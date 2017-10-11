@@ -27,22 +27,25 @@ namespace GymMSystem.Buisness_Logic
         {
             get
             {
-              //   var st = DateTime.ParseExact(startTime, "HH:mm:ss", CultureInfo.InvariantCulture);
-               //  var et = DateTime.ParseExact(endTime, "H:mm", null, System.Globalization.DateTimeStyles.None);
-              //  var st = dat.Parse(startTime);
-              //  var et = TimeSpan.Parse(endTime);
+                //   var st = DateTime.ParseExact(startTime, "HH:mm:ss", CultureInfo.InvariantCulture);
+                //  var et = DateTime.ParseExact(endTime, "H:mm", null, System.Globalization.DateTimeStyles.None);
+                //  var st = dat.Parse(startTime);
+                //  var et = TimeSpan.Parse(endTime);
 
-              //  TimeSpan dif = st - et;
+                //  TimeSpan dif = st - et;
 
-              //string gg=  dif.ToString();
-              //  TimeSpan duration = DateTime.ParseExact(endTime, "HH:mm:ss tt",CultureInfo.CurrentCulture).Subtract(DateTime.ParseExact(startTime, "HH:mm:ss tt", CultureInfo.CurrentCulture));
-              
+                //string gg=  dif.ToString();
+                //  TimeSpan duration = DateTime.ParseExact(endTime, "HH:mm:ss tt",CultureInfo.CurrentCulture).Subtract(DateTime.ParseExact(startTime, "HH:mm:ss tt", CultureInfo.CurrentCulture));
 
-             
-             //   double dif = (et - st).TotalHours;
-               // double x = dif.TotalHours;
-               // _hoursWorked = duration.TotalHours;
 
+
+                //   double dif = (et - st).TotalHours;
+                // double x = dif.TotalHours;
+                // _hoursWorked = duration.TotalHours;
+                double a = 20;
+                double b = 8;
+
+                _hoursWorked = a - b;
                 return _hoursWorked;
 
                      

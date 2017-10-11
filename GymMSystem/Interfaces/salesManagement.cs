@@ -25,11 +25,18 @@ namespace GymMSystem.Interfaces
 
         }
 
+        private void btnHome_SalesMgt_Click(object sender, EventArgs e)
+        {
+            Main smmain = new Main();
+            this.Hide();
+            smmain.Show();
+
+        }
         private bool validateProduct()
         {
             Buisness_Logic.validation valp = new Buisness_Logic.validation();
 
-            if (valp.IsWord(txtAddp_name.Text,"Product name"))
+            if (valp.IsWord(txtAddp_name.Text, "Product name"))
             {
                 if (valp.IsWord(txtAddp_make.Text, "Make"))
                 {
@@ -37,7 +44,7 @@ namespace GymMSystem.Interfaces
                     if (valp.IsNumeric(txtadd_qty.Text, "Product quantity"))
                     {
 
-                        if(picBox1_addproduct.Image!=null) return true;
+                        if (picBox1_addproduct.Image != null) return true;
 
                         else
                         {
@@ -48,15 +55,15 @@ namespace GymMSystem.Interfaces
 
 
                     }
-                    
+
                     else return false;
-                  
+
 
                 }
 
-              
+
                 else return false;
-              
+
             }
             else return false;
         }
@@ -73,7 +80,8 @@ namespace GymMSystem.Interfaces
                     prd.name = txtAddp_name.Text;
                     prd.qty = int.Parse(txtadd_qty.Text);
                     prd.make = txtAddp_make.Text;
-                    prd.price = double.Parse(txtAddp_price.Text);
+                    prd.buying_price = double.Parse(txtAddp_bprice.Text);
+                    prd.selling_Price = double.Parse(txtAddp_sell_price.Text);
                     prd.productType = cmb_addproduct_type.SelectedItem.ToString();
 
 
@@ -95,20 +103,27 @@ namespace GymMSystem.Interfaces
                     }
                 }
 
-                
+
 
             }
             catch (Exception expropd)
             {
                 MessageBox.Show(expropd.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
-            } 
-            
+            }
 
+        }
 
-
-
-
+        private void mtrtil2splmnt_clear_Click(object sender, EventArgs e)
+        {
+            txtAddp_ID.Text = "";
+            txtAddp_make.Text = "";
+            txtAddp_name.Text = "";
+            txtAddp_bprice.Text = "";
+            txtAddp_sell_price.Text = "";
+            txtadd_qty.Text = "";
+            cmb_addproduct_type.SelectedItem = null;
+            picBox1_addproduct.Image = null;
         }
 
         private void mtrtil3splmnt_brows_Click(object sender, EventArgs e)
@@ -130,19 +145,6 @@ namespace GymMSystem.Interfaces
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-        }
-
-        private void mtrtil2splmnt_clear_Click(object sender, EventArgs e)
-        {
-            txtAddp_ID.Text = "";
-            txtAddp_make.Text = "";
-            txtAddp_name.Text = "";
-            txtAddp_price.Text = "";
-            txtadd_qty.Text = "";
-            cmb_addproduct_type.SelectedItem = null;
-            picBox1_addproduct.Image = null;
-
 
         }
     }

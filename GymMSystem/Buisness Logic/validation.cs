@@ -20,7 +20,7 @@ namespace GymMSystem.Buisness_Logic
             if (x) return true;
             else
             {
-                MessageBox.Show(no+" is not in correct format.", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show(no+" is not in correct format.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
@@ -44,7 +44,7 @@ namespace GymMSystem.Buisness_Logic
 
             if (string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Email feild is empty!", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Email feild is empty!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return true;
             }
@@ -100,14 +100,14 @@ namespace GymMSystem.Buisness_Logic
 
             if (string.IsNullOrWhiteSpace(phone))
             {
-                MessageBox.Show("Phone number is not insertd!", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Phone number is not insertd!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
 
-            else if (IsNumeric(phone, "Phone"))
-            {
 
-                if (Regex.Match(phone, @"^(\+[0-9]{10})$").Success && phone != null)
+            else
+            {//Regex.Match(phone, @"^(\+[0-9]{10})$").Success
+                if (phone.All(char.IsNumber) && phone != null)
                 {
                     return true;
                 }
@@ -116,16 +116,16 @@ namespace GymMSystem.Buisness_Logic
                     MessageBox.Show("Phone number is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-
-
             }
-            else
-                return false;
-
-            
 
 
-           
+
+
+
+
+
+
+
         }
 
         public bool IsWord(string word, string wordName)
@@ -192,7 +192,7 @@ namespace GymMSystem.Buisness_Logic
 
                 else
                 {
-                   // MessageBox.Show("NIC  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("NIC  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 
@@ -209,8 +209,8 @@ namespace GymMSystem.Buisness_Logic
 
         public bool IsAddress(string address)
         {
-            bool chkAddress =  Regex.Match(address, @"\d{ 1,5}\s\w.\s(\b\w *\b\s){ 1,2}\w *\.) + (?:[A-Z][a-z.-]+[ ]?)+| (?:[A-Z][a-z.-]+[ ]?)+(?:[A-Z][a-z.-]+[ ]?)$").Success;
-
+            bool chkAddress = address.All(char.IsLetterOrDigit);
+                //Regex.Match(address, @"\d{ 1,5}\s\w.\s(\b\w *\b\s){ 1,2}\w *\.) + (?:[A-Z][a-z.-]+[ ]?)+| (?:[A-Z][a-z.-]+[ ]?)+(?:[A-Z][a-z.-]+[ ]?)$").Success;
             if (string.IsNullOrWhiteSpace(address))
             {
                 MessageBox.Show("Address can not be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -234,12 +234,12 @@ namespace GymMSystem.Buisness_Logic
         {
             if (!height.All(char.IsDigit))
             {
-                MessageBox.Show("Height should be a numeric value!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Height should be a numeric value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (double.Parse(height) > 250)
             {
-                MessageBox.Show("Height should be less than the entered value!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Height should be less than the entered value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else
@@ -251,12 +251,12 @@ namespace GymMSystem.Buisness_Logic
         {
             if (!weight.All(char.IsDigit))
             {
-                MessageBox.Show("Weight should be a numeric value!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Weight should be a numeric value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (double.Parse(weight) > 500)
             {
-                MessageBox.Show("Weight should be less than the entered value!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Weight should be less than the entered value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else

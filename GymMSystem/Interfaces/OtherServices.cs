@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using System.IO;
+
 
 namespace GymMSystem.Interfaces
 {
@@ -16,7 +18,6 @@ namespace GymMSystem.Interfaces
         public OtherServices()
         {
             InitializeComponent();
-           
         }
 
         private void OtherServices_Load(object sender, EventArgs e)
@@ -42,18 +43,23 @@ namespace GymMSystem.Interfaces
             txtOS1_EndingTime.Refresh();
             cmbOS1_day.Refresh();
             metroLabel1.Refresh();
-
-
         }
 
-        private void servicesTabPage_Click(object sender, EventArgs e)
+        private void btnHome_otherServices_Click(object sender, EventArgs e)
         {
-          
+            Main mother = new Main();
+            this.Hide();
+            mother.Show();
+        }
+
+        private void btnOS1_Save_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void radio_hc_CheckedChanged(object sender, EventArgs e)
         {
-          // radio button initialization
+            // radio button initialization
 
             if (radio_mc.Checked == true)
             {
@@ -72,8 +78,8 @@ namespace GymMSystem.Interfaces
             }
 
             // check button initialization
-            
-           if( checkOS2Mem.Checked == false)
+
+            if (checkOS2Mem.Checked == false)
             {
                 lblHint1.Visible = false;
                 lblHint2.Visible = false;
@@ -83,7 +89,7 @@ namespace GymMSystem.Interfaces
                 lblHint2.Refresh();
                 btnOS2_searchMember.Refresh();
             }
-           else if(checkOS2Mem.Checked == true)
+            else if (checkOS2Mem.Checked == true)
             {
 
                 lblHint1.Visible = true;
@@ -95,7 +101,7 @@ namespace GymMSystem.Interfaces
                 btnOS2_searchMember.Refresh();
 
             }
-            
+
         }
 
         private void radio_mc_CheckedChanged(object sender, EventArgs e)
@@ -158,128 +164,6 @@ namespace GymMSystem.Interfaces
 
 
             }
-
-        }
-
-        private void lbl_monthlyRate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOS1_Save_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tab_addMemOS2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOS1_update_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOS2_Save_Click(object sender, EventArgs e)
-        {
-            //create areobicmember object
-            Buisness_Logic.AreobicMember am = new Buisness_Logic.AreobicMember();
-
-            am.name = txtOS2_memName.Text;
-            am.dob = dateTime_OS2Mem.Value.ToShortDateString();
-            am.nic = txtOS2_nic.Text;
-            am.phone = int.Parse(txtOS2_phone.Text);
-            am.service_type = cmbOS2_serviceType.SelectedItem.ToString();
-
-
-            Buisness_Logic.otherServiceRepository rep1 = new Buisness_Logic.otherServiceRepository();
-
-          if(rep1.addOtherMembers(am))
-            {
-                MessageBox.Show("Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-
-
-        }
-
-        private void btnOS_home_Click(object sender, EventArgs e)
-        {
-            Main home = new Main();
-            this.Hide();
-            home.Show();
-
-
-
-        }
-
-        private void cmbOS2_serviceType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkOS2Mem_CheckedChanged(object sender, EventArgs e)
-        {
-            //Already a member or not
-
-            lblHint1.Visible = true;
-            lblHint2.Visible = true;
-            btnOS2_searchMember.Visible = true;
-
-            lblHint1.Refresh();
-            lblHint2.Refresh();
-            btnOS2_searchMember.Refresh();
-
-        }
-
-        private void metroTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddMember_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Buisness_Logic.AreobicMember am1 = new Buisness_Logic.AreobicMember();
-
-                Buisness_Logic.otherServiceRepository otr = new Buisness_Logic.otherServiceRepository();
-
-                am1.name = txtOS2_memName.Text;
-                am1.dob = dateTime_OS2Mem.Value.ToShortDateString();
-                am1.nic = txtOS2_nic.Text;
-                am1.phone = int.Parse(txtOS2_phone.Text);
-                am1.gender = cmbOS2_gender.SelectedItem.ToString();
-                am1.addresss = txtaddress.Text;
-
-
-
-                if (otr.addOtherMembers(am1))
-                {
-                    MessageBox.Show("Success", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Fail", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception eae)
-            {
-
-                throw;
-            }
-        }
-
-        private void btnOS2_searchMember_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

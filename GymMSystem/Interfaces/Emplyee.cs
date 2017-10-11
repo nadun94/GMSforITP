@@ -17,27 +17,22 @@ namespace GymMSystem.Interfaces
         public Emplyee()
         {
             InitializeComponent();
-
-
         }
 
         private void Emplyee_Load(object sender, EventArgs e)
         {
 
-            txtEmp1_jdate.Text = DateTime.Today.ToShortDateString();
         }
+        private Buisness_Logic.empAttendence transport1 = null;
 
-        private void metroTabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
         private bool validateEmp()
         {
             Buisness_Logic.validation vemp = new Buisness_Logic.validation();
 
             if (vemp.IsWord(txtEmp1_name.Text, "Name"))
             {
-                if (vemp.IsWord(txtEmp1_address.Text, "Address")){
+                if (vemp.IsAddress(txtEmp1_address.Text))
+                {
 
                     if (vemp.IsNIC(txtEmp_nic.Text))
                     {
@@ -48,6 +43,7 @@ namespace GymMSystem.Interfaces
                             MessageBox.Show("Please fill all text feilds and save.", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return false;
                         }
+
                     }
                     return false;
                 }
@@ -56,10 +52,8 @@ namespace GymMSystem.Interfaces
             }
             else return false;
         }
-
         private void btnEmp1_save_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (validateEmp())
@@ -97,6 +91,10 @@ namespace GymMSystem.Interfaces
                     }
 
                 }
+                else
+                {
+                    MessageBox.Show("Data Feilds are not validated.", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch (Exception exb)
@@ -127,51 +125,7 @@ namespace GymMSystem.Interfaces
             }
         }
 
-        private void btnEmp1Search_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnEMP2_browse_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEMP2_search_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEMP2_clear_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEmp1_clear_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAtAdStrtTime_Click(object sender, EventArgs e)
-        {
-
-        }
-        private Buisness_Logic.empAttendence transport1  = null;
         private void btnAtSerchM_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAtAdEndTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCalcHours_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAtSerchM_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -205,9 +159,8 @@ namespace GymMSystem.Interfaces
             }
         }
 
-        private void btnAtAdStrtTime_Click_1(object sender, EventArgs e)
+        private void btnAtAdStrtTime_Click(object sender, EventArgs e)
         {
-
             try
             {
                 txtempAT_theday.Text = DateTime.Today.ToShortDateString();
@@ -246,7 +199,7 @@ namespace GymMSystem.Interfaces
             }
         }
 
-        private void btnCalcHours_Click_1(object sender, EventArgs e)
+        private void btnCalcHours_Click(object sender, EventArgs e)
         {
             try
             {
@@ -259,9 +212,8 @@ namespace GymMSystem.Interfaces
             }
         }
 
-        private void btnAtAdEndTime_Click_1(object sender, EventArgs e)
+        private void btnAtAdEndTime_Click(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -278,6 +230,8 @@ namespace GymMSystem.Interfaces
                 if (emprep1.addEndTime(em1))
                 {
                     MessageBox.Show("Success", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textAtTotalHr.Text = em1.hoursWorked.ToString();
+
                 }
                 else
                 {
@@ -301,7 +255,7 @@ namespace GymMSystem.Interfaces
             }
         }
 
-        private void btnEMP2_search_Click_1(object sender, EventArgs e)
+        private void btnEMP2_search_Click(object sender, EventArgs e)
         {
             try
             {
@@ -351,7 +305,7 @@ namespace GymMSystem.Interfaces
             }
         }
 
-        private void btnEMP2_clear_Click_1(object sender, EventArgs e)
+        private void btnEMP2_clear_Click(object sender, EventArgs e)
         {
 
             txtEmp2_address.Text = "";
@@ -366,6 +320,13 @@ namespace GymMSystem.Interfaces
             cmbEMP2_gender.SelectedItem = null;
             cmbEMP2_post.SelectedItem = null;
             pictureBoxEmp2.Image = null;
+        }
+
+        private void btnHome_emp_Click(object sender, EventArgs e)
+        {
+            Main empmain = new Main();
+            this.Hide();
+            empmain.Show();
         }
     }
 }

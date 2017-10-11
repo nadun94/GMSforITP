@@ -8,24 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using System.IO;
+
 
 namespace GymMSystem.Interfaces
 {
-    public partial class setting : MetroForm
+    public partial class Settings : MetroForm
     {
-        public setting()
+        public Settings()
         {
             InitializeComponent();
         }
 
-        private void setting_Load(object sender, EventArgs e)
+        private void Settings_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnM3_check_Click(object sender, EventArgs e)
+        private void btnHome_settings_Click(object sender, EventArgs e)
         {
-
+            Main setmai = new Main();
+            this.Hide();
+            setmai.Show();
         }
     }
 }

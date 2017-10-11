@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using System.IO;
 
 namespace GymMSystem.Interfaces
 {
@@ -18,21 +19,16 @@ namespace GymMSystem.Interfaces
             InitializeComponent();
         }
 
-        private void Finance_Load(object sender, EventArgs e)
+        private void Settings_Load(object sender, EventArgs e)
         {
 
         }
 
         private void btnFinHome_Click(object sender, EventArgs e)
         {
-            Main hmfin = new Main();
+            Main fm = new Main();
             this.Hide();
-            hmfin.Show();
-        }
-
-        private void txtFin5_amount_Click(object sender, EventArgs e)
-        {
-
+            fm.Show();
         }
     }
 }

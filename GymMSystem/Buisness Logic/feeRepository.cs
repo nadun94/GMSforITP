@@ -173,7 +173,34 @@ namespace GymMSystem.Buisness_Logic
             
         }
         
-        //public fee getPaymentPendingList()
-        //    create view vw_paymentPending(MemberID, Name, Phone, recentPayment_date as 'recent Paid Date' , recentPayment as 'Recent payment' ,
+        public DataTable getPaymentPendingList()
+        {
+            try
+            {
+
+                DataLayer.dbConnect conrep1 = new DataLayer.dbConnect();
+                conrep1.openConnection();
+
+                string qrep1 = "SELECT * FROM vw_paymentPending";
+
+                SqlCommand cmdrep1 = new SqlCommand(qrep1, conrep1.getConnection());
+
+                SqlDataAdapter darep1 = new SqlDataAdapter(cmdrep1);
+
+
+                DataTable dtrep1 = new DataTable();
+
+                darep1.Fill(dtrep1);
+
+                return dtrep1;
+
+            }
+            catch (Exception erep)
+            {
+
+                throw;
+            }
+        }
+            
     }
 }

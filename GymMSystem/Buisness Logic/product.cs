@@ -16,8 +16,9 @@ namespace GymMSystem.Buisness_Logic
 
         public int qty { get; set; }
 
-        public double price { get; set; }
-      //  public string model { get; set; }
+        public double buying_price { get; set; }
+        public double selling_Price { get; set; }
+                                           //  public string model { get; set; }
 
         public byte[] photo { get; set; }
         public string  productType { get; set; }

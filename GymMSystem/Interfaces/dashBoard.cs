@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using System.IO;
+
 
 namespace GymMSystem.Interfaces
 {
@@ -23,11 +25,12 @@ namespace GymMSystem.Interfaces
 
         }
 
-        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
+        private void btnHome_dashBoard_Click(object sender, EventArgs e)
         {
-            Main ty = new Main();
+            Main dma = new Main();
             this.Hide();
-            ty.Show();
+            dma.Show();
+
         }
     }
 }

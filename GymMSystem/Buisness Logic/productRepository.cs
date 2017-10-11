@@ -22,14 +22,15 @@ namespace GymMSystem.Buisness_Logic
                 
                 DataLayer.dbConnect dbp = new DataLayer.dbConnect();
                 dbp.openConnection();
-                string query1 = "INSERT INTO tbl_product (name,make ,p_type, qty,price,photo) VALUES  (@name, @make, @type, @qty,@price, @photo)";
+                string query1 = "INSERT INTO tbl_product (name,make ,p_type, qty,buying_price,selling_price,photo) VALUES  (@name, @make, @type, @qty,@bprice,@sprice, @photo)";
 
                 SqlCommand cmd = new SqlCommand(query1, dbp.getConnection());
                 cmd.Parameters.AddWithValue("@name", prod.name);
                 cmd.Parameters.AddWithValue("@make", prod.make);
                 cmd.Parameters.AddWithValue("@type", prod.productType);
                 cmd.Parameters.AddWithValue("@qty", prod.qty);
-                cmd.Parameters.AddWithValue("@price", prod.price);
+                cmd.Parameters.AddWithValue("@bprice", prod.buying_price);
+                cmd.Parameters.AddWithValue("@sprice", prod.selling_Price);
                 cmd.Parameters.AddWithValue("@photo", prod.photo);
 
          

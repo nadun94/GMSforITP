@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using System.Data.SqlClient;
-using System.Data;
+using System.IO;
+
 
 namespace GymMSystem.Interfaces
 {
@@ -22,47 +22,16 @@ namespace GymMSystem.Interfaces
 
         private void workouts_Load(object sender, EventArgs e)
         {
-            DataLayer.dbConnect con = new DataLayer.dbConnect();
-            con.openConnection();
-
-            string q1 = "select * from tbl_exercise";
-
-            SqlCommand cmd = new SqlCommand(q1, con.getConnection());
-
-            DataTable dtq = new DataTable();
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd);
-            comboW1_name.Refresh();
-            da1.Fill(dtq);
-
-            if (dtq.Rows.Count > 0)
-            {
-                for (int i = 0; i < dtq.Rows.Count; i++)
-                {
-                    comboW1_name.Items.Add(dtq.Rows[i]["name"].ToString());
-
-                }
-            }
-
-
-            con.closeConnection();
-
 
         }
 
-        private void metroTabPage2_Click(object sender, EventArgs e)
+        private void btnHome_workouts_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnWorvHome_Click(object sender, EventArgs e)
-        {
-            Main gh = new Main();
+            Main wma = new Main();
             this.Hide();
-            gh.Show();
+            wma.Show();
+
         }
-
-       
-
         private bool validateExercise()
         {
             bool x = (!string.IsNullOrWhiteSpace(txtEx1_name.Text) && !string.IsNullOrWhiteSpace(txtEx2_description.Text)
@@ -80,7 +49,7 @@ namespace GymMSystem.Interfaces
 
         }
 
-        private void btnexercise_save_Click_1(object sender, EventArgs e)
+        private void btnexercise_save_Click(object sender, EventArgs e)
         {
             try
             {
@@ -110,11 +79,6 @@ namespace GymMSystem.Interfaces
         {
             txtEx1_name.Clear();
             txtEx2_description.Clear();
-        }
-
-        private void metroTabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnworkout_save_Click(object sender, EventArgs e)
@@ -197,7 +161,7 @@ namespace GymMSystem.Interfaces
                     txtW3_schedule.Text = wrk.interval_days.ToString();
 
                     MessageBox.Show("Succesfull.", "Data Insertion.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
+
 
                 }
                 else
@@ -212,12 +176,11 @@ namespace GymMSystem.Interfaces
                 throw;
             }
 
-
         }
 
         private void btnworkout_update_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

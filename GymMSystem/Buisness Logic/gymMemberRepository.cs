@@ -339,5 +339,48 @@ namespace GymMSystem.Buisness_Logic
           
         }
 
+        public bool deleteMemeber(gymMember gm)
+        {
+            bool tempdel = false;
+            DataLayer.dbConnect cond = new DataLayer.dbConnect();
+            cond.openConnection();
+            SqlTransaction trnd = cond.getConnection().BeginTransaction();
+            try
+            {
+               
+
+                string qd = "DELETE tbl_gymMember WHERE memberID=@mem ";
+
+                SqlCommand cmdel = new SqlCommand(qd, cond.getConnection());
+
+                cmdel.Parameters.AddWithValue("@mem", gm.MemberID);
+                cmdel.Transaction = trnd;
+
+                cmdel.ExecuteNonQuery();
+
+
+                string qd1 = "DELETE tbl_member WHERE regNo=@mem ";
+
+                SqlCommand cmdel1 = new SqlCommand(qd1, cond.getConnection());
+
+                cmdel1.Parameters.AddWithValue("@mem", gm.MemberID);
+                cmdel1.Transaction = trnd;
+                cmdel1.ExecuteNonQuery();
+                trnd.Commit();
+                cond.closeConnection();
+
+                tempdel = true;
+
+            }
+            catch (Exception edel)
+            {
+                trnd.Rollback();
+                throw;
+            }
+
+            if (tempdel == true) return true;
+            else return false;
+        }
+
     }
 }

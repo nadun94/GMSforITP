@@ -60,20 +60,17 @@
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Metro">
-      <HintPath>..\packages\Metro.dll</HintPath>
-    </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -142,12 +139,6 @@
     <Compile Include="Interfaces\Emplyee.Designer.cs">
       <DependentUpon>Emplyee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Finance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Finance.Designer.cs">
-      <DependentUpon>Finance.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +163,12 @@
     <Compile Include="Interfaces\Members.Designer.cs">
       <DependentUpon>Members.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Finance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Finance.Designer.cs">
+      <DependentUpon>Finance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\OtherServices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,11 +181,11 @@
     <Compile Include="Interfaces\salesManagement.Designer.cs">
       <DependentUpon>salesManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\setting.cs">
+    <Compile Include="Interfaces\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\setting.Designer.cs">
-      <DependentUpon>setting.cs</DependentUpon>
+    <Compile Include="Interfaces\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\workouts.cs">
       <SubType>Form</SubType>
@@ -204,9 +201,6 @@
     <EmbeddedResource Include="Interfaces\Emplyee.resx">
       <DependentUpon>Emplyee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Finance.resx">
-      <DependentUpon>Finance.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\inventory.resx">
       <DependentUpon>inventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,14 +213,17 @@
     <EmbeddedResource Include="Interfaces\Members.resx">
       <DependentUpon>Members.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Finance.resx">
+      <DependentUpon>Finance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\OtherServices.resx">
       <DependentUpon>OtherServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\salesManagement.resx">
       <DependentUpon>salesManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\setting.resx">
-      <DependentUpon>setting.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\workouts.resx">
       <DependentUpon>workouts.cs</DependentUpon>
@@ -240,8 +237,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -255,9 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
