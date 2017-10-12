@@ -40,7 +40,7 @@ namespace GymMSystem.Buisness_Logic
                                     + @"([a-zA-Z0-9]+[\w-]+\.)+[a-zA-Z]{1}[a-zA-Z0-9-]{1,23})$";
 
 
-
+            //@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
 
             if (string.IsNullOrWhiteSpace(email))
             {
@@ -67,13 +67,7 @@ namespace GymMSystem.Buisness_Logic
         public bool IsEmail2(string email)
         {
 
-            const string MatchEmailPattern =
-                                    @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
-                                    + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
-			                	    [0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
-                                    + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
-				                    [0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
-                                    + @"([a-zA-Z0-9]+[\w-]+\.)+[a-zA-Z]{1}[a-zA-Z0-9-]{1,23})$";
+            const string MatchEmailPattern = @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
 
 
 
@@ -83,7 +77,7 @@ namespace GymMSystem.Buisness_Logic
 
             else
             {
-                MessageBox.Show("Email is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show("Email is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -95,38 +89,69 @@ namespace GymMSystem.Buisness_Logic
         public bool IsPhone(string phone)
         {
 
+            const string MatchphonePattern = @"(^[0-9]{10}$)|(^\+[0-9]{2}\s+[0-9]{2}[0-9]{8}$)|(^[0-9]{3}-[0-9]{4}-[0-9]{4}$)";
 
 
 
-            if (string.IsNullOrWhiteSpace(phone))
-            {
-                MessageBox.Show("Phone number is not insertd!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (Regex.IsMatch(phone, MatchphonePattern) && phone != null)
                 return true;
-            }
 
 
             else
-            {//Regex.Match(phone, @"^(\+[0-9]{10})$").Success
-                if (phone.All(char.IsNumber) && phone != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Phone number is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+            {
+               
+                return false;
             }
 
+            //(^[0-9]{10}$)|(^\+[0-9]{2}\s+[0-9]{2}[0-9]{8}$)|(^[0-9]{3}-[0-9]{4}-[0-9]{4}$)
+
+
+            //if (string.IsNullOrWhiteSpace(phone))
+            //{
+            //    MessageBox.Show("Phone number is not insertd!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return true;
+            //}
+
+
+            //else
+            //{//Regex.Match(phone, @"^(\+[0-9]{10})$").Success
+            //    if (phone.All(char.IsNumber) && phone != null)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Phone number is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return false;
+            //    }
+        }
 
 
 
 
+        public bool IsName(string name)
+        {
+            
+
+            const string MatchName = @"^[A-z][A-z|\.|\s]+$";
+            
+
+
+            if (Regex.IsMatch(name, MatchName) && name != null)
+                return true;
+
+
+            else return false;
 
 
 
 
         }
+
+
+
+
+
 
         public bool IsWord(string word, string wordName)
         {
@@ -157,24 +182,7 @@ namespace GymMSystem.Buisness_Logic
         }
 
 
-        //public bool IsName(string name)
-        //{
-        //    //if (string.IsNullOrWhiteSpace(name))
-        //    //{
-        //    //    MessageBox.Show("Name can not be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //    //    return false;
-        //    //}
-        //    //else
-        //    if (IsWord(name))
-        //        return true;
-
-        //    else
-        //    {
-        //        MessageBox.Show("Name  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
-
-        //}
+       
 
         public bool IsNIC (string nic)
         {
@@ -192,7 +200,7 @@ namespace GymMSystem.Buisness_Logic
 
                 else
                 {
-                    MessageBox.Show("NIC  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                   // MessageBox.Show("NIC  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 
@@ -209,35 +217,31 @@ namespace GymMSystem.Buisness_Logic
 
         public bool IsAddress(string address)
         {
-            bool chkAddress = address.All(char.IsLetterOrDigit);
-                //Regex.Match(address, @"\d{ 1,5}\s\w.\s(\b\w *\b\s){ 1,2}\w *\.) + (?:[A-Z][a-z.-]+[ ]?)+| (?:[A-Z][a-z.-]+[ ]?)+(?:[A-Z][a-z.-]+[ ]?)$").Success;
-            if (string.IsNullOrWhiteSpace(address))
-            {
-                MessageBox.Show("Address can not be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else
-            {
-                if (chkAddress)
-                    return true;
-                else
-                {
-                    MessageBox.Show("Address  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-            }
+            //@"^[A-Za-z0-9]+(?:\s[A-Za-z0-9'_-]+)+$"
+
+            const string MatchAddress = @"^[A-Za-z0-9]+(?:\s[A-Za-z0-9'_-]+)+$";
+
+
+
+            if (Regex.IsMatch(address, MatchAddress) && address != null)
+                return true;
+
+
+            else return false;
+
         }
 
-       
-        
+
+        const string matchnumeric = @"-?\d+(?:\.\d+)?";
         public bool IsHeight(string height)
         {
-            if (!height.All(char.IsDigit))
+            
+            if (!Regex.IsMatch(height, matchnumeric))
             {
-                MessageBox.Show("Height should be a numeric value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
                 return false;
             }
-            else if (double.Parse(height) > 250)
+            else if (double.Parse(height) > 250 || double.Parse(height)<=0)
             {
                 MessageBox.Show("Height should be less than the entered value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -249,12 +253,12 @@ namespace GymMSystem.Buisness_Logic
 
         public bool IsWeight(string weight)
         {
-            if (!weight.All(char.IsDigit))
+            if (!Regex.IsMatch(weight, matchnumeric))
             {
-                MessageBox.Show("Weight should be a numeric value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return false;
             }
-            else if (double.Parse(weight) > 500)
+            else if (double.Parse(weight) > 500 || double.Parse(weight)<=1)
             {
                 MessageBox.Show("Weight should be less than the entered value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

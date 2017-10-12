@@ -41,69 +41,155 @@ namespace GymMSystem.Interfaces
         {
             datagridm3refresh();
         }
-
-        public bool validateMemeber()
+        private bool validateAddMember()
         {
-            Buisness_Logic.validation val = new Buisness_Logic.validation();
-            // bool status = false;
+            Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+            bool phone, email, address, name, nic,gender,pp,dob,height,weight;
 
-            if (val.IsWord(txtM_name.Text, "Name"))
+            //phone
+            if (!val1.IsPhone(txtM_phone.Text))
             {
+                this.errorProvider1.SetError(txtM_phone, "Phone is invalid.");
+                phone = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_phone, (string)null);
+                phone = true;
+            }
 
+            //Email
 
+             if  (!val1.IsEmail2(txtM_email.Text)){
 
-                if (val.IsAddress(txtM_address.Text))
-                {
+                this.errorProvider1.SetError(txtM_email, "Email is invalid.");
+                email = false;
 
-                    if (val.IsPhone(txtM_phone.Text))
-                    {
-                        if (val.IsEmail1(txtM_email.Text))
-                        {
-
-                            if (val.IsHeight(txtM_height.Text))
-                            {
-
-                                if (val.IsWeight(txtM_weight.Text))
-                                {
-                                    if (picuturebox_member.Image != null) return true;
-
-                                    else return false;
-                                }
-                                else return false;
-                            }
-                            else return false;
-                        }
-                        else return false;
-                    }
-                    else return false;
-
-
-
-
-
-                }
-
-                else return false;
-
-
-
-
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_email, (string)null);
+                email = true;
 
             }
 
+             //Name
+            if (!val1.IsName(txtM_name.Text))
+            {
+
+                this.errorProvider1.SetError(txtM_name, "Name is invalid.");
+                name = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_name, (string)null);
+                name = true;
+
+            }
+            //NIC
+            if (!val1.IsNIC(txtM_nic.Text))
+            {
+                this.errorProvider1.SetError(txtM_nic, "NIC is invalid.");
+                nic = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_nic, (string)null);
+                nic = true;
+            }
+            //address
+            if (!val1.IsAddress(txtM_address.Text))
+            {
+                this.errorProvider1.SetError(txtM_address, "Address is invalid.");
+                address = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_address, (string)null);
+                address = true;
+            }
+            //gender
+            if (cmbM_gender.SelectedIndex.Equals(-1))
+            {
+                this.errorProvider1.SetError(cmbM_gender, "Gender is not selected.");
+                gender = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(cmbM_gender, (string)null);
+                gender = true;
+            }
+            //payment plan
+            if (cmbM_paymentPlan.SelectedIndex.Equals(-1))
+            {
+                this.errorProvider1.SetError(cmbM_paymentPlan, "Payment Plan is not selected.");
+                pp = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(cmbM_paymentPlan, (string)null);
+                pp = true;
+            }
+
+            //dob
+            if (dateTimePickerMem.Value>= DateTime.Today)
+            {
+                this.errorProvider1.SetError(dateTimePickerMem, "DOB is invalid.");
+                dob = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(dateTimePickerMem, (string)null);
+                dob = true;
+            }
+
+            //height
+            if (!val1.IsHeight(txtM_height.Text))
+            {
+
+                this.errorProvider1.SetError(txtM_height, "Height is invalid.");
+                height = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_height, (string)null);
+                height = true;
+
+            }
+
+            //weight
+            if (!val1.IsWeight(txtM_weight.Text))
+            {
+
+                this.errorProvider1.SetError(txtM_weight, "Weight is invalid.");
+                weight = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM_weight, (string)null);
+                weight = true;
+
+            }
+
+            //**** main returning part
+            if (phone == true && email == true && name == true && nic==true && gender==true && height==true) return true;
             else return false;
 
 
-
         }
+       
 
+        
 
         private void btnM_save_Click(object sender, EventArgs e)
         {
             try
             {
 
-                if (validateMemeber())
+                if (validateAddMember())
                 {
 
                     //initialize image
