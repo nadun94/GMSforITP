@@ -39,7 +39,7 @@ namespace GymMSystem.Interfaces
         }
         private void Members_Load(object sender, EventArgs e)
         {
-            datagridm3refresh();
+           
         }
         private bool validateAddMember()
         {
@@ -74,7 +74,7 @@ namespace GymMSystem.Interfaces
             }
 
              //Name
-            if (!val1.IsName(txtM_name.Text))
+            if (!val1.IsName(txtM_name.Text) && string.IsNullOrWhiteSpace(txtM_name.Text))
             {
 
                 this.errorProvider1.SetError(txtM_name, "Name is invalid.");
@@ -88,7 +88,7 @@ namespace GymMSystem.Interfaces
 
             }
             //NIC
-            if (!val1.IsNIC(txtM_nic.Text))
+            if (!val1.IsNIC(txtM_nic.Text) )
             {
                 this.errorProvider1.SetError(txtM_nic, "NIC is invalid.");
                 nic = false;
@@ -175,7 +175,8 @@ namespace GymMSystem.Interfaces
             }
 
             //**** main returning part
-            if (phone == true && email == true && name == true && nic==true && gender==true && height==true) return true;
+            bool condition = phone == true && email == true && name == true && nic == true && gender == true && height == true && weight == true && address == true && pp == true;
+            if (condition) return true;
             else return false;
 
 
@@ -183,7 +184,7 @@ namespace GymMSystem.Interfaces
        
 
         
-
+       
         private void btnM_save_Click(object sender, EventArgs e)
         {
             try
@@ -336,33 +337,74 @@ namespace GymMSystem.Interfaces
         private bool validate_search()
         {
 
-            if (txtM3_memID.Text.Trim().Length == 0 && txtM3_name.Text.Trim().Length == 0 && txtM3_nic.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Please enter Name or MemberID or NIC to search Member.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
 
+            Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+            bool  name, nic,memid;
+
+            if (string.IsNullOrWhiteSpace(txtM3_memID.Text) && string.IsNullOrWhiteSpace(txtM3_nic.Text) && string.IsNullOrWhiteSpace(txtM3_name.Text))
+            {
+                MessageBox.Show("Please enter memberID or NIC or name to search member.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
             else
             {
 
-                if ((!Regex.Match(txtM3_name.Text, "^[a-zA-Z][a-zA-Z\\s]+$").Success) && ((txtM3_memID.Text.Trim().Length == 0) && (txtM3_nic.Text.Trim().Length == 0)))
+                // Member ID
+                if (!txtM3_memID.Text.All(char.IsDigit) && !string.IsNullOrWhiteSpace(txtM3_memID.Text))
                 {
-                    MessageBox.Show("Please enter Name in correct format.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+                    this.errorProvider1.SetError(txtM3_memID, "MemeberID is invalid.");
+                    memid = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtM3_memID, (string)null);
+                    memid = true;
+                }
+
+                //Name
+                if (!val1.IsName(txtM3_name.Text) && !string.IsNullOrWhiteSpace(txtM3_name.Text))
+                {
+
+                    this.errorProvider1.SetError(txtM3_name, "Name is invalid.");
+                    name = false;
 
                 }
-                else if (!txtM3_nic.Text.ToString().All(char.IsLetterOrDigit) && (txtM3_memID.Text.Trim().Length == 0) && txtM3_memID.Text.Trim().Length == 0)
+                else
                 {
-                    MessageBox.Show("Please enter NIC in correct format.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+                    this.errorProvider1.SetError(txtM3_name, (string)null);
+                    name = true;
+
                 }
-                else return true;
+                //NIC
+                if (!val1.IsNIC(txtM3_nic.Text) && !string.IsNullOrWhiteSpace(txtM3_nic.Text))
+                {
+                    this.errorProvider1.SetError(txtM3_nic, "NIC is invalid.");
+                    nic = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtM3_nic, (string)null);
+                    nic = true;
+                }
+
+
+
+
+                //**** main returning part
+                if (memid == true || name == true || nic == true) return true;
+                else return false;
             }
+            
+
+            
+
+
 
         }
+        
         private void clearMSearch()
         {
-           // txtMF_amount.Text = "";
+          
             txtM3_bmi.Text = "";
             txtm3_dob.Text = "";
             txtM3_fatLevel.Text = "";
@@ -377,9 +419,9 @@ namespace GymMSystem.Interfaces
             cmbM3_paymentpaln.SelectedItem = null;
             pictureBoxM3.Image = null;
             cmbM3_paymentpaln.Refresh();
-            cmbM_gender.Refresh();
-            txtM_address.Text = "";
+            cmbM3_gender.Refresh();
             txtmsearch_address.Text = "";
+            txtM3_jdate.Text = "";
 
 
         }
@@ -449,37 +491,182 @@ namespace GymMSystem.Interfaces
             }
         }
 
+        private bool validateUpdateMember()
+        {
+            Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+            bool phone, email, address, name, nic, gender, pp, dob, height, weight;
+
+            //phone
+            if (!val1.IsPhone(txtM3_phone.Text))
+            {
+                this.errorProvider1.SetError(txtM3_phone, "Phone is invalid.");
+                phone = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM3_phone, (string)null);
+                phone = true;
+            }
+
+            //Email
+
+            if (!val1.IsEmail2(txtmsemail.Text))
+            {
+
+                this.errorProvider1.SetError(txtmsemail, "Email is invalid.");
+                email = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtmsemail, (string)null);
+                email = true;
+
+            }
+
+            //Name
+            if (!val1.IsName(txtM3_name.Text) && string.IsNullOrWhiteSpace(txtM3_name.Text))
+            {
+
+                this.errorProvider1.SetError(txtM3_name, "Name is invalid.");
+                name = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM3_name, (string)null);
+                name = true;
+
+            }
+            //NIC
+            if (!val1.IsNIC(txtM3_nic.Text))
+            {
+                this.errorProvider1.SetError(txtM3_nic, "NIC is invalid.");
+                nic = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM3_nic, (string)null);
+                nic = true;
+            }
+            //address
+            if (!val1.IsAddress(txtmsearch_address.Text))
+            {
+                this.errorProvider1.SetError(txtmsearch_address, "Address is invalid.");
+                address = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtmsearch_address, (string)null);
+                address = true;
+            }
+            //gender
+            if (cmbM3_gender.SelectedIndex.Equals(-1))
+            {
+                this.errorProvider1.SetError(cmbM3_gender, "Gender is not selected.");
+                gender = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(cmbM3_gender, (string)null);
+                gender = true;
+            }
+            //payment plan
+            if (cmbM3_paymentpaln.SelectedIndex.Equals(-1))
+            {
+                this.errorProvider1.SetError(cmbM3_paymentpaln, "Payment Plan is not selected.");
+                pp = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(cmbM3_paymentpaln, (string)null);
+                pp = true;
+            }
+
+            //dob
+            DateTime dt;
+            if (DateTime.TryParse(txtm3_dob.Text,out dt) && dt > DateTime.Today)
+            {
+                this.errorProvider1.SetError(txtm3_dob, "DOB is invalid.");
+                dob = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtm3_dob, (string)null);
+                dob = true;
+            }
+
+            //height
+            if (!val1.IsHeight(txtM3_height.Text))
+            {
+
+                this.errorProvider1.SetError(txtM3_height, "Height is invalid.");
+                height = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM3_height, (string)null);
+                height = true;
+
+            }
+
+            //weight
+            if (!val1.IsWeight(txtM3_weight.Text))
+            {
+
+                this.errorProvider1.SetError(txtM3_weight, "Weight is invalid.");
+                weight = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtM3_weight, (string)null);
+                weight = true;
+
+            }
+
+            //**** main returning part
+            if (phone == true && email == true && name == true && nic == true && gender == true && height == true) return true;
+            else return false;
+
+        }
         private void btnM3_update_Click(object sender, EventArgs e)
         {
-            Buisness_Logic.gymMember gm = new Buisness_Logic.gymMember();
 
-            MemoryStream memt1p2 = new MemoryStream();
-            pictureBoxM3.Image.Save(memt1p2, System.Drawing.Imaging.ImageFormat.Jpeg);
-            byte[] photo_memt2 = memt1p2.ToArray();
-
-            gm.MemberID = int.Parse(txtM3_memID.Text);
-            gm.name = txtM3_name.Text;
-            gm.nic = txtM3_nic.Text;
-            gm.phone = int.Parse(txtM3_phone.Text);
-
-            gm.fatLevel = double.Parse(txtM3_fatLevel.Text);
-            gm.addresss = txtmsearch_address.Text;
-
-            gm.gender = cmbM3_gender.SelectedItem.ToString();
-            gm.paymentPlan = cmbM3_paymentpaln.SelectedItem.ToString();
-            gm.dob = txtm3_dob.Text;
-            gm.height = double.Parse(txtM3_height.Text);
-            gm.weight = double.Parse(txtM3_weight.Text);
-            gm.photo = photo_memt2;
-            gm.email = txtmsemail.Text;
-
-            Buisness_Logic.gymMemberRepository grup = new Buisness_Logic.gymMemberRepository();
-
-            if (grup.updateGymMember(gm))
+            if (validateUpdateMember())
             {
-                MessageBox.Show("Member detail updated.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                datagridm3refresh();
+                Buisness_Logic.gymMember gm = new Buisness_Logic.gymMember();
+
+                MemoryStream memt1p2 = new MemoryStream();
+                pictureBoxM3.Image.Save(memt1p2, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] photo_memt2 = memt1p2.ToArray();
+
+                gm.MemberID = int.Parse(txtM3_memID.Text);
+                gm.name = txtM3_name.Text;
+                gm.nic = txtM3_nic.Text;
+                gm.phone = int.Parse(txtM3_phone.Text);
+
+                gm.fatLevel = double.Parse(txtM3_fatLevel.Text);
+                gm.addresss = txtmsearch_address.Text;
+
+                gm.gender = cmbM3_gender.SelectedItem.ToString();
+                gm.paymentPlan = cmbM3_paymentpaln.SelectedItem.ToString();
+                gm.dob = txtm3_dob.Text;
+                gm.height = double.Parse(txtM3_height.Text);
+                gm.weight = double.Parse(txtM3_weight.Text);
+                gm.photo = photo_memt2;
+                gm.email = txtmsemail.Text;
+
+                Buisness_Logic.gymMemberRepository grup = new Buisness_Logic.gymMemberRepository();
+
+                if (grup.updateGymMember(gm))
+                {
+                    MessageBox.Show("Member detail updated.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    datagridm3refresh();
+                }
             }
+           
         }
 
         private void btnM2delete_Click(object sender, EventArgs e)
@@ -814,6 +1001,21 @@ namespace GymMSystem.Interfaces
 
                 throw;
             }
+        }
+
+        private void metroTabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            datagridm3refresh();
+        }
+
+        private void metroLabel21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtM3_nic_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

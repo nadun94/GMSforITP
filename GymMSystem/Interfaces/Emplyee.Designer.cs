@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Emptab = new MetroFramework.Controls.MetroTabControl();
             this.tabAddEmp = new MetroFramework.Controls.MetroTabPage();
             this.dateTimePickeremp = new MetroFramework.Controls.MetroDateTime();
@@ -122,6 +123,7 @@
             this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
             this.openFileDialogEmp = new System.Windows.Forms.OpenFileDialog();
             this.btnHome_emp = new MetroFramework.Controls.MetroTile();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Emptab.SuspendLayout();
             this.tabAddEmp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picuturebox_emp1)).BeginInit();
@@ -129,6 +131,7 @@
             this.tabEMp_salary.SuspendLayout();
             this.employeeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Emptab
@@ -143,7 +146,7 @@
             this.Emptab.Location = new System.Drawing.Point(35, 61);
             this.Emptab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.Emptab.Name = "Emptab";
-            this.Emptab.SelectedIndex = 0;
+            this.Emptab.SelectedIndex = 1;
             this.Emptab.Size = new System.Drawing.Size(1586, 756);
             this.Emptab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Emptab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -215,7 +218,7 @@
             this.txtEmp1_email.CustomButton.Visible = false;
             this.txtEmp1_email.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEmp1_email.Lines = new string[0];
-            this.txtEmp1_email.Location = new System.Drawing.Point(645, 275);
+            this.txtEmp1_email.Location = new System.Drawing.Point(782, 272);
             this.txtEmp1_email.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmp1_email.MaxLength = 32767;
             this.txtEmp1_email.Name = "txtEmp1_email";
@@ -250,7 +253,7 @@
             this.txtEmp_nic.CustomButton.Visible = false;
             this.txtEmp_nic.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEmp_nic.Lines = new string[0];
-            this.txtEmp_nic.Location = new System.Drawing.Point(645, 120);
+            this.txtEmp_nic.Location = new System.Drawing.Point(782, 117);
             this.txtEmp_nic.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmp_nic.MaxLength = 32767;
             this.txtEmp_nic.Name = "txtEmp_nic";
@@ -274,7 +277,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(531, 353);
+            this.metroLabel6.Location = new System.Drawing.Point(668, 350);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(46, 25);
@@ -290,7 +293,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(531, 275);
+            this.metroLabel5.Location = new System.Drawing.Point(668, 272);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(61, 25);
@@ -319,7 +322,7 @@
             this.txtEmp1_phone.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEmp1_phone.ForeColor = System.Drawing.Color.White;
             this.txtEmp1_phone.Lines = new string[0];
-            this.txtEmp1_phone.Location = new System.Drawing.Point(645, 198);
+            this.txtEmp1_phone.Location = new System.Drawing.Point(782, 195);
             this.txtEmp1_phone.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmp1_phone.MaxLength = 32767;
             this.txtEmp1_phone.Name = "txtEmp1_phone";
@@ -343,7 +346,7 @@
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(531, 122);
+            this.metroLabel10.Location = new System.Drawing.Point(668, 119);
             this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(41, 25);
@@ -359,7 +362,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(531, 201);
+            this.metroLabel4.Location = new System.Drawing.Point(668, 198);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(62, 25);
@@ -373,7 +376,7 @@
             // 
             this.btnEmp1_save.ActiveControl = null;
             this.btnEmp1_save.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEmp1_save.Location = new System.Drawing.Point(1079, 133);
+            this.btnEmp1_save.Location = new System.Drawing.Point(1366, 149);
             this.btnEmp1_save.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmp1_save.Name = "btnEmp1_save";
             this.btnEmp1_save.Size = new System.Drawing.Size(117, 47);
@@ -390,7 +393,7 @@
             // 
             this.btnEmp1_clear.ActiveControl = null;
             this.btnEmp1_clear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEmp1_clear.Location = new System.Drawing.Point(1079, 233);
+            this.btnEmp1_clear.Location = new System.Drawing.Point(1366, 249);
             this.btnEmp1_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmp1_clear.Name = "btnEmp1_clear";
             this.btnEmp1_clear.Size = new System.Drawing.Size(117, 47);
@@ -412,7 +415,7 @@
             "Trainer",
             "Manager",
             "Receptionist"});
-            this.cmbEmp1_post.Location = new System.Drawing.Point(645, 353);
+            this.cmbEmp1_post.Location = new System.Drawing.Point(782, 350);
             this.cmbEmp1_post.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEmp1_post.Name = "cmbEmp1_post";
             this.cmbEmp1_post.Size = new System.Drawing.Size(132, 29);
@@ -442,7 +445,7 @@
             // 
             this.btn_emp1_browse.ActiveControl = null;
             this.btn_emp1_browse.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_emp1_browse.Location = new System.Drawing.Point(890, 340);
+            this.btn_emp1_browse.Location = new System.Drawing.Point(1108, 340);
             this.btn_emp1_browse.Margin = new System.Windows.Forms.Padding(2);
             this.btn_emp1_browse.Name = "btn_emp1_browse";
             this.btn_emp1_browse.Size = new System.Drawing.Size(109, 42);
@@ -459,7 +462,7 @@
             // 
             this.picuturebox_emp1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picuturebox_emp1.BackColor = System.Drawing.Color.White;
-            this.picuturebox_emp1.Location = new System.Drawing.Point(864, 149);
+            this.picuturebox_emp1.Location = new System.Drawing.Point(1082, 149);
             this.picuturebox_emp1.Margin = new System.Windows.Forms.Padding(2);
             this.picuturebox_emp1.Name = "picuturebox_emp1";
             this.picuturebox_emp1.Size = new System.Drawing.Size(149, 168);
@@ -485,7 +488,7 @@
             this.txtEmp1_resume.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEmp1_resume.ForeColor = System.Drawing.Color.White;
             this.txtEmp1_resume.Lines = new string[0];
-            this.txtEmp1_resume.Location = new System.Drawing.Point(645, 426);
+            this.txtEmp1_resume.Location = new System.Drawing.Point(782, 423);
             this.txtEmp1_resume.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmp1_resume.MaxLength = 32767;
             this.txtEmp1_resume.Name = "txtEmp1_resume";
@@ -583,7 +586,7 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(531, 426);
+            this.metroLabel8.Location = new System.Drawing.Point(668, 423);
             this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(74, 25);
@@ -2316,7 +2319,7 @@
             // 
             this.btnHome_emp.ActiveControl = null;
             this.btnHome_emp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHome_emp.Location = new System.Drawing.Point(1217, 37);
+            this.btnHome_emp.Location = new System.Drawing.Point(1430, 40);
             this.btnHome_emp.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome_emp.Name = "btnHome_emp";
             this.btnHome_emp.Size = new System.Drawing.Size(132, 53);
@@ -2328,6 +2331,10 @@
             this.btnHome_emp.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnHome_emp.UseSelectable = true;
             this.btnHome_emp.Click += new System.EventHandler(this.btnHome_emp_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Emplyee
             // 
@@ -2350,6 +2357,7 @@
             this.employeeTab.ResumeLayout(false);
             this.employeeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2450,5 +2458,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel23;
         private MetroFramework.Controls.MetroLabel metroLabel25;
         private MetroFramework.Controls.MetroTile btnHome_emp;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

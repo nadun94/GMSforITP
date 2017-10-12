@@ -137,7 +137,7 @@ namespace GymMSystem.Buisness_Logic
             
 
 
-            if (Regex.IsMatch(name, MatchName) && name != null)
+            if (Regex.IsMatch(name, MatchName))
                 return true;
 
 
@@ -192,9 +192,7 @@ namespace GymMSystem.Buisness_Logic
                 || nic.EndsWith("V", StringComparison.OrdinalIgnoreCase) 
                 && (nic[2] !='4' && nic[2] != '9' ));
 
-            if (!string.IsNullOrWhiteSpace(nic))
-            {
-               
+           
                 if (condition)
                     return true;
 
@@ -204,12 +202,7 @@ namespace GymMSystem.Buisness_Logic
                     return false;
                 }
                 
-            }
-            else
-            {
-               // MessageBox.Show("NIC is not inserted!", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                return true;
-            }
+           
 
 
 

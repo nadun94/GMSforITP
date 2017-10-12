@@ -27,30 +27,116 @@ namespace GymMSystem.Interfaces
 
         private bool validateEmp()
         {
-            Buisness_Logic.validation vemp = new Buisness_Logic.validation();
+            Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+            bool phone, email, address, name, nic, gender,  dob,pp;
 
-            if (vemp.IsWord(txtEmp1_name.Text, "Name"))
+            //phone
+            if (!val1.IsPhone(txtEmp1_phone.Text))
             {
-                if (vemp.IsAddress(txtEmp1_address.Text))
-                {
+                this.errorProvider1.SetError(txtEmp1_phone, "Phone is invalid.");
+                phone = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtEmp1_phone, (string)null);
+                phone = true;
+            }
 
-                    if (vemp.IsNIC(txtEmp_nic.Text))
-                    {
-                        if (picuturebox_emp1.Image != null)
-                            return true;
-                        else
-                        {
-                            MessageBox.Show("Please fill all text feilds and save.", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return false;
-                        }
+            //Email
 
-                    }
-                    return false;
-                }
-                else return false;
+            if (!val1.IsEmail2(txtEmp1_email.Text))
+            {
+
+                this.errorProvider1.SetError(txtEmp1_email, "Email is invalid.");
+                email = false;
 
             }
+            else
+            {
+                this.errorProvider1.SetError(txtEmp1_email, (string)null);
+                email = true;
+
+            }
+
+            //Name
+            if (!val1.IsName(txtEmp1_name.Text) && string.IsNullOrWhiteSpace(txtEmp1_name.Text))
+            {
+
+                this.errorProvider1.SetError(txtEmp1_name, "Name is invalid.");
+                name = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtEmp1_name, (string)null);
+                name = true;
+
+            }
+            //NIC
+            if (!val1.IsNIC(txtEmp_nic.Text))
+            {
+                this.errorProvider1.SetError(txtEmp_nic, "NIC is invalid.");
+                nic = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtEmp_nic, (string)null);
+                nic = true;
+            }
+            //address
+            if (!val1.IsAddress(txtEmp1_address.Text))
+            {
+                this.errorProvider1.SetError(txtEmp1_address, "Address is invalid.");
+                address = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtEmp1_address, (string)null);
+                address = true;
+            }
+            //gender
+            if (cmbEmp1_gender.SelectedIndex.Equals(-1))
+            {
+                this.errorProvider1.SetError(cmbEmp1_gender, "Gender is not selected.");
+                gender = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(cmbEmp1_gender, (string)null);
+                gender = true;
+            }
+            //post
+            if (cmbEmp1_post.SelectedIndex.Equals(-1))
+            {
+                this.errorProvider1.SetError(cmbEmp1_post, "Post is not selected.");
+                pp = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(cmbEmp1_post, (string)null);
+                pp = true;
+            }
+
+            //dob
+            if (dateTimePickeremp.Value >= DateTime.Today)
+            {
+                this.errorProvider1.SetError(dateTimePickeremp, "DOB is invalid.");
+                dob = false;
+            }
+            else
+            {
+                this.errorProvider1.SetError(dateTimePickeremp, (string)null);
+                dob = true;
+            }
+
+            //resume
+          
+
+            //**** main returning part
+            if (phone == true && email == true && name == true && nic == true && gender == true && dob==true && address==true && pp == true   ) return true;
             else return false;
+
+
         }
         private void btnEmp1_save_Click(object sender, EventArgs e)
         {
@@ -91,10 +177,7 @@ namespace GymMSystem.Interfaces
                     }
 
                 }
-                else
-                {
-                    MessageBox.Show("Data Feilds are not validated.", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+               
 
             }
             catch (Exception exb)

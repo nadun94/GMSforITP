@@ -31,5 +31,10 @@ namespace GymMSystem.Interfaces
             this.Hide();
             setmai.Show();
         }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace GymMSystem.Buisness_Logic
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(qt);
 
+
                 qt.Parameters.AddWithValue("@name", mem.name);
                 qt.Parameters.AddWithValue("@nic", mem.nic);
 

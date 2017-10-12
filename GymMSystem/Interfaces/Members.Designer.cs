@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.memadd = new MetroFramework.Controls.MetroTabPage();
             this.btn_mem_browse = new MetroFramework.Controls.MetroTile();
@@ -176,7 +176,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(24, 88);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1792, 756);
             this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -184,7 +184,7 @@
             this.metroTabControl1.TabStop = false;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTabControl1.UseSelectable = true;
-            this.metroTabControl1.UseWaitCursor = true;
+            this.metroTabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.metroTabControl1_MouseClick);
             // 
             // memadd
             // 
@@ -226,7 +226,6 @@
             this.memadd.Size = new System.Drawing.Size(1784, 648);
             this.memadd.TabIndex = 0;
             this.memadd.Text = "Add Member";
-            this.memadd.UseWaitCursor = true;
             this.memadd.VerticalScrollbarBarColor = true;
             this.memadd.VerticalScrollbarHighlightOnWheel = false;
             this.memadd.VerticalScrollbarSize = 10;
@@ -244,7 +243,6 @@
             this.btn_mem_browse.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btn_mem_browse.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btn_mem_browse.UseSelectable = true;
-            this.btn_mem_browse.UseWaitCursor = true;
             this.btn_mem_browse.Click += new System.EventHandler(this.btn_mem_browse_Click);
             // 
             // btnM_clear
@@ -260,7 +258,6 @@
             this.btnM_clear.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM_clear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM_clear.UseSelectable = true;
-            this.btnM_clear.UseWaitCursor = true;
             this.btnM_clear.Click += new System.EventHandler(this.btnM_clear_Click);
             // 
             // btnM_save
@@ -276,7 +273,6 @@
             this.btnM_save.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM_save.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM_save.UseSelectable = true;
-            this.btnM_save.UseWaitCursor = true;
             this.btnM_save.Click += new System.EventHandler(this.btnM_save_Click);
             // 
             // picuturebox_member
@@ -289,7 +285,6 @@
             this.picuturebox_member.Size = new System.Drawing.Size(164, 196);
             this.picuturebox_member.TabIndex = 29;
             this.picuturebox_member.TabStop = false;
-            this.picuturebox_member.UseWaitCursor = true;
             // 
             // cmbM_paymentPlan
             // 
@@ -308,7 +303,6 @@
             this.cmbM_paymentPlan.TabIndex = 28;
             this.cmbM_paymentPlan.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmbM_paymentPlan.UseSelectable = true;
-            this.cmbM_paymentPlan.UseWaitCursor = true;
             // 
             // txtM_weight
             // 
@@ -325,7 +319,6 @@
             this.txtM_weight.CustomButton.TabIndex = 1;
             this.txtM_weight.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_weight.CustomButton.UseSelectable = true;
-            this.txtM_weight.CustomButton.UseWaitCursor = true;
             this.txtM_weight.CustomButton.Visible = false;
             this.txtM_weight.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_weight.ForeColor = System.Drawing.Color.White;
@@ -345,7 +338,6 @@
             this.txtM_weight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_weight.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_weight.UseSelectable = true;
-            this.txtM_weight.UseWaitCursor = true;
             this.txtM_weight.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_weight.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -363,7 +355,6 @@
             this.txtM_bmiratio.CustomButton.TabIndex = 1;
             this.txtM_bmiratio.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_bmiratio.CustomButton.UseSelectable = true;
-            this.txtM_bmiratio.CustomButton.UseWaitCursor = true;
             this.txtM_bmiratio.CustomButton.Visible = false;
             this.txtM_bmiratio.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_bmiratio.Lines = new string[0];
@@ -382,7 +373,6 @@
             this.txtM_bmiratio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_bmiratio.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_bmiratio.UseSelectable = true;
-            this.txtM_bmiratio.UseWaitCursor = true;
             this.txtM_bmiratio.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_bmiratio.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -400,7 +390,6 @@
             this.txtM_email.CustomButton.TabIndex = 1;
             this.txtM_email.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_email.CustomButton.UseSelectable = true;
-            this.txtM_email.CustomButton.UseWaitCursor = true;
             this.txtM_email.CustomButton.Visible = false;
             this.txtM_email.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_email.Lines = new string[0];
@@ -419,7 +408,6 @@
             this.txtM_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_email.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_email.UseSelectable = true;
-            this.txtM_email.UseWaitCursor = true;
             this.txtM_email.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_email.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -437,7 +425,6 @@
             this.txtM_fat.CustomButton.TabIndex = 1;
             this.txtM_fat.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_fat.CustomButton.UseSelectable = true;
-            this.txtM_fat.CustomButton.UseWaitCursor = true;
             this.txtM_fat.CustomButton.Visible = false;
             this.txtM_fat.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_fat.Lines = new string[0];
@@ -456,7 +443,6 @@
             this.txtM_fat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_fat.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_fat.UseSelectable = true;
-            this.txtM_fat.UseWaitCursor = true;
             this.txtM_fat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_fat.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -474,7 +460,6 @@
             this.txtM_height.CustomButton.TabIndex = 1;
             this.txtM_height.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_height.CustomButton.UseSelectable = true;
-            this.txtM_height.CustomButton.UseWaitCursor = true;
             this.txtM_height.CustomButton.Visible = false;
             this.txtM_height.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_height.Lines = new string[0];
@@ -493,7 +478,6 @@
             this.txtM_height.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_height.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_height.UseSelectable = true;
-            this.txtM_height.UseWaitCursor = true;
             this.txtM_height.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_height.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -512,7 +496,6 @@
             this.txtM_memID.CustomButton.TabIndex = 1;
             this.txtM_memID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_memID.CustomButton.UseSelectable = true;
-            this.txtM_memID.CustomButton.UseWaitCursor = true;
             this.txtM_memID.CustomButton.Visible = false;
             this.txtM_memID.Enabled = false;
             this.txtM_memID.FontSize = MetroFramework.MetroTextBoxSize.Medium;
@@ -533,7 +516,6 @@
             this.txtM_memID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_memID.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_memID.UseSelectable = true;
-            this.txtM_memID.UseWaitCursor = true;
             this.txtM_memID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_memID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -553,7 +535,6 @@
             this.cmbM_gender.TabIndex = 21;
             this.cmbM_gender.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmbM_gender.UseSelectable = true;
-            this.cmbM_gender.UseWaitCursor = true;
             // 
             // txtM_nic
             // 
@@ -569,7 +550,6 @@
             this.txtM_nic.CustomButton.TabIndex = 1;
             this.txtM_nic.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_nic.CustomButton.UseSelectable = true;
-            this.txtM_nic.CustomButton.UseWaitCursor = true;
             this.txtM_nic.CustomButton.Visible = false;
             this.txtM_nic.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_nic.Lines = new string[0];
@@ -588,7 +568,6 @@
             this.txtM_nic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_nic.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_nic.UseSelectable = true;
-            this.txtM_nic.UseWaitCursor = true;
             this.txtM_nic.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_nic.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -606,7 +585,6 @@
             this.txtM_address.CustomButton.TabIndex = 1;
             this.txtM_address.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_address.CustomButton.UseSelectable = true;
-            this.txtM_address.CustomButton.UseWaitCursor = true;
             this.txtM_address.CustomButton.Visible = false;
             this.txtM_address.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_address.Lines = new string[0];
@@ -625,7 +603,6 @@
             this.txtM_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_address.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_address.UseSelectable = true;
-            this.txtM_address.UseWaitCursor = true;
             this.txtM_address.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_address.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -644,7 +621,6 @@
             this.txtM_phone.CustomButton.TabIndex = 1;
             this.txtM_phone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_phone.CustomButton.UseSelectable = true;
-            this.txtM_phone.CustomButton.UseWaitCursor = true;
             this.txtM_phone.CustomButton.Visible = false;
             this.txtM_phone.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_phone.ForeColor = System.Drawing.Color.White;
@@ -664,19 +640,17 @@
             this.txtM_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_phone.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_phone.UseSelectable = true;
-            this.txtM_phone.UseWaitCursor = true;
             this.txtM_phone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_phone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // dateTimePickerMem
             // 
             this.dateTimePickerMem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePickerMem.Location = new System.Drawing.Point(361, 198);
+            this.dateTimePickerMem.Location = new System.Drawing.Point(361, 175);
             this.dateTimePickerMem.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateTimePickerMem.Name = "dateTimePickerMem";
             this.dateTimePickerMem.Size = new System.Drawing.Size(223, 29);
             this.dateTimePickerMem.TabIndex = 17;
-            this.dateTimePickerMem.UseWaitCursor = true;
             // 
             // metroLabel5
             // 
@@ -693,7 +667,6 @@
             this.metroLabel5.Text = "Weight";
             this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel5.UseWaitCursor = true;
             // 
             // metroLabel11
             // 
@@ -710,7 +683,6 @@
             this.metroLabel11.Text = "Payment Plan";
             this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel11.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel11.UseWaitCursor = true;
             // 
             // metroLabel29
             // 
@@ -727,7 +699,6 @@
             this.metroLabel29.Text = "BMI Ratio";
             this.metroLabel29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel29.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel29.UseWaitCursor = true;
             // 
             // metroLabel28
             // 
@@ -744,7 +715,6 @@
             this.metroLabel28.Text = "Email";
             this.metroLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel28.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel28.UseWaitCursor = true;
             // 
             // metroLabel12
             // 
@@ -761,7 +731,6 @@
             this.metroLabel12.Text = "Fat Level";
             this.metroLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel12.UseWaitCursor = true;
             // 
             // metroLabel4
             // 
@@ -778,7 +747,6 @@
             this.metroLabel4.Text = "Height";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel4.UseWaitCursor = true;
             // 
             // metroLabel13
             // 
@@ -795,7 +763,6 @@
             this.metroLabel13.Text = "Member ID";
             this.metroLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel13.UseWaitCursor = true;
             // 
             // txtM_name
             // 
@@ -811,11 +778,10 @@
             this.txtM_name.CustomButton.TabIndex = 1;
             this.txtM_name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM_name.CustomButton.UseSelectable = true;
-            this.txtM_name.CustomButton.UseWaitCursor = true;
             this.txtM_name.CustomButton.Visible = false;
             this.txtM_name.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM_name.Lines = new string[0];
-            this.txtM_name.Location = new System.Drawing.Point(361, 122);
+            this.txtM_name.Location = new System.Drawing.Point(361, 85);
             this.txtM_name.MaxLength = 32767;
             this.txtM_name.Name = "txtM_name";
             this.txtM_name.PasswordChar = '\0';
@@ -828,7 +794,6 @@
             this.txtM_name.TabIndex = 9;
             this.txtM_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM_name.UseSelectable = true;
-            this.txtM_name.UseWaitCursor = true;
             this.txtM_name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM_name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -847,7 +812,6 @@
             this.metroLabel10.Text = "NIC";
             this.metroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel10.UseWaitCursor = true;
             // 
             // metroLabel26
             // 
@@ -864,7 +828,6 @@
             this.metroLabel26.Text = "Address";
             this.metroLabel26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel26.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel26.UseWaitCursor = true;
             // 
             // metroLabel3
             // 
@@ -872,7 +835,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(258, 183);
+            this.metroLabel3.Location = new System.Drawing.Point(258, 175);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(49, 25);
@@ -881,7 +844,6 @@
             this.metroLabel3.Text = "DOB";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel3.UseWaitCursor = true;
             // 
             // metroLabel9
             // 
@@ -898,7 +860,6 @@
             this.metroLabel9.Text = "Gender";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel9.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel9.UseWaitCursor = true;
             // 
             // metroLabel2
             // 
@@ -915,7 +876,6 @@
             this.metroLabel2.Text = "Phone";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel2.UseWaitCursor = true;
             // 
             // metroLabel1
             // 
@@ -923,7 +883,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(258, 105);
+            this.metroLabel1.Location = new System.Drawing.Point(258, 85);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(59, 25);
@@ -932,7 +892,6 @@
             this.metroLabel1.Text = "Name";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel1.UseWaitCursor = true;
             // 
             // tb_editmem
             // 
@@ -979,7 +938,6 @@
             this.tb_editmem.Size = new System.Drawing.Size(1784, 648);
             this.tb_editmem.TabIndex = 1;
             this.tb_editmem.Text = "Members";
-            this.tb_editmem.UseWaitCursor = true;
             this.tb_editmem.VerticalScrollbarBarColor = true;
             this.tb_editmem.VerticalScrollbarHighlightOnWheel = false;
             this.tb_editmem.VerticalScrollbarSize = 10;
@@ -996,23 +954,23 @@
             this.dataGridMemedit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridMemedit.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridMemedit.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridMemedit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridMemedit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridMemedit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridMemedit.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridMemedit.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridMemedit.EnableHeadersVisualStyles = false;
             this.dataGridMemedit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridMemedit.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1020,21 +978,20 @@
             this.dataGridMemedit.Name = "dataGridMemedit";
             this.dataGridMemedit.ReadOnly = true;
             this.dataGridMemedit.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridMemedit.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridMemedit.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridMemedit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridMemedit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridMemedit.Size = new System.Drawing.Size(1747, 63);
             this.dataGridMemedit.Style = MetroFramework.MetroColorStyle.Orange;
             this.dataGridMemedit.TabIndex = 83;
             this.dataGridMemedit.UseStyleColors = true;
-            this.dataGridMemedit.UseWaitCursor = true;
             this.dataGridMemedit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMemedit_CellClick);
             // 
             // btnM2delete
@@ -1052,7 +1009,6 @@
             this.btnM2delete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM2delete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM2delete.UseSelectable = true;
-            this.btnM2delete.UseWaitCursor = true;
             this.btnM2delete.Click += new System.EventHandler(this.btnM2delete_Click);
             // 
             // btnM3_Search
@@ -1070,7 +1026,6 @@
             this.btnM3_Search.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM3_Search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM3_Search.UseSelectable = true;
-            this.btnM3_Search.UseWaitCursor = true;
             this.btnM3_Search.Click += new System.EventHandler(this.btnM3_Search_Click);
             // 
             // btnM3_browse
@@ -1088,7 +1043,6 @@
             this.btnM3_browse.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM3_browse.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM3_browse.UseSelectable = true;
-            this.btnM3_browse.UseWaitCursor = true;
             this.btnM3_browse.Click += new System.EventHandler(this.btnM3_browse_Click);
             // 
             // btnM3_update
@@ -1106,7 +1060,6 @@
             this.btnM3_update.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM3_update.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM3_update.UseSelectable = true;
-            this.btnM3_update.UseWaitCursor = true;
             this.btnM3_update.Click += new System.EventHandler(this.btnM3_update_Click);
             // 
             // btnM3_clear
@@ -1123,7 +1076,6 @@
             this.btnM3_clear.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM3_clear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM3_clear.UseSelectable = true;
-            this.btnM3_clear.UseWaitCursor = true;
             this.btnM3_clear.Click += new System.EventHandler(this.btnM3_clear_Click);
             // 
             // pictureBoxM3
@@ -1136,7 +1088,6 @@
             this.pictureBoxM3.Size = new System.Drawing.Size(149, 168);
             this.pictureBoxM3.TabIndex = 77;
             this.pictureBoxM3.TabStop = false;
-            this.pictureBoxM3.UseWaitCursor = true;
             // 
             // txtmsearch_address
             // 
@@ -1152,11 +1103,10 @@
             this.txtmsearch_address.CustomButton.TabIndex = 1;
             this.txtmsearch_address.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtmsearch_address.CustomButton.UseSelectable = true;
-            this.txtmsearch_address.CustomButton.UseWaitCursor = true;
             this.txtmsearch_address.CustomButton.Visible = false;
             this.txtmsearch_address.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtmsearch_address.Lines = new string[0];
-            this.txtmsearch_address.Location = new System.Drawing.Point(249, 204);
+            this.txtmsearch_address.Location = new System.Drawing.Point(249, 266);
             this.txtmsearch_address.Margin = new System.Windows.Forms.Padding(2);
             this.txtmsearch_address.MaxLength = 32767;
             this.txtmsearch_address.Multiline = true;
@@ -1167,12 +1117,11 @@
             this.txtmsearch_address.SelectionLength = 0;
             this.txtmsearch_address.SelectionStart = 0;
             this.txtmsearch_address.ShortcutsEnabled = true;
-            this.txtmsearch_address.Size = new System.Drawing.Size(255, 35);
+            this.txtmsearch_address.Size = new System.Drawing.Size(332, 25);
             this.txtmsearch_address.TabIndex = 76;
             this.txtmsearch_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtmsearch_address.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtmsearch_address.UseSelectable = true;
-            this.txtmsearch_address.UseWaitCursor = true;
             this.txtmsearch_address.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtmsearch_address.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1191,7 +1140,6 @@
             this.txtM3_weight.CustomButton.TabIndex = 1;
             this.txtM3_weight.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_weight.CustomButton.UseSelectable = true;
-            this.txtM3_weight.CustomButton.UseWaitCursor = true;
             this.txtM3_weight.CustomButton.Visible = false;
             this.txtM3_weight.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_weight.ForeColor = System.Drawing.Color.White;
@@ -1211,7 +1159,6 @@
             this.txtM3_weight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_weight.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_weight.UseSelectable = true;
-            this.txtM3_weight.UseWaitCursor = true;
             this.txtM3_weight.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_weight.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1229,15 +1176,15 @@
             this.txtM3_nic.CustomButton.TabIndex = 1;
             this.txtM3_nic.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_nic.CustomButton.UseSelectable = true;
-            this.txtM3_nic.CustomButton.UseWaitCursor = true;
             this.txtM3_nic.CustomButton.Visible = false;
             this.txtM3_nic.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_nic.Lines = new string[0];
-            this.txtM3_nic.Location = new System.Drawing.Point(249, 274);
+            this.txtM3_nic.Location = new System.Drawing.Point(249, 135);
             this.txtM3_nic.Margin = new System.Windows.Forms.Padding(2);
             this.txtM3_nic.MaxLength = 32767;
             this.txtM3_nic.Name = "txtM3_nic";
             this.txtM3_nic.PasswordChar = '\0';
+            this.txtM3_nic.PromptText = "Search by NIC";
             this.txtM3_nic.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtM3_nic.SelectedText = "";
             this.txtM3_nic.SelectionLength = 0;
@@ -1248,9 +1195,10 @@
             this.txtM3_nic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_nic.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_nic.UseSelectable = true;
-            this.txtM3_nic.UseWaitCursor = true;
+            this.txtM3_nic.WaterMark = "Search by NIC";
             this.txtM3_nic.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_nic.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtM3_nic.Click += new System.EventHandler(this.txtM3_nic_Click);
             // 
             // txtmsemail
             // 
@@ -1266,7 +1214,6 @@
             this.txtmsemail.CustomButton.TabIndex = 1;
             this.txtmsemail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtmsemail.CustomButton.UseSelectable = true;
-            this.txtmsemail.CustomButton.UseWaitCursor = true;
             this.txtmsemail.CustomButton.Visible = false;
             this.txtmsemail.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtmsemail.Lines = new string[0];
@@ -1285,7 +1232,6 @@
             this.txtmsemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtmsemail.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtmsemail.UseSelectable = true;
-            this.txtmsemail.UseWaitCursor = true;
             this.txtmsemail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtmsemail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1303,7 +1249,6 @@
             this.txtM3_bmi.CustomButton.TabIndex = 1;
             this.txtM3_bmi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_bmi.CustomButton.UseSelectable = true;
-            this.txtM3_bmi.CustomButton.UseWaitCursor = true;
             this.txtM3_bmi.CustomButton.Visible = false;
             this.txtM3_bmi.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_bmi.Lines = new string[0];
@@ -1322,7 +1267,6 @@
             this.txtM3_bmi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_bmi.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_bmi.UseSelectable = true;
-            this.txtM3_bmi.UseWaitCursor = true;
             this.txtM3_bmi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_bmi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1340,7 +1284,6 @@
             this.txtM3_fatLevel.CustomButton.TabIndex = 1;
             this.txtM3_fatLevel.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_fatLevel.CustomButton.UseSelectable = true;
-            this.txtM3_fatLevel.CustomButton.UseWaitCursor = true;
             this.txtM3_fatLevel.CustomButton.Visible = false;
             this.txtM3_fatLevel.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_fatLevel.Lines = new string[0];
@@ -1359,7 +1302,6 @@
             this.txtM3_fatLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_fatLevel.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_fatLevel.UseSelectable = true;
-            this.txtM3_fatLevel.UseWaitCursor = true;
             this.txtM3_fatLevel.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_fatLevel.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1377,7 +1319,6 @@
             this.txtM3_height.CustomButton.TabIndex = 1;
             this.txtM3_height.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_height.CustomButton.UseSelectable = true;
-            this.txtM3_height.CustomButton.UseWaitCursor = true;
             this.txtM3_height.CustomButton.Visible = false;
             this.txtM3_height.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_height.Lines = new string[0];
@@ -1396,7 +1337,6 @@
             this.txtM3_height.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_height.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_height.UseSelectable = true;
-            this.txtM3_height.UseWaitCursor = true;
             this.txtM3_height.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_height.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1415,12 +1355,11 @@
             this.txtm3_dob.CustomButton.TabIndex = 1;
             this.txtm3_dob.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtm3_dob.CustomButton.UseSelectable = true;
-            this.txtm3_dob.CustomButton.UseWaitCursor = true;
             this.txtm3_dob.CustomButton.Visible = false;
             this.txtm3_dob.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtm3_dob.ForeColor = System.Drawing.Color.White;
             this.txtm3_dob.Lines = new string[0];
-            this.txtm3_dob.Location = new System.Drawing.Point(249, 134);
+            this.txtm3_dob.Location = new System.Drawing.Point(249, 207);
             this.txtm3_dob.Margin = new System.Windows.Forms.Padding(2);
             this.txtm3_dob.MaxLength = 32767;
             this.txtm3_dob.Name = "txtm3_dob";
@@ -1435,7 +1374,6 @@
             this.txtm3_dob.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtm3_dob.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtm3_dob.UseSelectable = true;
-            this.txtm3_dob.UseWaitCursor = true;
             this.txtm3_dob.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtm3_dob.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1454,7 +1392,6 @@
             this.txtM3_jdate.CustomButton.TabIndex = 1;
             this.txtM3_jdate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_jdate.CustomButton.UseSelectable = true;
-            this.txtM3_jdate.CustomButton.UseWaitCursor = true;
             this.txtM3_jdate.CustomButton.Visible = false;
             this.txtM3_jdate.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_jdate.ForeColor = System.Drawing.Color.White;
@@ -1474,7 +1411,6 @@
             this.txtM3_jdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_jdate.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_jdate.UseSelectable = true;
-            this.txtM3_jdate.UseWaitCursor = true;
             this.txtM3_jdate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_jdate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1493,7 +1429,6 @@
             this.txtM3_phone.CustomButton.TabIndex = 1;
             this.txtM3_phone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_phone.CustomButton.UseSelectable = true;
-            this.txtM3_phone.CustomButton.UseWaitCursor = true;
             this.txtM3_phone.CustomButton.Visible = false;
             this.txtM3_phone.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_phone.ForeColor = System.Drawing.Color.White;
@@ -1513,7 +1448,6 @@
             this.txtM3_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_phone.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_phone.UseSelectable = true;
-            this.txtM3_phone.UseWaitCursor = true;
             this.txtM3_phone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_phone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1532,7 +1466,6 @@
             this.txtM3_memID.CustomButton.TabIndex = 1;
             this.txtM3_memID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_memID.CustomButton.UseSelectable = true;
-            this.txtM3_memID.CustomButton.UseWaitCursor = true;
             this.txtM3_memID.CustomButton.Visible = false;
             this.txtM3_memID.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_memID.ForeColor = System.Drawing.Color.White;
@@ -1542,6 +1475,7 @@
             this.txtM3_memID.MaxLength = 32767;
             this.txtM3_memID.Name = "txtM3_memID";
             this.txtM3_memID.PasswordChar = '\0';
+            this.txtM3_memID.PromptText = "Search by MemberID";
             this.txtM3_memID.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtM3_memID.SelectedText = "";
             this.txtM3_memID.SelectionLength = 0;
@@ -1552,7 +1486,7 @@
             this.txtM3_memID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_memID.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_memID.UseSelectable = true;
-            this.txtM3_memID.UseWaitCursor = true;
+            this.txtM3_memID.WaterMark = "Search by MemberID";
             this.txtM3_memID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_memID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1571,7 +1505,6 @@
             this.txtM3_name.CustomButton.TabIndex = 1;
             this.txtM3_name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_name.CustomButton.UseSelectable = true;
-            this.txtM3_name.CustomButton.UseWaitCursor = true;
             this.txtM3_name.CustomButton.Visible = false;
             this.txtM3_name.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtM3_name.ForeColor = System.Drawing.Color.White;
@@ -1581,6 +1514,7 @@
             this.txtM3_name.MaxLength = 32767;
             this.txtM3_name.Name = "txtM3_name";
             this.txtM3_name.PasswordChar = '\0';
+            this.txtM3_name.PromptText = "Search by name";
             this.txtM3_name.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtM3_name.SelectedText = "";
             this.txtM3_name.SelectionLength = 0;
@@ -1591,7 +1525,7 @@
             this.txtM3_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtM3_name.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtM3_name.UseSelectable = true;
-            this.txtM3_name.UseWaitCursor = true;
+            this.txtM3_name.WaterMark = "Search by name";
             this.txtM3_name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtM3_name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1612,7 +1546,6 @@
             this.cmbM3_paymentpaln.TabIndex = 65;
             this.cmbM3_paymentpaln.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmbM3_paymentpaln.UseSelectable = true;
-            this.cmbM3_paymentpaln.UseWaitCursor = true;
             // 
             // cmbM3_gender
             // 
@@ -1630,7 +1563,6 @@
             this.cmbM3_gender.TabIndex = 64;
             this.cmbM3_gender.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmbM3_gender.UseSelectable = true;
-            this.cmbM3_gender.UseWaitCursor = true;
             // 
             // metroLabel19
             // 
@@ -1647,7 +1579,6 @@
             this.metroLabel19.Text = "Weight";
             this.metroLabel19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel19.UseWaitCursor = true;
             // 
             // metroLabel20
             // 
@@ -1664,7 +1595,6 @@
             this.metroLabel20.Text = "Payment Plan";
             this.metroLabel20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel20.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel20.UseWaitCursor = true;
             // 
             // metroLabel21
             // 
@@ -1672,7 +1602,7 @@
             this.metroLabel21.AutoSize = true;
             this.metroLabel21.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel21.Location = new System.Drawing.Point(137, 272);
+            this.metroLabel21.Location = new System.Drawing.Point(137, 133);
             this.metroLabel21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel21.Name = "metroLabel21";
             this.metroLabel21.Size = new System.Drawing.Size(41, 25);
@@ -1681,7 +1611,7 @@
             this.metroLabel21.Text = "NIC";
             this.metroLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel21.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel21.UseWaitCursor = true;
+            this.metroLabel21.Click += new System.EventHandler(this.metroLabel21_Click);
             // 
             // metroLabel42
             // 
@@ -1689,7 +1619,7 @@
             this.metroLabel42.AutoSize = true;
             this.metroLabel42.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel42.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel42.Location = new System.Drawing.Point(137, 204);
+            this.metroLabel42.Location = new System.Drawing.Point(137, 266);
             this.metroLabel42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel42.Name = "metroLabel42";
             this.metroLabel42.Size = new System.Drawing.Size(77, 25);
@@ -1698,7 +1628,6 @@
             this.metroLabel42.Text = "Address";
             this.metroLabel42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel42.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel42.UseWaitCursor = true;
             // 
             // metroLabel43
             // 
@@ -1715,7 +1644,6 @@
             this.metroLabel43.Text = "Email";
             this.metroLabel43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel43.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel43.UseWaitCursor = true;
             // 
             // BMI
             // 
@@ -1732,7 +1660,6 @@
             this.BMI.Text = "BMI Ratio";
             this.BMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BMI.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.BMI.UseWaitCursor = true;
             // 
             // metroLabel22
             // 
@@ -1749,7 +1676,6 @@
             this.metroLabel22.Text = "Fat Level";
             this.metroLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel22.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel22.UseWaitCursor = true;
             // 
             // metroLabel23
             // 
@@ -1766,7 +1692,6 @@
             this.metroLabel23.Text = "Height";
             this.metroLabel23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel23.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel23.UseWaitCursor = true;
             // 
             // metroLabel24
             // 
@@ -1774,7 +1699,7 @@
             this.metroLabel24.AutoSize = true;
             this.metroLabel24.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel24.Location = new System.Drawing.Point(140, 134);
+            this.metroLabel24.Location = new System.Drawing.Point(137, 207);
             this.metroLabel24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel24.Name = "metroLabel24";
             this.metroLabel24.Size = new System.Drawing.Size(49, 25);
@@ -1783,7 +1708,6 @@
             this.metroLabel24.Text = "DOB";
             this.metroLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel24.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel24.UseWaitCursor = true;
             // 
             // metroLabel25
             // 
@@ -1800,7 +1724,6 @@
             this.metroLabel25.Text = "Gender";
             this.metroLabel25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel25.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel25.UseWaitCursor = true;
             // 
             // metroLabel27
             // 
@@ -1817,7 +1740,6 @@
             this.metroLabel27.Text = "Member ID";
             this.metroLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel27.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel27.UseWaitCursor = true;
             // 
             // metroLabel44
             // 
@@ -1832,7 +1754,6 @@
             this.metroLabel44.TabIndex = 52;
             this.metroLabel44.Text = "Joined Date";
             this.metroLabel44.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel44.UseWaitCursor = true;
             // 
             // metroLabel16
             // 
@@ -1847,7 +1768,6 @@
             this.metroLabel16.TabIndex = 52;
             this.metroLabel16.Text = "Phone";
             this.metroLabel16.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel16.UseWaitCursor = true;
             // 
             // metroLabel15
             // 
@@ -1862,7 +1782,6 @@
             this.metroLabel15.TabIndex = 51;
             this.metroLabel15.Text = "Name";
             this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel15.UseWaitCursor = true;
             // 
             // mem
             // 
@@ -1911,7 +1830,6 @@
             this.mem.Size = new System.Drawing.Size(1784, 648);
             this.mem.TabIndex = 2;
             this.mem.Text = "Member Fee";
-            this.mem.UseWaitCursor = true;
             this.mem.VerticalScrollbarBarColor = true;
             this.mem.VerticalScrollbarHighlightOnWheel = false;
             this.mem.VerticalScrollbarSize = 10;
@@ -1931,7 +1849,6 @@
             this.btnmfCalcPayment.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnmfCalcPayment.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnmfCalcPayment.UseSelectable = true;
-            this.btnmfCalcPayment.UseWaitCursor = true;
             this.btnmfCalcPayment.Click += new System.EventHandler(this.btnmfCalcPayment_Click);
             // 
             // txtmfNIC
@@ -1948,7 +1865,6 @@
             this.txtmfNIC.CustomButton.TabIndex = 1;
             this.txtmfNIC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtmfNIC.CustomButton.UseSelectable = true;
-            this.txtmfNIC.CustomButton.UseWaitCursor = true;
             this.txtmfNIC.CustomButton.Visible = false;
             this.txtmfNIC.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtmfNIC.Lines = new string[0];
@@ -1967,7 +1883,6 @@
             this.txtmfNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtmfNIC.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtmfNIC.UseSelectable = true;
-            this.txtmfNIC.UseWaitCursor = true;
             this.txtmfNIC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtmfNIC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1986,7 +1901,6 @@
             this.metroLabel36.Text = "NIC";
             this.metroLabel36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel36.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel36.UseWaitCursor = true;
             // 
             // metroLabel39
             // 
@@ -2001,7 +1915,6 @@
             this.metroLabel39.TabIndex = 83;
             this.metroLabel39.Text = "Enter Member NIC here";
             this.metroLabel39.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel39.UseWaitCursor = true;
             // 
             // metroLabel38
             // 
@@ -2016,7 +1929,6 @@
             this.metroLabel38.TabIndex = 82;
             this.metroLabel38.Text = "Enter Member Name here";
             this.metroLabel38.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel38.UseWaitCursor = true;
             // 
             // metroLabel31
             // 
@@ -2031,7 +1943,6 @@
             this.metroLabel31.TabIndex = 84;
             this.metroLabel31.Text = "Enter Member ID here";
             this.metroLabel31.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel31.UseWaitCursor = true;
             // 
             // bunifuSeparator1
             // 
@@ -2044,7 +1955,6 @@
             this.bunifuSeparator1.Size = new System.Drawing.Size(1788, 41);
             this.bunifuSeparator1.TabIndex = 78;
             this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.UseWaitCursor = true;
             this.bunifuSeparator1.Vertical = false;
             // 
             // txtLastpaidtime
@@ -2061,7 +1971,6 @@
             this.txtLastpaidtime.CustomButton.TabIndex = 1;
             this.txtLastpaidtime.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtLastpaidtime.CustomButton.UseSelectable = true;
-            this.txtLastpaidtime.CustomButton.UseWaitCursor = true;
             this.txtLastpaidtime.CustomButton.Visible = false;
             this.txtLastpaidtime.Lines = new string[0];
             this.txtLastpaidtime.Location = new System.Drawing.Point(1070, 327);
@@ -2078,7 +1987,6 @@
             this.txtLastpaidtime.TabIndex = 75;
             this.txtLastpaidtime.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtLastpaidtime.UseSelectable = true;
-            this.txtLastpaidtime.UseWaitCursor = true;
             this.txtLastpaidtime.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLastpaidtime.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2096,7 +2004,6 @@
             this.txtPaymentValidfor.CustomButton.TabIndex = 1;
             this.txtPaymentValidfor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPaymentValidfor.CustomButton.UseSelectable = true;
-            this.txtPaymentValidfor.CustomButton.UseWaitCursor = true;
             this.txtPaymentValidfor.CustomButton.Visible = false;
             this.txtPaymentValidfor.Lines = new string[0];
             this.txtPaymentValidfor.Location = new System.Drawing.Point(1084, 449);
@@ -2113,7 +2020,6 @@
             this.txtPaymentValidfor.TabIndex = 74;
             this.txtPaymentValidfor.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPaymentValidfor.UseSelectable = true;
-            this.txtPaymentValidfor.UseWaitCursor = true;
             this.txtPaymentValidfor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPaymentValidfor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2131,7 +2037,6 @@
             this.txtPaidTIme.CustomButton.TabIndex = 1;
             this.txtPaidTIme.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPaidTIme.CustomButton.UseSelectable = true;
-            this.txtPaidTIme.CustomButton.UseWaitCursor = true;
             this.txtPaidTIme.CustomButton.Visible = false;
             this.txtPaidTIme.Lines = new string[0];
             this.txtPaidTIme.Location = new System.Drawing.Point(1084, 527);
@@ -2148,7 +2053,6 @@
             this.txtPaidTIme.TabIndex = 73;
             this.txtPaidTIme.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPaidTIme.UseSelectable = true;
-            this.txtPaidTIme.UseWaitCursor = true;
             this.txtPaidTIme.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPaidTIme.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2166,7 +2070,6 @@
             this.txtMFnewpayemnt.CustomButton.TabIndex = 1;
             this.txtMFnewpayemnt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMFnewpayemnt.CustomButton.UseSelectable = true;
-            this.txtMFnewpayemnt.CustomButton.UseWaitCursor = true;
             this.txtMFnewpayemnt.CustomButton.Visible = false;
             this.txtMFnewpayemnt.Lines = new string[0];
             this.txtMFnewpayemnt.Location = new System.Drawing.Point(357, 466);
@@ -2183,7 +2086,6 @@
             this.txtMFnewpayemnt.TabIndex = 72;
             this.txtMFnewpayemnt.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMFnewpayemnt.UseSelectable = true;
-            this.txtMFnewpayemnt.UseWaitCursor = true;
             this.txtMFnewpayemnt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMFnewpayemnt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2201,7 +2103,6 @@
             this.txtlstPaidDate.CustomButton.TabIndex = 1;
             this.txtlstPaidDate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtlstPaidDate.CustomButton.UseSelectable = true;
-            this.txtlstPaidDate.CustomButton.UseWaitCursor = true;
             this.txtlstPaidDate.CustomButton.Visible = false;
             this.txtlstPaidDate.Lines = new string[0];
             this.txtlstPaidDate.Location = new System.Drawing.Point(357, 329);
@@ -2218,7 +2119,6 @@
             this.txtlstPaidDate.TabIndex = 71;
             this.txtlstPaidDate.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtlstPaidDate.UseSelectable = true;
-            this.txtlstPaidDate.UseWaitCursor = true;
             this.txtlstPaidDate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtlstPaidDate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2236,7 +2136,6 @@
             this.txtPaidDate.CustomButton.TabIndex = 1;
             this.txtPaidDate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPaidDate.CustomButton.UseSelectable = true;
-            this.txtPaidDate.CustomButton.UseWaitCursor = true;
             this.txtPaidDate.CustomButton.Visible = false;
             this.txtPaidDate.Lines = new string[0];
             this.txtPaidDate.Location = new System.Drawing.Point(357, 541);
@@ -2253,7 +2152,6 @@
             this.txtPaidDate.TabIndex = 70;
             this.txtPaidDate.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPaidDate.UseSelectable = true;
-            this.txtPaidDate.UseWaitCursor = true;
             this.txtPaidDate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPaidDate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2271,7 +2169,6 @@
             this.txtMF_lastValidDate.CustomButton.TabIndex = 1;
             this.txtMF_lastValidDate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_lastValidDate.CustomButton.UseSelectable = true;
-            this.txtMF_lastValidDate.CustomButton.UseWaitCursor = true;
             this.txtMF_lastValidDate.CustomButton.Visible = false;
             this.txtMF_lastValidDate.Lines = new string[0];
             this.txtMF_lastValidDate.Location = new System.Drawing.Point(1070, 260);
@@ -2288,7 +2185,6 @@
             this.txtMF_lastValidDate.TabIndex = 76;
             this.txtMF_lastValidDate.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_lastValidDate.UseSelectable = true;
-            this.txtMF_lastValidDate.UseWaitCursor = true;
             this.txtMF_lastValidDate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMF_lastValidDate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2306,7 +2202,6 @@
             this.txtfservice.CustomButton.TabIndex = 1;
             this.txtfservice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtfservice.CustomButton.UseSelectable = true;
-            this.txtfservice.CustomButton.UseWaitCursor = true;
             this.txtfservice.CustomButton.Visible = false;
             this.txtfservice.Lines = new string[0];
             this.txtfservice.Location = new System.Drawing.Point(359, 188);
@@ -2323,7 +2218,6 @@
             this.txtfservice.TabIndex = 69;
             this.txtfservice.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtfservice.UseSelectable = true;
-            this.txtfservice.UseWaitCursor = true;
             this.txtfservice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtfservice.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2341,7 +2235,6 @@
             this.txtMF_payPlan.CustomButton.TabIndex = 1;
             this.txtMF_payPlan.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_payPlan.CustomButton.UseSelectable = true;
-            this.txtMF_payPlan.CustomButton.UseWaitCursor = true;
             this.txtMF_payPlan.CustomButton.Visible = false;
             this.txtMF_payPlan.Lines = new string[0];
             this.txtMF_payPlan.Location = new System.Drawing.Point(1070, 188);
@@ -2358,7 +2251,6 @@
             this.txtMF_payPlan.TabIndex = 65;
             this.txtMF_payPlan.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_payPlan.UseSelectable = true;
-            this.txtMF_payPlan.UseWaitCursor = true;
             this.txtMF_payPlan.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMF_payPlan.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2376,7 +2268,6 @@
             this.txtMF_amount.CustomButton.TabIndex = 1;
             this.txtMF_amount.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_amount.CustomButton.UseSelectable = true;
-            this.txtMF_amount.CustomButton.UseWaitCursor = true;
             this.txtMF_amount.CustomButton.Visible = false;
             this.txtMF_amount.Lines = new string[0];
             this.txtMF_amount.Location = new System.Drawing.Point(357, 260);
@@ -2393,7 +2284,6 @@
             this.txtMF_amount.TabIndex = 68;
             this.txtMF_amount.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_amount.UseSelectable = true;
-            this.txtMF_amount.UseWaitCursor = true;
             this.txtMF_amount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMF_amount.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2411,7 +2301,6 @@
             this.txtMF_memID.CustomButton.TabIndex = 1;
             this.txtMF_memID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_memID.CustomButton.UseSelectable = true;
-            this.txtMF_memID.CustomButton.UseWaitCursor = true;
             this.txtMF_memID.CustomButton.Visible = false;
             this.txtMF_memID.Lines = new string[0];
             this.txtMF_memID.Location = new System.Drawing.Point(419, 59);
@@ -2428,7 +2317,6 @@
             this.txtMF_memID.TabIndex = 67;
             this.txtMF_memID.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMF_memID.UseSelectable = true;
-            this.txtMF_memID.UseWaitCursor = true;
             this.txtMF_memID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMF_memID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2446,7 +2334,6 @@
             this.txtMFee_name.CustomButton.TabIndex = 1;
             this.txtMFee_name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMFee_name.CustomButton.UseSelectable = true;
-            this.txtMFee_name.CustomButton.UseWaitCursor = true;
             this.txtMFee_name.CustomButton.Visible = false;
             this.txtMFee_name.Lines = new string[0];
             this.txtMFee_name.Location = new System.Drawing.Point(851, 59);
@@ -2463,7 +2350,6 @@
             this.txtMFee_name.TabIndex = 66;
             this.txtMFee_name.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMFee_name.UseSelectable = true;
-            this.txtMFee_name.UseWaitCursor = true;
             this.txtMFee_name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMFee_name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -2482,7 +2368,6 @@
             this.metroLabel35.Text = "Recent Paid Time";
             this.metroLabel35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel35.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel35.UseWaitCursor = true;
             // 
             // metroLabel18
             // 
@@ -2499,7 +2384,6 @@
             this.metroLabel18.Text = "Valid For";
             this.metroLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel18.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel18.UseWaitCursor = true;
             // 
             // metroLabel34
             // 
@@ -2516,7 +2400,6 @@
             this.metroLabel34.Text = "Recent Paid Date";
             this.metroLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel34.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel34.UseWaitCursor = true;
             // 
             // metroLabel33
             // 
@@ -2533,7 +2416,6 @@
             this.metroLabel33.Text = "Paid Time";
             this.metroLabel33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel33.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel33.UseWaitCursor = true;
             // 
             // metroLabel32
             // 
@@ -2550,7 +2432,6 @@
             this.metroLabel32.Text = "Paid Date";
             this.metroLabel32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel32.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel32.UseWaitCursor = true;
             // 
             // metroLabel14
             // 
@@ -2567,7 +2448,6 @@
             this.metroLabel14.Text = "Valid Payment Date";
             this.metroLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel14.UseWaitCursor = true;
             // 
             // metroLabel41
             // 
@@ -2584,7 +2464,6 @@
             this.metroLabel41.Text = "Amount";
             this.metroLabel41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel41.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel41.UseWaitCursor = true;
             // 
             // metroLabel17
             // 
@@ -2601,7 +2480,6 @@
             this.metroLabel17.Text = "Recent payment";
             this.metroLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel17.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel17.UseWaitCursor = true;
             // 
             // metroLabel8
             // 
@@ -2618,7 +2496,6 @@
             this.metroLabel8.Text = "Payment Plan";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel8.UseWaitCursor = true;
             // 
             // metroLabel40
             // 
@@ -2635,7 +2512,6 @@
             this.metroLabel40.Text = "or";
             this.metroLabel40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel40.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel40.UseWaitCursor = true;
             // 
             // metroLabel37
             // 
@@ -2652,7 +2528,6 @@
             this.metroLabel37.Text = "or";
             this.metroLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel37.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel37.UseWaitCursor = true;
             // 
             // metroLabel7
             // 
@@ -2669,7 +2544,6 @@
             this.metroLabel7.Text = "Member ID";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel7.UseWaitCursor = true;
             // 
             // metroLabel30
             // 
@@ -2686,7 +2560,6 @@
             this.metroLabel30.Text = "Service";
             this.metroLabel30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel30.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel30.UseWaitCursor = true;
             // 
             // metroLabel6
             // 
@@ -2703,7 +2576,6 @@
             this.metroLabel6.Text = "Name";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel6.UseWaitCursor = true;
             // 
             // btnMFee_clear1
             // 
@@ -2720,7 +2592,6 @@
             this.btnMFee_clear1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnMFee_clear1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnMFee_clear1.UseSelectable = true;
-            this.btnMFee_clear1.UseWaitCursor = true;
             this.btnMFee_clear1.Click += new System.EventHandler(this.btnMFee_clear1_Click);
             // 
             // btnMF_addfee
@@ -2738,7 +2609,6 @@
             this.btnMF_addfee.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnMF_addfee.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnMF_addfee.UseSelectable = true;
-            this.btnMF_addfee.UseWaitCursor = true;
             this.btnMF_addfee.Click += new System.EventHandler(this.btnMF_addfee_Click);
             // 
             // btnFee_clear
@@ -2756,7 +2626,6 @@
             this.btnFee_clear.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnFee_clear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnFee_clear.UseSelectable = true;
-            this.btnFee_clear.UseWaitCursor = true;
             this.btnFee_clear.Click += new System.EventHandler(this.btnFee_clear_Click);
             // 
             // btnM3_check
@@ -2774,7 +2643,6 @@
             this.btnM3_check.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnM3_check.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnM3_check.UseSelectable = true;
-            this.btnM3_check.UseWaitCursor = true;
             this.btnM3_check.Click += new System.EventHandler(this.btnM3_check_Click);
             // 
             // mem_payemtPending
@@ -2789,7 +2657,6 @@
             this.mem_payemtPending.Size = new System.Drawing.Size(1784, 648);
             this.mem_payemtPending.TabIndex = 3;
             this.mem_payemtPending.Text = "Payment Pending";
-            this.mem_payemtPending.UseWaitCursor = true;
             this.mem_payemtPending.VerticalScrollbarBarColor = true;
             this.mem_payemtPending.VerticalScrollbarHighlightOnWheel = false;
             this.mem_payemtPending.VerticalScrollbarSize = 10;
@@ -2801,43 +2668,42 @@
             this.dataGridPayementPending.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridPayementPending.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridPayementPending.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(19)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPayementPending.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(19)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPayementPending.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridPayementPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(19)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridPayementPending.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(19)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridPayementPending.DefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridPayementPending.EnableHeadersVisualStyles = false;
             this.dataGridPayementPending.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridPayementPending.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridPayementPending.Location = new System.Drawing.Point(257, 167);
             this.dataGridPayementPending.Name = "dataGridPayementPending";
             this.dataGridPayementPending.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(19)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPayementPending.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(19)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPayementPending.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridPayementPending.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridPayementPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPayementPending.Size = new System.Drawing.Size(1181, 434);
             this.dataGridPayementPending.Style = MetroFramework.MetroColorStyle.Red;
             this.dataGridPayementPending.TabIndex = 55;
-            this.dataGridPayementPending.UseWaitCursor = true;
             // 
             // bntMem4_checkPp
             // 
@@ -2854,7 +2720,6 @@
             this.bntMem4_checkPp.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.bntMem4_checkPp.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.bntMem4_checkPp.UseSelectable = true;
-            this.bntMem4_checkPp.UseWaitCursor = true;
             this.bntMem4_checkPp.Click += new System.EventHandler(this.bntMem4_checkPp_Click);
             // 
             // wrkoutcrd
@@ -2867,7 +2732,6 @@
             this.wrkoutcrd.Size = new System.Drawing.Size(1784, 648);
             this.wrkoutcrd.TabIndex = 4;
             this.wrkoutcrd.Text = "Workout Card";
-            this.wrkoutcrd.UseWaitCursor = true;
             this.wrkoutcrd.VerticalScrollbarBarColor = true;
             this.wrkoutcrd.VerticalScrollbarHighlightOnWheel = false;
             this.wrkoutcrd.VerticalScrollbarSize = 10;
@@ -2891,7 +2755,6 @@
             this.btnMemHme.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnMemHme.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnMemHme.UseSelectable = true;
-            this.btnMemHme.UseWaitCursor = true;
             this.btnMemHme.Click += new System.EventHandler(this.btnMemHme_Click_1);
             // 
             // errorProvider1
@@ -2907,7 +2770,6 @@
             this.Controls.Add(this.metroTabControl1);
             this.Name = "Members";
             this.Text = "Members";
-            this.UseWaitCursor = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Members_Load);
             this.metroTabControl1.ResumeLayout(false);
