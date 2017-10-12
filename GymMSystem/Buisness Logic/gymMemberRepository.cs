@@ -15,28 +15,8 @@ namespace GymMSystem.Buisness_Logic
     {
         
 
-        //public bool validateMemeber (gymMember mem1)
-        //{
-        //    validation val = new validation();
-        //    // bool status = false;
+        
 
-
-        //    if (val.IsEmail(mem1.email)) return true;
-
-        //    else if (val.IsAddress(mem1.addresss)) return true;
-
-        //    else if (val.IsName(mem1.name)) return true;
-
-        //    else if (val.IsPhone(mem1.phone)) return true;
-
-        //    else if (val.IsHeight(mem1.height)) return true;
-
-        //    else if (val.IsWeight(mem1.weight)) return true;
-
-        //    else
-        //        return false;
-
-        //}
 
         public bool save(gymMember mem)
         {
@@ -380,6 +360,38 @@ namespace GymMSystem.Buisness_Logic
 
             if (tempdel == true) return true;
             else return false;
+        }
+
+
+        public DataTable editGymMembers()
+        {
+            try
+            {
+                DataLayer.dbConnect condg = new DataLayer.dbConnect();
+                condg.openConnection();
+
+                string qdg1 = "select m.regNo as 'MemberID' , m.name as 'Name' , m.dob as 'DOB' , m.address as 'Address' ,"
+                                + " m.nic as 'NIC' , m.gender as 'Gender' , m.phone as 'Phone' , g.email as 'E-mail', "
+                                + "g.joined_date as 'Joined Date' , g.BMI , g.height as 'Height' , g.weight as 'Weight' , "
+                                + " g.payment_plan as 'Payment Plan' , g.fat_level as 'Fat Level', g.photo as 'p' FROM tbl_member m ,tbl_gymMember g "
+                                + "WHERE m.regNo=g.memberID";
+
+
+                SqlCommand cmddg1 = new SqlCommand(qdg1, condg.getConnection());
+
+                SqlDataAdapter dadg1 = new SqlDataAdapter(cmddg1);
+                DataTable dtdg1 = new DataTable();
+
+                dadg1.Fill(dtdg1);
+
+                return dtdg1;
+            }
+            catch (Exception el)
+            {
+                
+                throw;
+            }
+
         }
 
     }

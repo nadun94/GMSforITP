@@ -20,9 +20,26 @@ namespace GymMSystem.Interfaces
             InitializeComponent();
         }
 
+        private void datagridm3refresh()
+        {
+            try
+            {
+                Buisness_Logic.gymMemberRepository gmrep = new Buisness_Logic.gymMemberRepository();
+                dataGridMemedit.DataSource = gmrep.editGymMembers();
+                this.dataGridMemedit.Columns[14].Visible = false;
+                // txtM3_memID.Text= dataGridMemedit.SelectedRows[0].Cells[0].Value + string.Empty;
+
+
+            }
+            catch (Exception yt)
+            {
+
+                throw;
+            }
+        }
         private void Members_Load(object sender, EventArgs e)
         {
-
+            datagridm3refresh();
         }
 
         public bool validateMemeber()
@@ -375,6 +392,7 @@ namespace GymMSystem.Interfaces
             if (grup.updateGymMember(gm))
             {
                 MessageBox.Show("Member detail updated.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                datagridm3refresh();
             }
         }
 
@@ -393,6 +411,7 @@ namespace GymMSystem.Interfaces
                     if (grd.deleteMemeber(gmd))
                     {
                         MessageBox.Show("Record deleted.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        datagridm3refresh();
                     }
 
                     else
@@ -657,6 +676,54 @@ namespace GymMSystem.Interfaces
 
             }
             catch (Exception ert)
+            {
+
+                throw;
+            }
+        }
+
+        private void tb_editmem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridMemedit_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if(e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridMemedit.Rows[e.RowIndex];
+                    txtM3_memID.Text = row.Cells[0].Value.ToString();
+                    txtM3_bmi.Text = row.Cells[9].Value.ToString();
+                    txtm3_dob.Text = row.Cells[2].Value.ToString();
+                    txtM3_fatLevel.Text = row.Cells[13].Value.ToString();
+                    txtM3_height.Text = row.Cells[10].Value.ToString();
+                    txtM3_name.Text = row.Cells[1].Value.ToString();
+                    txtM3_nic.Text = row.Cells[4].Value.ToString();
+                    txtmsemail.Text = row.Cells[7].Value.ToString();
+                    txtM3_phone.Text = row.Cells[6].Value.ToString();
+                    txtM3_jdate.Text= row.Cells[8].Value.ToString();
+                    txtM3_weight.Text = row.Cells[11].Value.ToString();
+                    cmbM3_gender.SelectedItem = row.Cells[5].Value.ToString();
+                    cmbM3_paymentpaln.SelectedItem = row.Cells[12].Value.ToString();
+                    cmbM3_paymentpaln.Refresh();
+                    cmbM_gender.Refresh();
+                    txtmsearch_address.Text = row.Cells[3].Value.ToString();
+
+                    byte[] picdg = (byte[])row.Cells[14].Value;
+                    pictureBoxM3.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    MemoryStream msdg1 = new MemoryStream(picdg);
+                    msdg1.Position = 0;
+
+                    msdg1.Read(picdg, 0, picdg.Length);
+                    pictureBoxM3.Image = Image.FromStream(msdg1);
+                    pictureBoxM3.Refresh();
+
+                }
+            }
+            catch (Exception ecell)
             {
 
                 throw;
