@@ -18,11 +18,12 @@ namespace GymMSystem.Interfaces
         public Settings()
         {
             InitializeComponent();
+            this.StyleManager = metroStyleManager1;
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnHome_settings_Click(object sender, EventArgs e)
@@ -32,8 +33,29 @@ namespace GymMSystem.Interfaces
             setmai.Show();
         }
 
-        private void btnTheme_Click(object sender, EventArgs e)
+        private  void btnTheme_Click(object sender, EventArgs e)
         {
+            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            themCarrier tc = new themCarrier();
+            tc.theme();
+        }
+
+        private void btnwhitetheme_Click(object sender, EventArgs e)
+        {
+            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+        }
+
+        private void cmbtheme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbtheme.SelectedIndex) {
+
+                case 0:
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    break;
+                case 1:
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+                    break;
+            }
 
         }
     }

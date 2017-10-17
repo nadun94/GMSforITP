@@ -37,7 +37,9 @@ namespace GymMSystem
 
         private void panel8_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            Interfaces.Settings sett = new Interfaces.Settings();
+            this.Hide();
+            sett.Show();
         }
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)

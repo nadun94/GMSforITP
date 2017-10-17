@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,18 +43,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Emptab = new MetroFramework.Controls.MetroTabControl();
             this.tabFinGym = new MetroFramework.Controls.MetroTabPage();
+            this.btnThismonthTOto = new MetroFramework.Controls.MetroTile();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.txtFin_fitYear = new MetroFramework.Controls.MetroTextBox();
             this.dataGridFin1 = new MetroFramework.Controls.MetroGrid();
             this.btnFin1_clear = new MetroFramework.Controls.MetroTile();
             this.cmbFin1_month = new MetroFramework.Controls.MetroComboBox();
-            this.txtFin1_expense = new MetroFramework.Controls.MetroTextBox();
-            this.txtFin1_revenue = new MetroFramework.Controls.MetroTextBox();
             this.txtFin1_income = new MetroFramework.Controls.MetroTextBox();
             this.btnFIn1_check = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.tabFinSales = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtsalesyear = new MetroFramework.Controls.MetroTextBox();
             this.btnFin2_clear = new MetroFramework.Controls.MetroTile();
             this.cmbFin2_month = new MetroFramework.Controls.MetroComboBox();
             this.txtFin2_expense = new MetroFramework.Controls.MetroTextBox();
@@ -94,13 +96,16 @@
             this.FinBills = new MetroFramework.Controls.MetroTabPage();
             this.btnFin5_clear = new MetroFramework.Controls.MetroTile();
             this.cmbFin5_expenseType = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.chkFin5_mon = new MetroFramework.Controls.MetroComboBox();
+            this.txtfin_expen_Year = new MetroFramework.Controls.MetroTextBox();
             this.txtFin5_amount = new MetroFramework.Controls.MetroTextBox();
             this.btnFin5_Add = new MetroFramework.Controls.MetroTile();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.btnFinHome = new MetroFramework.Controls.MetroTile();
+            this.metroStyleManager_fin = new MetroFramework.Components.MetroStyleManager(this.components);
             this.Emptab.SuspendLayout();
             this.tabFinGym.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFin1)).BeginInit();
@@ -111,6 +116,7 @@
             this.tabFinRevenue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datGridFin3rev)).BeginInit();
             this.FinBills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager_fin)).BeginInit();
             this.SuspendLayout();
             // 
             // Emptab
@@ -126,7 +132,7 @@
             this.Emptab.Location = new System.Drawing.Point(35, 61);
             this.Emptab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.Emptab.Name = "Emptab";
-            this.Emptab.SelectedIndex = 0;
+            this.Emptab.SelectedIndex = 1;
             this.Emptab.Size = new System.Drawing.Size(1586, 756);
             this.Emptab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Emptab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -137,16 +143,15 @@
             // 
             // tabFinGym
             // 
+            this.tabFinGym.Controls.Add(this.btnThismonthTOto);
+            this.tabFinGym.Controls.Add(this.metroLabel22);
+            this.tabFinGym.Controls.Add(this.txtFin_fitYear);
             this.tabFinGym.Controls.Add(this.dataGridFin1);
             this.tabFinGym.Controls.Add(this.btnFin1_clear);
             this.tabFinGym.Controls.Add(this.cmbFin1_month);
-            this.tabFinGym.Controls.Add(this.txtFin1_expense);
-            this.tabFinGym.Controls.Add(this.txtFin1_revenue);
             this.tabFinGym.Controls.Add(this.txtFin1_income);
             this.tabFinGym.Controls.Add(this.btnFIn1_check);
             this.tabFinGym.Controls.Add(this.metroLabel1);
-            this.tabFinGym.Controls.Add(this.metroLabel7);
-            this.tabFinGym.Controls.Add(this.metroLabel2);
             this.tabFinGym.Controls.Add(this.metroLabel6);
             this.tabFinGym.HorizontalScrollbarBarColor = true;
             this.tabFinGym.HorizontalScrollbarHighlightOnWheel = false;
@@ -160,6 +165,70 @@
             this.tabFinGym.VerticalScrollbarBarColor = true;
             this.tabFinGym.VerticalScrollbarHighlightOnWheel = false;
             this.tabFinGym.VerticalScrollbarSize = 10;
+            // 
+            // btnThismonthTOto
+            // 
+            this.btnThismonthTOto.ActiveControl = null;
+            this.btnThismonthTOto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThismonthTOto.Location = new System.Drawing.Point(107, 252);
+            this.btnThismonthTOto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThismonthTOto.Name = "btnThismonthTOto";
+            this.btnThismonthTOto.Size = new System.Drawing.Size(293, 42);
+            this.btnThismonthTOto.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btnThismonthTOto.TabIndex = 81;
+            this.btnThismonthTOto.Text = "Income of this month";
+            this.btnThismonthTOto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThismonthTOto.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnThismonthTOto.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnThismonthTOto.UseSelectable = true;
+            this.btnThismonthTOto.Click += new System.EventHandler(this.btnThismonthTOto_Click);
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel22.Location = new System.Drawing.Point(19, 100);
+            this.metroLabel22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(44, 25);
+            this.metroLabel22.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel22.TabIndex = 79;
+            this.metroLabel22.Text = "Year";
+            this.metroLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel22.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // txtFin_fitYear
+            // 
+            // 
+            // 
+            // 
+            this.txtFin_fitYear.CustomButton.Image = null;
+            this.txtFin_fitYear.CustomButton.Location = new System.Drawing.Point(88, 1);
+            this.txtFin_fitYear.CustomButton.Name = "";
+            this.txtFin_fitYear.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtFin_fitYear.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFin_fitYear.CustomButton.TabIndex = 1;
+            this.txtFin_fitYear.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFin_fitYear.CustomButton.UseSelectable = true;
+            this.txtFin_fitYear.CustomButton.Visible = false;
+            this.txtFin_fitYear.Lines = new string[0];
+            this.txtFin_fitYear.Location = new System.Drawing.Point(119, 100);
+            this.txtFin_fitYear.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFin_fitYear.MaxLength = 32767;
+            this.txtFin_fitYear.Name = "txtFin_fitYear";
+            this.txtFin_fitYear.PasswordChar = '\0';
+            this.txtFin_fitYear.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFin_fitYear.SelectedText = "";
+            this.txtFin_fitYear.SelectionLength = 0;
+            this.txtFin_fitYear.SelectionStart = 0;
+            this.txtFin_fitYear.ShortcutsEnabled = true;
+            this.txtFin_fitYear.Size = new System.Drawing.Size(110, 23);
+            this.txtFin_fitYear.TabIndex = 78;
+            this.txtFin_fitYear.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFin_fitYear.UseSelectable = true;
+            this.txtFin_fitYear.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFin_fitYear.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // dataGridFin1
             // 
@@ -208,7 +277,7 @@
             // 
             this.btnFin1_clear.ActiveControl = null;
             this.btnFin1_clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFin1_clear.Location = new System.Drawing.Point(1041, 239);
+            this.btnFin1_clear.Location = new System.Drawing.Point(897, 252);
             this.btnFin1_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btnFin1_clear.Name = "btnFin1_clear";
             this.btnFin1_clear.Size = new System.Drawing.Size(136, 42);
@@ -219,6 +288,7 @@
             this.btnFin1_clear.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnFin1_clear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnFin1_clear.UseSelectable = true;
+            this.btnFin1_clear.Click += new System.EventHandler(this.btnFin1_clear_Click);
             // 
             // cmbFin1_month
             // 
@@ -226,7 +296,7 @@
             this.cmbFin1_month.ItemHeight = 23;
             this.cmbFin1_month.Items.AddRange(new object[] {
             "January",
-            "February ",
+            "February",
             "March",
             "April",
             "May",
@@ -234,10 +304,10 @@
             "July",
             "August",
             "September",
-            "Octomber ",
-            "November",
+            "October",
+            "November ",
             "December"});
-            this.cmbFin1_month.Location = new System.Drawing.Point(128, 122);
+            this.cmbFin1_month.Location = new System.Drawing.Point(119, 155);
             this.cmbFin1_month.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFin1_month.Name = "cmbFin1_month";
             this.cmbFin1_month.Size = new System.Drawing.Size(132, 29);
@@ -245,70 +315,6 @@
             this.cmbFin1_month.TabIndex = 75;
             this.cmbFin1_month.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmbFin1_month.UseSelectable = true;
-            // 
-            // txtFin1_expense
-            // 
-            // 
-            // 
-            // 
-            this.txtFin1_expense.CustomButton.Image = null;
-            this.txtFin1_expense.CustomButton.Location = new System.Drawing.Point(238, 1);
-            this.txtFin1_expense.CustomButton.Name = "";
-            this.txtFin1_expense.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtFin1_expense.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFin1_expense.CustomButton.TabIndex = 1;
-            this.txtFin1_expense.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFin1_expense.CustomButton.UseSelectable = true;
-            this.txtFin1_expense.CustomButton.Visible = false;
-            this.txtFin1_expense.Lines = new string[0];
-            this.txtFin1_expense.Location = new System.Drawing.Point(638, 178);
-            this.txtFin1_expense.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFin1_expense.MaxLength = 32767;
-            this.txtFin1_expense.Name = "txtFin1_expense";
-            this.txtFin1_expense.PasswordChar = '\0';
-            this.txtFin1_expense.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFin1_expense.SelectedText = "";
-            this.txtFin1_expense.SelectionLength = 0;
-            this.txtFin1_expense.SelectionStart = 0;
-            this.txtFin1_expense.ShortcutsEnabled = true;
-            this.txtFin1_expense.Size = new System.Drawing.Size(260, 23);
-            this.txtFin1_expense.TabIndex = 71;
-            this.txtFin1_expense.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFin1_expense.UseSelectable = true;
-            this.txtFin1_expense.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFin1_expense.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtFin1_revenue
-            // 
-            // 
-            // 
-            // 
-            this.txtFin1_revenue.CustomButton.Image = null;
-            this.txtFin1_revenue.CustomButton.Location = new System.Drawing.Point(238, 1);
-            this.txtFin1_revenue.CustomButton.Name = "";
-            this.txtFin1_revenue.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtFin1_revenue.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFin1_revenue.CustomButton.TabIndex = 1;
-            this.txtFin1_revenue.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFin1_revenue.CustomButton.UseSelectable = true;
-            this.txtFin1_revenue.CustomButton.Visible = false;
-            this.txtFin1_revenue.Lines = new string[0];
-            this.txtFin1_revenue.Location = new System.Drawing.Point(638, 239);
-            this.txtFin1_revenue.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFin1_revenue.MaxLength = 32767;
-            this.txtFin1_revenue.Name = "txtFin1_revenue";
-            this.txtFin1_revenue.PasswordChar = '\0';
-            this.txtFin1_revenue.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFin1_revenue.SelectedText = "";
-            this.txtFin1_revenue.SelectionLength = 0;
-            this.txtFin1_revenue.SelectionStart = 0;
-            this.txtFin1_revenue.ShortcutsEnabled = true;
-            this.txtFin1_revenue.Size = new System.Drawing.Size(260, 23);
-            this.txtFin1_revenue.TabIndex = 72;
-            this.txtFin1_revenue.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFin1_revenue.UseSelectable = true;
-            this.txtFin1_revenue.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFin1_revenue.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtFin1_income
             // 
@@ -325,7 +331,7 @@
             this.txtFin1_income.CustomButton.UseSelectable = true;
             this.txtFin1_income.CustomButton.Visible = false;
             this.txtFin1_income.Lines = new string[0];
-            this.txtFin1_income.Location = new System.Drawing.Point(638, 126);
+            this.txtFin1_income.Location = new System.Drawing.Point(494, 125);
             this.txtFin1_income.Margin = new System.Windows.Forms.Padding(2);
             this.txtFin1_income.MaxLength = 32767;
             this.txtFin1_income.Name = "txtFin1_income";
@@ -346,24 +352,25 @@
             // 
             this.btnFIn1_check.ActiveControl = null;
             this.btnFIn1_check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFIn1_check.Location = new System.Drawing.Point(1041, 138);
+            this.btnFIn1_check.Location = new System.Drawing.Point(562, 252);
             this.btnFIn1_check.Margin = new System.Windows.Forms.Padding(2);
             this.btnFIn1_check.Name = "btnFIn1_check";
-            this.btnFIn1_check.Size = new System.Drawing.Size(136, 42);
+            this.btnFIn1_check.Size = new System.Drawing.Size(211, 42);
             this.btnFIn1_check.Style = MetroFramework.MetroColorStyle.Teal;
             this.btnFIn1_check.TabIndex = 74;
-            this.btnFIn1_check.Text = "Check ";
+            this.btnFIn1_check.Text = "Get Income";
             this.btnFIn1_check.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnFIn1_check.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnFIn1_check.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnFIn1_check.UseSelectable = true;
+            this.btnFIn1_check.Click += new System.EventHandler(this.btnFIn1_check_Click);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(17, 126);
+            this.metroLabel1.Location = new System.Drawing.Point(19, 159);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 25);
@@ -373,42 +380,12 @@
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(504, 239);
-            this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(78, 25);
-            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroLabel7.TabIndex = 68;
-            this.metroLabel7.Text = "Revenue";
-            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(504, 178);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(105, 25);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroLabel2.TabIndex = 69;
-            this.metroLabel2.Text = "Expenditure";
-            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(504, 126);
+            this.metroLabel6.Location = new System.Drawing.Point(360, 125);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(71, 25);
@@ -420,6 +397,8 @@
             // 
             // tabFinSales
             // 
+            this.tabFinSales.Controls.Add(this.metroLabel2);
+            this.tabFinSales.Controls.Add(this.txtsalesyear);
             this.tabFinSales.Controls.Add(this.btnFin2_clear);
             this.tabFinSales.Controls.Add(this.cmbFin2_month);
             this.tabFinSales.Controls.Add(this.txtFin2_expense);
@@ -444,6 +423,53 @@
             this.tabFinSales.VerticalScrollbarHighlightOnWheel = false;
             this.tabFinSales.VerticalScrollbarSize = 10;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(50, 112);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(44, 25);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel2.TabIndex = 90;
+            this.metroLabel2.Text = "Year";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // txtsalesyear
+            // 
+            // 
+            // 
+            // 
+            this.txtsalesyear.CustomButton.Image = null;
+            this.txtsalesyear.CustomButton.Location = new System.Drawing.Point(88, 1);
+            this.txtsalesyear.CustomButton.Name = "";
+            this.txtsalesyear.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtsalesyear.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtsalesyear.CustomButton.TabIndex = 1;
+            this.txtsalesyear.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtsalesyear.CustomButton.UseSelectable = true;
+            this.txtsalesyear.CustomButton.Visible = false;
+            this.txtsalesyear.Lines = new string[0];
+            this.txtsalesyear.Location = new System.Drawing.Point(150, 112);
+            this.txtsalesyear.Margin = new System.Windows.Forms.Padding(2);
+            this.txtsalesyear.MaxLength = 32767;
+            this.txtsalesyear.Name = "txtsalesyear";
+            this.txtsalesyear.PasswordChar = '\0';
+            this.txtsalesyear.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtsalesyear.SelectedText = "";
+            this.txtsalesyear.SelectionLength = 0;
+            this.txtsalesyear.SelectionStart = 0;
+            this.txtsalesyear.ShortcutsEnabled = true;
+            this.txtsalesyear.Size = new System.Drawing.Size(110, 23);
+            this.txtsalesyear.TabIndex = 89;
+            this.txtsalesyear.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtsalesyear.UseSelectable = true;
+            this.txtsalesyear.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtsalesyear.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // btnFin2_clear
             // 
             this.btnFin2_clear.ActiveControl = null;
@@ -459,6 +485,7 @@
             this.btnFin2_clear.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnFin2_clear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnFin2_clear.UseSelectable = true;
+            this.btnFin2_clear.Click += new System.EventHandler(this.btnFin2_clear_Click);
             // 
             // cmbFin2_month
             // 
@@ -466,7 +493,7 @@
             this.cmbFin2_month.ItemHeight = 23;
             this.cmbFin2_month.Items.AddRange(new object[] {
             "January",
-            "February ",
+            "February",
             "March",
             "April",
             "May",
@@ -474,10 +501,10 @@
             "July",
             "August",
             "September",
-            "Octomber ",
-            "November",
+            "October",
+            "November ",
             "December"});
-            this.cmbFin2_month.Location = new System.Drawing.Point(155, 108);
+            this.cmbFin2_month.Location = new System.Drawing.Point(150, 164);
             this.cmbFin2_month.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFin2_month.Name = "cmbFin2_month";
             this.cmbFin2_month.Size = new System.Drawing.Size(132, 29);
@@ -597,13 +624,14 @@
             this.btnFin2_check.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnFin2_check.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnFin2_check.UseSelectable = true;
+            this.btnFin2_check.Click += new System.EventHandler(this.btnFin2_check_Click);
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(44, 112);
+            this.metroLabel8.Location = new System.Drawing.Point(39, 168);
             this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(65, 25);
@@ -811,7 +839,7 @@
             this.cmbFin3Month.ItemHeight = 23;
             this.cmbFin3Month.Items.AddRange(new object[] {
             "January",
-            "February ",
+            "February",
             "March",
             "April",
             "May",
@@ -819,8 +847,8 @@
             "July",
             "August",
             "September",
-            "Octomber ",
-            "November",
+            "October",
+            "November ",
             "December"});
             this.cmbFin3Month.Location = new System.Drawing.Point(135, 108);
             this.cmbFin3Month.Margin = new System.Windows.Forms.Padding(2);
@@ -1081,7 +1109,7 @@
             this.cmbFin4_month.ItemHeight = 23;
             this.cmbFin4_month.Items.AddRange(new object[] {
             "January",
-            "February ",
+            "February",
             "March",
             "April",
             "May",
@@ -1089,8 +1117,8 @@
             "July",
             "August",
             "September",
-            "Octomber ",
-            "November",
+            "October",
+            "November ",
             "December"});
             this.cmbFin4_month.Location = new System.Drawing.Point(135, 96);
             this.cmbFin4_month.Margin = new System.Windows.Forms.Padding(2);
@@ -1305,8 +1333,10 @@
             // 
             this.FinBills.Controls.Add(this.btnFin5_clear);
             this.FinBills.Controls.Add(this.cmbFin5_expenseType);
+            this.FinBills.Controls.Add(this.metroLabel21);
             this.FinBills.Controls.Add(this.metroLabel18);
             this.FinBills.Controls.Add(this.chkFin5_mon);
+            this.FinBills.Controls.Add(this.txtfin_expen_Year);
             this.FinBills.Controls.Add(this.txtFin5_amount);
             this.FinBills.Controls.Add(this.btnFin5_Add);
             this.FinBills.Controls.Add(this.metroLabel20);
@@ -1359,12 +1389,27 @@
             this.cmbFin5_expenseType.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmbFin5_expenseType.UseSelectable = true;
             // 
+            // metroLabel21
+            // 
+            this.metroLabel21.AutoSize = true;
+            this.metroLabel21.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel21.Location = new System.Drawing.Point(30, 97);
+            this.metroLabel21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel21.Name = "metroLabel21";
+            this.metroLabel21.Size = new System.Drawing.Size(44, 25);
+            this.metroLabel21.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel21.TabIndex = 68;
+            this.metroLabel21.Text = "Year";
+            this.metroLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel21.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
             this.metroLabel18.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel18.Location = new System.Drawing.Point(89, 156);
+            this.metroLabel18.Location = new System.Drawing.Point(337, 97);
             this.metroLabel18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel18.Name = "metroLabel18";
             this.metroLabel18.Size = new System.Drawing.Size(65, 25);
@@ -1380,7 +1425,7 @@
             this.chkFin5_mon.ItemHeight = 23;
             this.chkFin5_mon.Items.AddRange(new object[] {
             "January",
-            "February ",
+            "February",
             "March",
             "April",
             "May",
@@ -1388,10 +1433,10 @@
             "July",
             "August",
             "September",
-            "Octomber ",
-            "November",
+            "October",
+            "November ",
             "December"});
-            this.chkFin5_mon.Location = new System.Drawing.Point(197, 156);
+            this.chkFin5_mon.Location = new System.Drawing.Point(445, 97);
             this.chkFin5_mon.Margin = new System.Windows.Forms.Padding(2);
             this.chkFin5_mon.Name = "chkFin5_mon";
             this.chkFin5_mon.Size = new System.Drawing.Size(132, 29);
@@ -1399,6 +1444,38 @@
             this.chkFin5_mon.TabIndex = 67;
             this.chkFin5_mon.Theme = MetroFramework.MetroThemeStyle.Light;
             this.chkFin5_mon.UseSelectable = true;
+            // 
+            // txtfin_expen_Year
+            // 
+            // 
+            // 
+            // 
+            this.txtfin_expen_Year.CustomButton.Image = null;
+            this.txtfin_expen_Year.CustomButton.Location = new System.Drawing.Point(88, 1);
+            this.txtfin_expen_Year.CustomButton.Name = "";
+            this.txtfin_expen_Year.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtfin_expen_Year.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtfin_expen_Year.CustomButton.TabIndex = 1;
+            this.txtfin_expen_Year.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtfin_expen_Year.CustomButton.UseSelectable = true;
+            this.txtfin_expen_Year.CustomButton.Visible = false;
+            this.txtfin_expen_Year.Lines = new string[0];
+            this.txtfin_expen_Year.Location = new System.Drawing.Point(119, 99);
+            this.txtfin_expen_Year.Margin = new System.Windows.Forms.Padding(2);
+            this.txtfin_expen_Year.MaxLength = 32767;
+            this.txtfin_expen_Year.Name = "txtfin_expen_Year";
+            this.txtfin_expen_Year.PasswordChar = '\0';
+            this.txtfin_expen_Year.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtfin_expen_Year.SelectedText = "";
+            this.txtfin_expen_Year.SelectionLength = 0;
+            this.txtfin_expen_Year.SelectionStart = 0;
+            this.txtfin_expen_Year.ShortcutsEnabled = true;
+            this.txtfin_expen_Year.Size = new System.Drawing.Size(110, 23);
+            this.txtfin_expen_Year.TabIndex = 65;
+            this.txtfin_expen_Year.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtfin_expen_Year.UseSelectable = true;
+            this.txtfin_expen_Year.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtfin_expen_Year.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtFin5_amount
             // 
@@ -1495,6 +1572,10 @@
             this.btnFinHome.UseSelectable = true;
             this.btnFinHome.Click += new System.EventHandler(this.btnFinHome_Click);
             // 
+            // metroStyleManager_fin
+            // 
+            this.metroStyleManager_fin.Owner = this;
+            // 
             // Finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1520,6 +1601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datGridFin3rev)).EndInit();
             this.FinBills.ResumeLayout(false);
             this.FinBills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager_fin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1531,13 +1613,9 @@
         private MetroFramework.Controls.MetroGrid dataGridFin1;
         private MetroFramework.Controls.MetroTile btnFin1_clear;
         private MetroFramework.Controls.MetroComboBox cmbFin1_month;
-        private MetroFramework.Controls.MetroTextBox txtFin1_expense;
-        private MetroFramework.Controls.MetroTextBox txtFin1_revenue;
         private MetroFramework.Controls.MetroTextBox txtFin1_income;
         private MetroFramework.Controls.MetroTile btnFIn1_check;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTabPage tabFinSales;
         private MetroFramework.Controls.MetroTile btnFin2_clear;
@@ -1587,5 +1665,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel20;
         private MetroFramework.Controls.MetroLabel metroLabel19;
         private MetroFramework.Controls.MetroTile btnFinHome;
+        public MetroFramework.Components.MetroStyleManager metroStyleManager_fin;
+        private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroTextBox txtFin_fitYear;
+        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroTextBox txtfin_expen_Year;
+        private MetroFramework.Controls.MetroTile btnThismonthTOto;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox txtsalesyear;
     }
 }

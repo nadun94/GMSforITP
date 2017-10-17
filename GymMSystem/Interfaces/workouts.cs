@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using System.IO;
+using System.Data.SqlClient;
+using System.Data;
 
 
 namespace GymMSystem.Interfaces
@@ -23,6 +25,29 @@ namespace GymMSystem.Interfaces
         private void workouts_Load(object sender, EventArgs e)
         {
 
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+
+            string q1 = "select * from tbl_exercise";
+
+            SqlCommand cmd = new SqlCommand(q1, con.getConnection());
+
+            DataTable dtq = new DataTable();
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+            comboW1_name.Refresh();
+            da1.Fill(dtq);
+
+            if (dtq.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtq.Rows.Count; i++)
+                {
+                    comboW1_name.Items.Add(dtq.Rows[i]["name"].ToString());
+
+                }
+            }
+
+
+            con.closeConnection();
         }
 
         private void btnHome_workouts_Click(object sender, EventArgs e)
