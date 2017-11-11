@@ -14,6 +14,10 @@ namespace GymMSystem.Buisness_Logic
         public string source { get; set; }
         public double expenditure { get; set; }
 
+        //expenses
+        public string   expenseID { get; set; }
+  
+
 
     }
 }
