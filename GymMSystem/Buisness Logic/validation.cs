@@ -12,7 +12,7 @@ namespace GymMSystem.Buisness_Logic
     class validation
     {
 
-        public bool IsNumeric(string number,string no)
+        public bool IsNumeric(string number)
         {
            // number.ToString();
             bool x = Regex.Match(number, @"^([1-9][0-9]*)$").Success;
@@ -20,7 +20,7 @@ namespace GymMSystem.Buisness_Logic
             if (x) return true;
             else
             {
-                MessageBox.Show(no+" is not in correct format.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show(no+" is not in correct format.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
@@ -153,33 +153,39 @@ namespace GymMSystem.Buisness_Logic
 
 
 
-        public bool IsWord(string word, string wordName)
+        public bool IsWord(string word)
         {
 
-            if(!string.IsNullOrWhiteSpace(word)){
+            const string matchWord = @"^[A-Z]|[a-z|\s]+$";
 
-                if (word.All(char.IsLetter))
-                {
+            if (Regex.IsMatch(word, matchWord))
+                return true;
+            else return false;
+            //if(!string.IsNullOrWhiteSpace(word)){
 
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show(wordName + " should be letters only.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+            //    if (word.All(char.IsLetter))
+            //    {
 
-                }
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(wordName + " should be letters only.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        return false;
 
-            }
-            else
-            {
-                
-                MessageBox.Show(wordName +" can not be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //    }
+
+            //}
+            //else
+            //{
+
+            //    MessageBox.Show(wordName +" can not be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
 
             //Regex.Match(word, @"\w * ").Success;
         }
+
+    
 
 
        
@@ -259,6 +265,21 @@ namespace GymMSystem.Buisness_Logic
             else
                 return true;
 
+        }
+       
+
+        public bool isPrice(string price)
+        {
+            if (!Regex.IsMatch(price, matchnumeric)) return false;
+            else return true;
+
+        }
+
+        public bool IsAlphaNumeric(string alphan)
+        {
+            const string matchword = @"^[A-Z]|[a-z|0-9|\s]+$";
+            if (!Regex.IsMatch(alphan, matchword)) return false;
+            else return true;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(salesManagement));
             this.btnHome_SalesMgt = new MetroFramework.Controls.MetroTile();
             this.salesMgtsTab = new MetroFramework.Controls.MetroTabControl();
@@ -58,7 +59,7 @@
             this.btnEditProd_clear = new MetroFramework.Controls.MetroTile();
             this.btnprod_search = new MetroFramework.Controls.MetroTile();
             this.picbox_editProd = new System.Windows.Forms.PictureBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtp2Newqty = new MetroFramework.Controls.MetroTextBox();
             this.txtp2_availableqty = new MetroFramework.Controls.MetroTextBox();
             this.txtp2_sellingprice = new MetroFramework.Controls.MetroTextBox();
             this.txtp2_bprice = new MetroFramework.Controls.MetroTextBox();
@@ -84,6 +85,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.openfileprod1 = new System.Windows.Forms.OpenFileDialog();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.salesMgtsTab.SuspendLayout();
             this.addprod_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1_addproduct)).BeginInit();
@@ -91,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbox_editProd)).BeginInit();
             this.addtoCarttab.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome_SalesMgt
@@ -122,7 +125,7 @@
             this.salesMgtsTab.Location = new System.Drawing.Point(35, 114);
             this.salesMgtsTab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.salesMgtsTab.Name = "salesMgtsTab";
-            this.salesMgtsTab.SelectedIndex = 0;
+            this.salesMgtsTab.SelectedIndex = 1;
             this.salesMgtsTab.Size = new System.Drawing.Size(1586, 712);
             this.salesMgtsTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.salesMgtsTab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -188,12 +191,12 @@
             // 
             this.mtrtil3splmnt_brows.ActiveControl = null;
             this.mtrtil3splmnt_brows.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.mtrtil3splmnt_brows.Location = new System.Drawing.Point(976, 301);
+            this.mtrtil3splmnt_brows.Location = new System.Drawing.Point(976, 306);
             this.mtrtil3splmnt_brows.Name = "mtrtil3splmnt_brows";
             this.mtrtil3splmnt_brows.Size = new System.Drawing.Size(134, 47);
             this.mtrtil3splmnt_brows.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtrtil3splmnt_brows.TabIndex = 23;
-            this.mtrtil3splmnt_brows.Text = "Brows";
+            this.mtrtil3splmnt_brows.Text = "Browse";
             this.mtrtil3splmnt_brows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mtrtil3splmnt_brows.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mtrtil3splmnt_brows.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
@@ -542,7 +545,7 @@
             this.editprod_tab.Controls.Add(this.btnEditProd_clear);
             this.editprod_tab.Controls.Add(this.btnprod_search);
             this.editprod_tab.Controls.Add(this.picbox_editProd);
-            this.editprod_tab.Controls.Add(this.metroTextBox1);
+            this.editprod_tab.Controls.Add(this.txtp2Newqty);
             this.editprod_tab.Controls.Add(this.txtp2_availableqty);
             this.editprod_tab.Controls.Add(this.txtp2_sellingprice);
             this.editprod_tab.Controls.Add(this.txtp2_bprice);
@@ -584,6 +587,7 @@
             this.btnprod_delete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnprod_delete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnprod_delete.UseSelectable = true;
+            this.btnprod_delete.Click += new System.EventHandler(this.btnprod_delete_Click);
             // 
             // btnprod_update
             // 
@@ -600,6 +604,7 @@
             this.btnprod_update.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnprod_update.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnprod_update.UseSelectable = true;
+            this.btnprod_update.Click += new System.EventHandler(this.btnprod_update_Click);
             // 
             // cmbp2ProdType
             // 
@@ -634,6 +639,7 @@
             this.btnEditprod_browse.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEditprod_browse.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnEditprod_browse.UseSelectable = true;
+            this.btnEditprod_browse.Click += new System.EventHandler(this.btnEditprod_browse_Click);
             // 
             // btnEditProd_clear
             // 
@@ -666,6 +672,7 @@
             this.btnprod_search.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnprod_search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnprod_search.UseSelectable = true;
+            this.btnprod_search.Click += new System.EventHandler(this.btnprod_search_Click);
             // 
             // picbox_editProd
             // 
@@ -677,38 +684,38 @@
             this.picbox_editProd.TabIndex = 38;
             this.picbox_editProd.TabStop = false;
             // 
-            // metroTextBox1
+            // txtp2Newqty
             // 
-            this.metroTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtp2Newqty.Anchor = System.Windows.Forms.AnchorStyles.Left;
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(166, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(697, 288);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(188, 23);
-            this.metroTextBox1.TabIndex = 32;
-            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtp2Newqty.CustomButton.Image = null;
+            this.txtp2Newqty.CustomButton.Location = new System.Drawing.Point(166, 1);
+            this.txtp2Newqty.CustomButton.Name = "";
+            this.txtp2Newqty.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtp2Newqty.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtp2Newqty.CustomButton.TabIndex = 1;
+            this.txtp2Newqty.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtp2Newqty.CustomButton.UseSelectable = true;
+            this.txtp2Newqty.CustomButton.Visible = false;
+            this.txtp2Newqty.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtp2Newqty.Lines = new string[0];
+            this.txtp2Newqty.Location = new System.Drawing.Point(697, 288);
+            this.txtp2Newqty.MaxLength = 32767;
+            this.txtp2Newqty.Name = "txtp2Newqty";
+            this.txtp2Newqty.PasswordChar = '\0';
+            this.txtp2Newqty.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtp2Newqty.SelectedText = "";
+            this.txtp2Newqty.SelectionLength = 0;
+            this.txtp2Newqty.SelectionStart = 0;
+            this.txtp2Newqty.ShortcutsEnabled = true;
+            this.txtp2Newqty.Size = new System.Drawing.Size(188, 23);
+            this.txtp2Newqty.TabIndex = 32;
+            this.txtp2Newqty.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtp2Newqty.UseSelectable = true;
+            this.txtp2Newqty.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtp2Newqty.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtp2_availableqty
             // 
@@ -1198,6 +1205,10 @@
             // 
             this.openfileprod1.FileName = "openFileDialog1";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // salesManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1220,6 +1231,7 @@
             this.addtoCarttab.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1255,7 +1267,7 @@
         private MetroFramework.Controls.MetroTile btnEditProd_clear;
         private MetroFramework.Controls.MetroTile btnprod_search;
         private System.Windows.Forms.PictureBox picbox_editProd;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox txtp2Newqty;
         private MetroFramework.Controls.MetroTextBox txtp2_availableqty;
         private MetroFramework.Controls.MetroTextBox txtp2_sellingprice;
         private MetroFramework.Controls.MetroTextBox txtp2_bprice;
@@ -1281,5 +1293,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openfileprod1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

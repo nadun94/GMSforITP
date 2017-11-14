@@ -402,5 +402,10 @@ namespace GymMSystem.Interfaces
                 MessageBox.Show(sere.Message, "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnOS3_update_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

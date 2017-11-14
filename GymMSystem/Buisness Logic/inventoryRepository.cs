@@ -9,6 +9,6 @@ namespace GymMSystem.Buisness_Logic
 {
     class inventoryRepository
     {
-        public int MyProperty { get; set; }
+      
     }
 }

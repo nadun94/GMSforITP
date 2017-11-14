@@ -39,7 +39,8 @@ namespace GymMSystem.Interfaces
         }
         private void Members_Load(object sender, EventArgs e)
         {
-           
+
+          //  this.reportViewer1.RefreshReport();
         }
         private bool validateAddMember()
         {
@@ -627,7 +628,7 @@ namespace GymMSystem.Interfaces
             }
 
             //**** main returning part
-            if (phone == true && email == true && name == true && nic == true && gender == true && height == true) return true;
+            if (phone == true && email == true && name == true && nic == true && gender == true && height == true && address && weight ==true) return true;
             else return false;
 
         }
