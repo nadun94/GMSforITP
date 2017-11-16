@@ -820,5 +820,15 @@ namespace GymMSystem.Interfaces
         {
 
         }
+
+        private void btnOS1_update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOS1_delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

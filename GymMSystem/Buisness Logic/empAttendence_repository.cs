@@ -78,8 +78,34 @@ namespace GymMSystem.Buisness_Logic
                 {
                     eat1.startTime = dt1.Rows[0]["start_time"].ToString();
                     eat1.theDay = dt1.Rows[0]["theDay"].ToString();
-                  
-            
+                    eat1.endTime = dt1.Rows[0]["end_time"].ToString();
+                    if (!DBNull.Value.Equals(dt1.Rows[0]["end_time"]))
+                    {
+                        eat1.endTime = dt1.Rows[0]["end_time"].ToString();
+                    }
+                    else
+                    {
+
+                    }
+                    if (!DBNull.Value.Equals(dt1.Rows[0]["hours_worked"]))
+                    {
+                        eat1.hoursWorked = (double)dt1.Rows[0]["hours_worked"];
+                    }
+                    else
+                    {
+
+                    }
+                    if (!DBNull.Value.Equals(dt1.Rows[0]["extra_hours"]))
+                    {
+                        eat1.extraHours = (double)dt1.Rows[0]["extra_hours"];
+                    }
+                    else
+                    {
+
+                    }
+
+                   
+
                     tempx = true;
                 }
 
@@ -138,6 +164,20 @@ namespace GymMSystem.Buisness_Logic
 
 
         }
+
+        //public bool calculateHours(empAttendence att)
+        //{
+        //    try
+        //    {
+                
+        //    }
+        //    catch (Exception fdsf)
+        //    {
+
+        //        throw;
+        //    }
+
+        //}
 
     }
 }

@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnHome_otherServices = new MetroFramework.Controls.MetroTile();
             this.otherserviecessTab = new MetroFramework.Controls.MetroTabControl();
             this.addmemberOS_tab = new MetroFramework.Controls.MetroTabPage();
             this.btnClearosaddmem = new MetroFramework.Controls.MetroTile();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.dateTime_OS2Mem = new MetroFramework.Controls.MetroDateTime();
-            this.btnAddMember = new MetroFramework.Controls.MetroTile();
             this.btnOS2_searchMember = new MetroFramework.Controls.MetroTile();
+            this.btnAddMember = new MetroFramework.Controls.MetroTile();
             this.cmbOS2_gender = new MetroFramework.Controls.MetroComboBox();
             this.cmbOS2_serviceType = new MetroFramework.Controls.MetroComboBox();
             this.txtaddress = new MetroFramework.Controls.MetroTextBox();
@@ -84,6 +84,8 @@
             this.btnOS3_update = new MetroFramework.Controls.MetroTile();
             this.btnOS3_searchMem = new MetroFramework.Controls.MetroTile();
             this.tab_osMfee = new MetroFramework.Controls.MetroTabPage();
+            this.txtareofNIC = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel36 = new MetroFramework.Controls.MetroLabel();
             this.txtosMfvalidFor = new MetroFramework.Controls.MetroTextBox();
             this.btnOS4Fe_cleari = new MetroFramework.Controls.MetroTile();
             this.btnOS4_addPay = new MetroFramework.Controls.MetroTile();
@@ -123,8 +125,6 @@
             this.txtOS1_name = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtareofNIC = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel36 = new MetroFramework.Controls.MetroLabel();
             this.otherserviecessTab.SuspendLayout();
             this.addmemberOS_tab.SuspendLayout();
             this.tab_OS3serviMem.SuspendLayout();
@@ -245,27 +245,10 @@
             // dateTime_OS2Mem
             // 
             this.dateTime_OS2Mem.Location = new System.Drawing.Point(218, 206);
-            this.dateTime_OS2Mem.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTime_OS2Mem.MinimumSize = new System.Drawing.Size(4, 29);
             this.dateTime_OS2Mem.Name = "dateTime_OS2Mem";
             this.dateTime_OS2Mem.Size = new System.Drawing.Size(223, 29);
             this.dateTime_OS2Mem.TabIndex = 53;
-            // 
-            // btnAddMember
-            // 
-            this.btnAddMember.ActiveControl = null;
-            this.btnAddMember.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddMember.Location = new System.Drawing.Point(1038, 230);
-            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddMember.Name = "btnAddMember";
-            this.btnAddMember.Size = new System.Drawing.Size(114, 40);
-            this.btnAddMember.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btnAddMember.TabIndex = 52;
-            this.btnAddMember.Text = "Add";
-            this.btnAddMember.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddMember.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnAddMember.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnAddMember.UseSelectable = true;
-            this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
             // btnOS2_searchMember
             // 
@@ -283,6 +266,23 @@
             this.btnOS2_searchMember.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnOS2_searchMember.UseSelectable = true;
             this.btnOS2_searchMember.Click += new System.EventHandler(this.btnOS2_searchMember_Click);
+            // 
+            // btnAddMember
+            // 
+            this.btnAddMember.ActiveControl = null;
+            this.btnAddMember.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddMember.Location = new System.Drawing.Point(1038, 230);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddMember.Name = "btnAddMember";
+            this.btnAddMember.Size = new System.Drawing.Size(114, 40);
+            this.btnAddMember.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btnAddMember.TabIndex = 52;
+            this.btnAddMember.Text = "Add";
+            this.btnAddMember.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddMember.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnAddMember.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnAddMember.UseSelectable = true;
+            this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
             // cmbOS2_gender
             // 
@@ -691,37 +691,37 @@
             this.dataGridOs1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridOs1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridOs1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridOs1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridOs1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridOs1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridOs1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridOs1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridOs1.EnableHeadersVisualStyles = false;
             this.dataGridOs1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridOs1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridOs1.Location = new System.Drawing.Point(70, 371);
             this.dataGridOs1.Name = "dataGridOs1";
             this.dataGridOs1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridOs1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridOs1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridOs1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridOs1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridOs1.Size = new System.Drawing.Size(1134, 135);
@@ -1155,6 +1155,57 @@
             this.tab_osMfee.VerticalScrollbarHighlightOnWheel = false;
             this.tab_osMfee.VerticalScrollbarSize = 10;
             // 
+            // txtareofNIC
+            // 
+            this.txtareofNIC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            // 
+            // 
+            // 
+            this.txtareofNIC.CustomButton.Image = null;
+            this.txtareofNIC.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.txtareofNIC.CustomButton.Name = "";
+            this.txtareofNIC.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtareofNIC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtareofNIC.CustomButton.TabIndex = 1;
+            this.txtareofNIC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtareofNIC.CustomButton.UseSelectable = true;
+            this.txtareofNIC.CustomButton.Visible = false;
+            this.txtareofNIC.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtareofNIC.Lines = new string[0];
+            this.txtareofNIC.Location = new System.Drawing.Point(782, 57);
+            this.txtareofNIC.Margin = new System.Windows.Forms.Padding(2);
+            this.txtareofNIC.MaxLength = 32767;
+            this.txtareofNIC.Name = "txtareofNIC";
+            this.txtareofNIC.PasswordChar = '\0';
+            this.txtareofNIC.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtareofNIC.SelectedText = "";
+            this.txtareofNIC.SelectionLength = 0;
+            this.txtareofNIC.SelectionStart = 0;
+            this.txtareofNIC.ShortcutsEnabled = true;
+            this.txtareofNIC.Size = new System.Drawing.Size(196, 23);
+            this.txtareofNIC.TabIndex = 88;
+            this.txtareofNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtareofNIC.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtareofNIC.UseSelectable = true;
+            this.txtareofNIC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtareofNIC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel36
+            // 
+            this.metroLabel36.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel36.AutoSize = true;
+            this.metroLabel36.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel36.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel36.Location = new System.Drawing.Point(678, 57);
+            this.metroLabel36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel36.Name = "metroLabel36";
+            this.metroLabel36.Size = new System.Drawing.Size(41, 25);
+            this.metroLabel36.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel36.TabIndex = 87;
+            this.metroLabel36.Text = "NIC";
+            this.metroLabel36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel36.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // txtosMfvalidFor
             // 
             this.txtosMfvalidFor.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1552,37 +1603,37 @@
             this.dataGriddServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGriddServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGriddServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGriddServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGriddServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGriddServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGriddServices.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGriddServices.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGriddServices.EnableHeadersVisualStyles = false;
             this.dataGriddServices.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGriddServices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGriddServices.Location = new System.Drawing.Point(249, 371);
             this.dataGriddServices.Name = "dataGriddServices";
             this.dataGriddServices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGriddServices.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGriddServices.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGriddServices.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGriddServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGriddServices.Size = new System.Drawing.Size(632, 145);
@@ -1603,6 +1654,7 @@
             this.btnOS1_delete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnOS1_delete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnOS1_delete.UseSelectable = true;
+            this.btnOS1_delete.Click += new System.EventHandler(this.btnOS1_delete_Click);
             // 
             // btnOS1_update
             // 
@@ -1619,6 +1671,7 @@
             this.btnOS1_update.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnOS1_update.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnOS1_update.UseSelectable = true;
+            this.btnOS1_update.Click += new System.EventHandler(this.btnOS1_update_Click);
             // 
             // btnOS1_clear
             // 
@@ -1973,57 +2026,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtareofNIC
-            // 
-            this.txtareofNIC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            // 
-            // 
-            // 
-            this.txtareofNIC.CustomButton.Image = null;
-            this.txtareofNIC.CustomButton.Location = new System.Drawing.Point(174, 1);
-            this.txtareofNIC.CustomButton.Name = "";
-            this.txtareofNIC.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtareofNIC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtareofNIC.CustomButton.TabIndex = 1;
-            this.txtareofNIC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtareofNIC.CustomButton.UseSelectable = true;
-            this.txtareofNIC.CustomButton.Visible = false;
-            this.txtareofNIC.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtareofNIC.Lines = new string[0];
-            this.txtareofNIC.Location = new System.Drawing.Point(782, 57);
-            this.txtareofNIC.Margin = new System.Windows.Forms.Padding(2);
-            this.txtareofNIC.MaxLength = 32767;
-            this.txtareofNIC.Name = "txtareofNIC";
-            this.txtareofNIC.PasswordChar = '\0';
-            this.txtareofNIC.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtareofNIC.SelectedText = "";
-            this.txtareofNIC.SelectionLength = 0;
-            this.txtareofNIC.SelectionStart = 0;
-            this.txtareofNIC.ShortcutsEnabled = true;
-            this.txtareofNIC.Size = new System.Drawing.Size(196, 23);
-            this.txtareofNIC.TabIndex = 88;
-            this.txtareofNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtareofNIC.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtareofNIC.UseSelectable = true;
-            this.txtareofNIC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtareofNIC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel36
-            // 
-            this.metroLabel36.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel36.AutoSize = true;
-            this.metroLabel36.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel36.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel36.Location = new System.Drawing.Point(678, 57);
-            this.metroLabel36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel36.Name = "metroLabel36";
-            this.metroLabel36.Size = new System.Drawing.Size(41, 25);
-            this.metroLabel36.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroLabel36.TabIndex = 87;
-            this.metroLabel36.Text = "NIC";
-            this.metroLabel36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel36.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // OtherServices
             // 

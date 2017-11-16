@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using System.IO;
+using System.Globalization;
 
 namespace GymMSystem.Interfaces
 {
@@ -28,7 +29,7 @@ namespace GymMSystem.Interfaces
         private bool validateEmp()
         {
             Buisness_Logic.validation val1 = new Buisness_Logic.validation();
-            bool phone, email, address, name, nic, gender,  dob,pp;
+            bool phone, email, address, name, nic, gender, dob, pp;
 
             //phone
             if (!val1.IsPhone(txtEmp1_phone.Text))
@@ -130,10 +131,10 @@ namespace GymMSystem.Interfaces
             }
 
             //resume
-          
+
 
             //**** main returning part
-            if (phone == true && email == true && name == true && nic == true && gender == true && dob==true && address==true && pp == true   ) return true;
+            if (phone == true && email == true && name == true && nic == true && gender == true && dob == true && address == true && pp == true) return true;
             else return false;
 
 
@@ -177,7 +178,7 @@ namespace GymMSystem.Interfaces
                     }
 
                 }
-               
+
 
             }
             catch (Exception exb)
@@ -224,6 +225,9 @@ namespace GymMSystem.Interfaces
                     MessageBox.Show("Employee attendence record found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtStartTime.Text = ea1.startTime;
                     txtempAT_theday.Text = ea1.theDay;
+                    textAtEndTime.Text = ea1.endTime;
+                    textAtTotalHr.Text = ea1.hoursWorked.ToString();
+                    textAtExtraHr.Text = ea1.extraHours.ToString();
 
 
                 }
@@ -246,7 +250,7 @@ namespace GymMSystem.Interfaces
         {
             try
             {
-                
+
                 Buisness_Logic.empAttendence em = new Buisness_Logic.empAttendence();
 
                 em.empID = int.Parse(txtEmpIDatte.Text);
@@ -616,7 +620,7 @@ namespace GymMSystem.Interfaces
             }
 
             //**** main returning part
-            if (phone == true && email == true && name == true && nic == true && gender == true && position == true && dob && jdate == true && profile==true && address==true) return true;
+            if (phone == true && email == true && name == true && nic == true && gender == true && position == true && dob && jdate == true && profile == true && address == true) return true;
             else return false;
 
         }
@@ -630,13 +634,13 @@ namespace GymMSystem.Interfaces
                 pictureBoxEmp2.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBoxEmp2.Image.Save(memt1p2, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] photo_memt2 = memt1p2.ToArray();
-               
+
                 gm.empID = int.Parse(txtEmp2_empid.Text);
                 gm.name = txtEmp2_name.Text;
                 gm.nic = txtEmp2_nic.Text;
                 gm.phone = txtEmp2_phone.Text;
 
-           
+
                 gm.address = txtEmp2_address.Text;
 
                 gm.gender = cmbEMP2_gender.SelectedItem.ToString();
@@ -685,7 +689,7 @@ namespace GymMSystem.Interfaces
             {
                 try
                 {
-                    
+
 
                     int empid = int.Parse(txtEmp2_empid.Text);
 
@@ -720,7 +724,7 @@ namespace GymMSystem.Interfaces
         {
             try
             {
-                
+
                 textAtEndTime.Text = DateTime.Now.ToShortTimeString();
             }
             catch (Exception tu)
@@ -728,6 +732,27 @@ namespace GymMSystem.Interfaces
 
                 throw;
             }
+        }
+
+        private void btncalculate_Hours_Click(object sender, EventArgs e)
+        {
+
+
+            Buisness_Logic.empAttendence em1 = new Buisness_Logic.empAttendence();
+
+       
+            em1.startTime = txtStartTime.Text;
+            em1.endTime = textAtEndTime.Text;
+
+           // Buisness_Logic.empAttendence_repository emprep1 = new Buisness_Logic.empAttendence_repository();
+
+           //DateTime st= DateTime.ParseExact(" "+em1.startTime, " h:mm tt", CultureInfo.InvariantCulture);
+           // DateTime et = DateTime.ParseExact(" " + em1.endTime, " h:mm tt", CultureInfo.InvariantCulture);
+           // TimeSpan dif = et - st;
+           // string y = dif.ToString(@"hh\:mm");
+            textAtTotalHr.Text =em1.hoursWorked.ToString();
+            textAtExtraHr.Text = em1.extraHours.ToString();
+
         }
     }
 }

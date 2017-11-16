@@ -20,30 +20,19 @@ namespace GymMSystem.Buisness_Logic
         public Boolean _attendenceStatus{ get; set; }
 
         public string startTime { get; set; }
-        public DateTime startTIme_inOriginal { get; set; }
-        public DateTime endTIme_inOriginal { get; set; }
+
         public string endTime { get; set; }
         public int empID { get; set; }
         
-        public double hoursWorked
+        public double  hoursWorked
         {
             get
             {
-                var st = DateTime.ParseExact(startTime, "HH:mm:ss", CultureInfo.InvariantCulture);
-                var et = DateTime.ParseExact(endTime, "H:mm", null, System.Globalization.DateTimeStyles.None);
-                //var st = dat.Parse(startTime);
-                //var et = TimeSpan.Parse(endTime);
-
-                TimeSpan dif = st - et;
-
-                string gg = dif.ToString();
-                TimeSpan duration = DateTime.ParseExact(endTime, "HH:mm:ss tt", CultureInfo.CurrentCulture).Subtract(DateTime.ParseExact(startTime, "HH:mm:ss tt", CultureInfo.CurrentCulture));
-
-
-
-             //   double dif = (et - st).TotalHours;
-                double x = dif.TotalHours;
-                _hoursWorked = duration.TotalHours;
+                DateTime st = DateTime.ParseExact(" " + startTime, " h:mm tt", CultureInfo.InvariantCulture);
+                DateTime et = DateTime.ParseExact(" " + endTime, " h:mm tt", CultureInfo.InvariantCulture);
+                TimeSpan dif = et - st;
+                // string y = dif.ToString(@"hh\:mm");
+                _hoursWorked = Math.Round(dif.TotalHours, 2);
 
                 return _hoursWorked;
 
