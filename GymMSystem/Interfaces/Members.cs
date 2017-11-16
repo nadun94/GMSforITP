@@ -18,6 +18,8 @@ namespace GymMSystem.Interfaces
         public Members()
         {
             InitializeComponent();
+
+            pictureBox_card_mem.Image = new Bitmap(pictureBox_card_mem.Width, pictureBox_card_mem.Height);
         }
 
         private void datagridm3refresh()
@@ -1017,6 +1019,175 @@ namespace GymMSystem.Interfaces
         private void txtM3_nic_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroLabel46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_member_card_Add_Paint(object sender, PaintEventArgs e)
+        {
+          
+
+        }
+         Buisness_Logic.gymMember gmzzz = null;
+
+        private void mebershipCard_writeOn_image()
+        {
+            var image = new Bitmap(this.pictureBox_card_mem.Width, this.pictureBox_card_mem.Height);
+            var font_family = new FontFamily("Tahoma");
+            var font = new Font(font_family, 20, FontStyle.Regular, GraphicsUnit.Pixel);
+           var solid_brush = new SolidBrush(Color.White);
+            var graphics = Graphics.FromImage(image);
+
+            graphics.DrawString("Name : "+gmzzz.name, font, solid_brush, new Point(250, 60));
+            graphics.DrawString("Member ID : "+gmzzz.MemberID.ToString(), font, solid_brush, new Point(250, 90));
+            graphics.DrawString("Member sice: "+gmzzz.joinedDate, font, solid_brush, new Point(250, 120));
+
+            this.pictureBox_card_mem.Image = image;
+            this.pictureBox_card_mem.Refresh();
+            pictureBox_card_mem.Update();
+
+
+        }
+        private void pictureBox_card_mem_Paint(object sender, PaintEventArgs e)
+        {
+            //var font_family = new FontFamily("Tahoma");
+            //var font = new Font(font_family, 20, FontStyle.Bold, GraphicsUnit.Pixel);
+            //var solid_brush = new SolidBrush(Color.White);
+
+            //e.Graphics.DrawString("Nadun sirimevan", font, solid_brush, new PointF(10, 20));
+
+            //font = new Font(font_family, 14, FontStyle.Regular, GraphicsUnit.Pixel);
+            //e.Graphics.DrawString("Hello world", font, solid_brush, new PointF(15, 50));
+
+            //MessageBox.Show("dfsdf");
+
+            //Bitmap bitmap_forCard = new Bitmap(pictureBox_card_mem.Width, pictureBox_card_mem.Height);
+
+            //using (Graphics g = Graphics.FromImage(bitmap_forCard))
+            //{
+
+
+            //    g.DrawImage(pictureBox_card_mem.Image, 0, 0);
+            ////    g.DrawImage(pictureBox_card_mem.Image, 380, 30, 100, 100);
+            ////    pictureBox_card_mem.Refresh();
+            //}
+
+            //pictureBox_card_mem.Image = bitmap_forCard;
+            //pictureBox_card_photo.Visible = false;
+        }
+       
+        private void btn_member_card_Add_Click(object sender, EventArgs e)
+        {
+            mebershipCard_writeOn_image();
+
+            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            pictureBox_barcode.Image = barcode.Draw("Member ID: "+txt_memCardID.Text, 50);
+
+            Bitmap bitmap_forCard = new Bitmap(pictureBox_card_mem.Width, pictureBox_card_mem.Height);
+
+            using (Graphics g = Graphics.FromImage(bitmap_forCard))
+            {
+
+                pictureBox_barcode.SizeMode = PictureBoxSizeMode.AutoSize;
+                g.DrawImage(pictureBox_card_mem.Image, 0, 0);
+                g.DrawImage(pictureBox_card_photo.Image, 20, 30, 160, 184);
+                g.DrawImage(pictureBox_barcode.Image, 250, 255, 276, 70);
+              //  g.DrawImage(pictureBox_logo.Image, 473, 104, 117, 104);
+                pictureBox_card_mem.Refresh();
+            }
+
+            pictureBox_card_mem.Image = bitmap_forCard;
+            pictureBox_card_photo.Visible = false;
+            pictureBox_barcode.Visible = false;
+            //    Bitmap finalImage = null;
+            //    try
+            //    {
+            //        mebershipCard_writeOn_image();
+
+            //        List<Bitmap> images = new List<Bitmap>();
+
+            //        int width = 0;
+            //        int height = 0;
+            //        Bitmap b1 = new Bitmap(pictureBox_card_mem.Image);
+            //        Bitmap b2 = new Bitmap(pictureBox_card_photo.Image);
+            //        width = b1.Width;
+            //        height = b1.Height;
+
+            //        images.Add(b1);
+            //        images.Add(b2);
+
+            //        finalImage = new Bitmap(width, height);
+            //        using (Graphics g = Graphics.FromImage(finalImage))
+            //        {
+            //            g.Clear(Color.Transparent);
+            //            int offset = 0;
+            //            foreach (Bitmap image in images)
+            //            {
+            //                g.DrawImage(image, new Rectangle(offset, 0, image.Width, image.Height));
+            //                offset += image.Width;
+            //            }
+            //        }
+
+            //        FinImg = finalImage;
+
+            //    }
+            //    catch (Exception vv)
+            //    {
+            //        if (finalImage != null)
+            //            finalImage.Dispose();
+            //        throw;
+            //    } 
+
+        }
+
+        private void btn_member_card_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buisness_Logic.gymMemberRepository gr = new Buisness_Logic.gymMemberRepository();
+              //  Buisness_Logic.gymMember gm = new Buisness_Logic.gymMember();
+                string nicr = " ";
+                gmzzz = gr.search(int.Parse(txt_memCardID.Text), txt_memCard_name.Text, nicr);
+
+
+                    txt_memCard_name.Text = gmzzz.name;
+                txt_memCard_jdate.Text = gmzzz.joinedDate;
+
+                pictureBox_card_photo.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                MemoryStream ms1 = new MemoryStream(gmzzz.photo);
+                // ms1.ToArray();
+                ms1.Position = 0;
+
+                ms1.Read(gmzzz.photo, 0, gmzzz.photo.Length);
+                pictureBox_card_photo.Image = Image.FromStream(ms1);
+
+
+
+            }
+            catch (Exception dsf)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnCard_savetopc_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialg = new SaveFileDialog();
+            if (dialg.ShowDialog() == DialogResult.OK)
+            {
+                int wid = Convert.ToInt32(pictureBox_card_mem.Width);
+                int hei = Convert.ToInt32(pictureBox_card_mem.Height);
+
+                Bitmap bmp = new Bitmap(wid,hei);
+               pictureBox_card_mem.DrawToBitmap(bmp, new Rectangle(0, 0, wid, hei));
+                bmp.Save(dialg.FileName + ".png");
+
+            }
         }
     }
     }

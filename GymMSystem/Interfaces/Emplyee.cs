@@ -754,5 +754,10 @@ namespace GymMSystem.Interfaces
             textAtExtraHr.Text = em1.extraHours.ToString();
 
         }
+
+        private void btnPrSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

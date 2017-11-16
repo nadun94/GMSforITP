@@ -148,7 +148,7 @@
             this.Emptab.Location = new System.Drawing.Point(35, 61);
             this.Emptab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.Emptab.Name = "Emptab";
-            this.Emptab.SelectedIndex = 2;
+            this.Emptab.SelectedIndex = 3;
             this.Emptab.Size = new System.Drawing.Size(1586, 756);
             this.Emptab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Emptab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -1912,6 +1912,7 @@
             this.btnPrSearch.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnPrSearch.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnPrSearch.UseSelectable = true;
+            this.btnPrSearch.Click += new System.EventHandler(this.btnPrSearch_Click);
             // 
             // textPrAmount
             // 
