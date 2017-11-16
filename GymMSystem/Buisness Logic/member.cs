@@ -28,7 +28,7 @@ namespace GymMSystem.Buisness_Logic
         public string nic { get; set; }
         public string  addresss { get; set; }
       
-        public int  phone { get; set; }
+        public string  phone { get; set; }
        
 
     }

@@ -181,7 +181,7 @@ namespace GymMSystem.Buisness_Logic
                     gm.dob = dtq.Rows[0]["dob"].ToString();
                     gm.gender = dtq.Rows[0]["gender"].ToString();
                     gm.addresss = dtq.Rows[0]["address"].ToString();
-                    gm.phone = int.Parse(dtq.Rows[0]["phone"].ToString());
+                    gm.phone = dtq.Rows[0]["phone"].ToString();
 
                     temp = true;
                 }
@@ -302,7 +302,7 @@ namespace GymMSystem.Buisness_Logic
                 tup = true;
 
 
-                return tup;
+               
 
             }
             catch (Exception epu)
@@ -312,11 +312,9 @@ namespace GymMSystem.Buisness_Logic
 
                 throw;
             }
-           
 
-           
-
-
+            if (tup == true) return true;
+            else return false;
           
         }
 

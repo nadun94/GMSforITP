@@ -88,7 +88,7 @@ namespace GymMSystem.Buisness_Logic
                     emp.dob = dtq.Rows[0]["dob"].ToString();
                     emp.gender = dtq.Rows[0]["gender"].ToString();
                     emp.address = dtq.Rows[0]["address"].ToString();
-                    emp.phone = int.Parse(dtq.Rows[0]["phone"].ToString());
+                    emp.phone = dtq.Rows[0]["phone"].ToString();
                     emp.email = dtq.Rows[0]["email"].ToString();
                     emp.position = dtq.Rows[0]["position"].ToString();
                     emp.profile = dtq.Rows[0]["profile"].ToString();
@@ -108,6 +108,91 @@ namespace GymMSystem.Buisness_Logic
 
                 throw;
             }
+        }
+
+        public bool update_employee(employee g)
+        {
+            bool tup = false;
+
+            try
+            {
+                DataLayer.dbConnect dbu = new DataLayer.dbConnect();
+         
+                dbu.openConnection();
+
+                SqlCommand cmdu = null;
+
+                string qup = "UPDATE tbl_employee set name=@name, dob=@dob, nic=@nic, address=@address , gender=@gender,email=@email, phone=@phone , position=@position ,profile=@profile,joinedDate=@jdate,photo=@photo where empID=@reg ";
+
+                cmdu = new SqlCommand(qup, dbu.getConnection());
+                cmdu.Parameters.AddWithValue("@name", g.name);
+                cmdu.Parameters.AddWithValue("@dob", g.dob);
+                cmdu.Parameters.AddWithValue("@address", g.address);
+                cmdu.Parameters.AddWithValue("@nic", g.nic);
+                cmdu.Parameters.AddWithValue("@gender", g.gender);
+                cmdu.Parameters.AddWithValue("@phone", g.phone);
+                cmdu.Parameters.AddWithValue("@reg", g.empID);
+                cmdu.Parameters.AddWithValue("@email", g.email);
+                cmdu.Parameters.AddWithValue("@position", g.position);
+                cmdu.Parameters.AddWithValue("@photo", g.photo);
+                cmdu.Parameters.AddWithValue("@profile", g.profile);
+                cmdu.Parameters.AddWithValue("@jdate", g.joinedDate);
+
+                cmdu.ExecuteNonQuery();
+
+                tup = true;
+
+
+
+
+            }
+            catch (Exception epu)
+            {
+                // trnup.Rollback();
+                MessageBox.Show(epu.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                throw;
+            }
+
+            if (tup == true) return true;
+            else return false;
+
+        }
+
+        public bool deleteEmployee(int emp)
+        {
+            bool tempdel = false;
+            DataLayer.dbConnect cond = new DataLayer.dbConnect();
+            cond.openConnection();
+ 
+            try
+            {
+
+
+                string qd = "DELETE tbl_employee WHERE empID=@mem ";
+
+                SqlCommand cmdel = new SqlCommand(qd, cond.getConnection());
+
+                cmdel.Parameters.AddWithValue("@mem", emp);
+            
+
+                cmdel.ExecuteNonQuery();
+
+
+               
+                cond.closeConnection();
+
+                tempdel = true;
+
+            }
+            catch (Exception edel)
+            {
+         
+                throw;
+            }
+
+            if (tempdel == true) return true;
+            else return false;
         }
     }
 }

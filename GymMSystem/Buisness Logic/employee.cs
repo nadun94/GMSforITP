@@ -16,7 +16,7 @@ namespace GymMSystem.Buisness_Logic
         public string email { get; set; }
         public string  position { get; set; }
         public string nic { get; set; }
-        public int phone { get; set; }
+        public string phone { get; set; }
         public string  profile { get; set; }
         public byte[] photo { get; set; }
         public string joinedDate { get; set; }

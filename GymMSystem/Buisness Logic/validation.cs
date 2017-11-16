@@ -281,5 +281,13 @@ namespace GymMSystem.Buisness_Logic
             if (!Regex.IsMatch(alphan, matchword)) return false;
             else return true;
         }
+
+        public bool IsTime(string time)
+        {
+            const string matchword = @"^[0-9][0-9]:[0-9][0-9]$";
+
+            if (!Regex.IsMatch(time, matchword)) return false;
+            else return true;
+        }
     }
 }

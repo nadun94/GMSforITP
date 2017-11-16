@@ -56,7 +56,7 @@
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tabemp_attendence = new MetroFramework.Controls.MetroTabPage();
-            this.btnCalcHours = new MetroFramework.Controls.MetroTile();
+            this.btngen_starttime = new MetroFramework.Controls.MetroTile();
             this.btnAtAdEndTime = new MetroFramework.Controls.MetroTile();
             this.btnAtAdStrtTime = new MetroFramework.Controls.MetroTile();
             this.textAtExtraHr = new MetroFramework.Controls.MetroTextBox();
@@ -124,6 +124,7 @@
             this.openFileDialogEmp = new System.Windows.Forms.OpenFileDialog();
             this.btnHome_emp = new MetroFramework.Controls.MetroTile();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnGenEndTime = new MetroFramework.Controls.MetroTile();
             this.Emptab.SuspendLayout();
             this.tabAddEmp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picuturebox_emp1)).BeginInit();
@@ -137,16 +138,16 @@
             // Emptab
             // 
             this.Emptab.Controls.Add(this.tabAddEmp);
+            this.Emptab.Controls.Add(this.employeeTab);
             this.Emptab.Controls.Add(this.tabemp_attendence);
             this.Emptab.Controls.Add(this.tabEMp_salary);
-            this.Emptab.Controls.Add(this.employeeTab);
             this.Emptab.FontSize = MetroFramework.MetroTabControlSize.Tall;
             this.Emptab.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.Emptab.ItemSize = new System.Drawing.Size(200, 70);
             this.Emptab.Location = new System.Drawing.Point(35, 61);
             this.Emptab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.Emptab.Name = "Emptab";
-            this.Emptab.SelectedIndex = 1;
+            this.Emptab.SelectedIndex = 2;
             this.Emptab.Size = new System.Drawing.Size(1586, 756);
             this.Emptab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Emptab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -715,7 +716,8 @@
             // 
             // tabemp_attendence
             // 
-            this.tabemp_attendence.Controls.Add(this.btnCalcHours);
+            this.tabemp_attendence.Controls.Add(this.btnGenEndTime);
+            this.tabemp_attendence.Controls.Add(this.btngen_starttime);
             this.tabemp_attendence.Controls.Add(this.btnAtAdEndTime);
             this.tabemp_attendence.Controls.Add(this.btnAtAdStrtTime);
             this.tabemp_attendence.Controls.Add(this.textAtExtraHr);
@@ -744,28 +746,28 @@
             this.tabemp_attendence.VerticalScrollbarHighlightOnWheel = false;
             this.tabemp_attendence.VerticalScrollbarSize = 10;
             // 
-            // btnCalcHours
+            // btngen_starttime
             // 
-            this.btnCalcHours.ActiveControl = null;
-            this.btnCalcHours.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCalcHours.Location = new System.Drawing.Point(828, 241);
-            this.btnCalcHours.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCalcHours.Name = "btnCalcHours";
-            this.btnCalcHours.Size = new System.Drawing.Size(168, 44);
-            this.btnCalcHours.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btnCalcHours.TabIndex = 80;
-            this.btnCalcHours.Text = "Add";
-            this.btnCalcHours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCalcHours.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnCalcHours.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnCalcHours.UseSelectable = true;
-            this.btnCalcHours.Click += new System.EventHandler(this.btnCalcHours_Click);
+            this.btngen_starttime.ActiveControl = null;
+            this.btngen_starttime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btngen_starttime.Location = new System.Drawing.Point(1015, 109);
+            this.btngen_starttime.Margin = new System.Windows.Forms.Padding(2);
+            this.btngen_starttime.Name = "btngen_starttime";
+            this.btngen_starttime.Size = new System.Drawing.Size(253, 44);
+            this.btngen_starttime.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btngen_starttime.TabIndex = 80;
+            this.btngen_starttime.Text = "Generate start time";
+            this.btngen_starttime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btngen_starttime.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btngen_starttime.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btngen_starttime.UseSelectable = true;
+            this.btngen_starttime.Click += new System.EventHandler(this.btnCalcHours_Click);
             // 
             // btnAtAdEndTime
             // 
             this.btnAtAdEndTime.ActiveControl = null;
             this.btnAtAdEndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAtAdEndTime.Location = new System.Drawing.Point(828, 302);
+            this.btnAtAdEndTime.Location = new System.Drawing.Point(768, 245);
             this.btnAtAdEndTime.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtAdEndTime.Name = "btnAtAdEndTime";
             this.btnAtAdEndTime.Size = new System.Drawing.Size(168, 44);
@@ -782,7 +784,7 @@
             // 
             this.btnAtAdStrtTime.ActiveControl = null;
             this.btnAtAdStrtTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAtAdStrtTime.Location = new System.Drawing.Point(828, 170);
+            this.btnAtAdStrtTime.Location = new System.Drawing.Point(768, 109);
             this.btnAtAdStrtTime.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtAdStrtTime.Name = "btnAtAdStrtTime";
             this.btnAtAdStrtTime.Size = new System.Drawing.Size(168, 44);
@@ -836,7 +838,7 @@
             // 
             this.btnAtSerchM.ActiveControl = null;
             this.btnAtSerchM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAtSerchM.Location = new System.Drawing.Point(828, 108);
+            this.btnAtSerchM.Location = new System.Drawing.Point(768, 177);
             this.btnAtSerchM.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtSerchM.Name = "btnAtSerchM";
             this.btnAtSerchM.Size = new System.Drawing.Size(168, 44);
@@ -1069,6 +1071,7 @@
             this.txtEmpIDatte.MaxLength = 32767;
             this.txtEmpIDatte.Name = "txtEmpIDatte";
             this.txtEmpIDatte.PasswordChar = '\0';
+            this.txtEmpIDatte.PromptText = "Enter Employee ID here";
             this.txtEmpIDatte.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEmpIDatte.SelectedText = "";
             this.txtEmpIDatte.SelectionLength = 0;
@@ -1079,6 +1082,7 @@
             this.txtEmpIDatte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEmpIDatte.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEmpIDatte.UseSelectable = true;
+            this.txtEmpIDatte.WaterMark = "Enter Employee ID here";
             this.txtEmpIDatte.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmpIDatte.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1700,7 +1704,7 @@
             // 
             this.btnEMP2_delete.ActiveControl = null;
             this.btnEMP2_delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_delete.Location = new System.Drawing.Point(1228, 427);
+            this.btnEMP2_delete.Location = new System.Drawing.Point(1228, 367);
             this.btnEMP2_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_delete.Name = "btnEMP2_delete";
             this.btnEMP2_delete.Size = new System.Drawing.Size(105, 41);
@@ -1711,12 +1715,13 @@
             this.btnEMP2_delete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnEMP2_delete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnEMP2_delete.UseSelectable = true;
+            this.btnEMP2_delete.Click += new System.EventHandler(this.btnEMP2_delete_Click);
             // 
             // btnEMP2_update
             // 
             this.btnEMP2_update.ActiveControl = null;
             this.btnEMP2_update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_update.Location = new System.Drawing.Point(1228, 369);
+            this.btnEMP2_update.Location = new System.Drawing.Point(1228, 309);
             this.btnEMP2_update.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_update.Name = "btnEMP2_update";
             this.btnEMP2_update.Size = new System.Drawing.Size(105, 41);
@@ -1727,6 +1732,7 @@
             this.btnEMP2_update.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnEMP2_update.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnEMP2_update.UseSelectable = true;
+            this.btnEMP2_update.Click += new System.EventHandler(this.btnEMP2_update_Click);
             // 
             // txtEmp2_email
             // 
@@ -1954,7 +1960,7 @@
             // 
             this.btnEMP2_clear.ActiveControl = null;
             this.btnEMP2_clear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_clear.Location = new System.Drawing.Point(1228, 308);
+            this.btnEMP2_clear.Location = new System.Drawing.Point(1233, 435);
             this.btnEMP2_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_clear.Name = "btnEMP2_clear";
             this.btnEMP2_clear.Size = new System.Drawing.Size(100, 41);
@@ -2018,6 +2024,7 @@
             this.btnEMP2_browse.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnEMP2_browse.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnEMP2_browse.UseSelectable = true;
+            this.btnEMP2_browse.Click += new System.EventHandler(this.btnEMP2_browse_Click);
             // 
             // pictureBoxEmp2
             // 
@@ -2319,7 +2326,7 @@
             // 
             this.btnHome_emp.ActiveControl = null;
             this.btnHome_emp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHome_emp.Location = new System.Drawing.Point(1430, 40);
+            this.btnHome_emp.Location = new System.Drawing.Point(1466, 31);
             this.btnHome_emp.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome_emp.Name = "btnHome_emp";
             this.btnHome_emp.Size = new System.Drawing.Size(132, 53);
@@ -2335,6 +2342,23 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnGenEndTime
+            // 
+            this.btnGenEndTime.ActiveControl = null;
+            this.btnGenEndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenEndTime.Location = new System.Drawing.Point(1015, 245);
+            this.btnGenEndTime.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenEndTime.Name = "btnGenEndTime";
+            this.btnGenEndTime.Size = new System.Drawing.Size(253, 45);
+            this.btnGenEndTime.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btnGenEndTime.TabIndex = 92;
+            this.btnGenEndTime.Text = "Generate end time";
+            this.btnGenEndTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGenEndTime.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnGenEndTime.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnGenEndTime.UseSelectable = true;
+            this.btnGenEndTime.Click += new System.EventHandler(this.btnGenEndTime_Click);
             // 
             // Emplyee
             // 
@@ -2392,7 +2416,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroDateTime dateTimePickeremp;
         private System.Windows.Forms.OpenFileDialog openFileDialogEmp;
-        private MetroFramework.Controls.MetroTile btnCalcHours;
+        private MetroFramework.Controls.MetroTile btngen_starttime;
         private MetroFramework.Controls.MetroTile btnAtAdEndTime;
         private MetroFramework.Controls.MetroTile btnAtAdStrtTime;
         private MetroFramework.Controls.MetroTextBox textAtExtraHr;
@@ -2459,5 +2483,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel25;
         private MetroFramework.Controls.MetroTile btnHome_emp;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private MetroFramework.Controls.MetroTile btnGenEndTime;
     }
 }

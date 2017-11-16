@@ -126,9 +126,11 @@
     <Compile Include="Buisness Logic\Finance.cs" />
     <Compile Include="Buisness Logic\gymMember.cs" />
     <Compile Include="Buisness Logic\gymMemberRepository.cs" />
+    <Compile Include="Buisness Logic\hourly_services.cs" />
     <Compile Include="Buisness Logic\inventory.cs" />
     <Compile Include="Buisness Logic\inventoryRepository.cs" />
     <Compile Include="Buisness Logic\member.cs" />
+    <Compile Include="Buisness Logic\monthly_services.cs" />
     <Compile Include="Buisness Logic\nonRepairableItem_repository.cs" />
     <Compile Include="Buisness Logic\nonRepairable_Item.cs" />
     <Compile Include="Buisness Logic\otherServiceRepository.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="Buisness Logic\repair.cs" />
     <Compile Include="Buisness Logic\repairableItem_repository.cs" />
     <Compile Include="Buisness Logic\repairablerable_Items.cs" />
+    <Compile Include="Buisness Logic\services.cs" />
     <Compile Include="Buisness Logic\validation.cs" />
     <Compile Include="Buisness Logic\workout.cs" />
     <Compile Include="Buisness Logic\workout_repository.cs" />

@@ -798,12 +798,12 @@ namespace GymMSystem.Interfaces
             try
             {
                 Buisness_Logic.repair rep = new Buisness_Logic.repair();
-                
 
+                double cost_for_repair = string.IsNullOrWhiteSpace(txtI1_icost.Text) ? 0 : double.Parse(txtI1_icost.Text);
                 rep.repID = int.Parse(txtI1_irepair.Text);
                 rep.equipmentID = int.Parse(txtI1_icod.Text);
                 rep.status = cmbRepairINV.SelectedItem.ToString();
-                rep.cost = double.Parse(txtI1_icost.Text);
+                rep.cost = cost_for_repair;
                 rep.descriptioin = txtI1_idescription.Text;
                 rep.start_date = txtI1_istart.Text;
                 rep.finished_date = txti_repfdate.Text;

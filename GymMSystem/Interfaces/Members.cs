@@ -213,7 +213,7 @@ namespace GymMSystem.Interfaces
                     mem.name = txtM_name.Text;
                     mem.dob = dateTimePickerMem.Value.ToShortDateString();
                     mem.gender = cmbM_gender.SelectedItem.ToString();
-                    mem.phone = int.Parse(txtM_phone.Text);
+                    mem.phone = txtM_phone.Text;
                     mem.addresss = txtM_address.Text;
                     mem.nic = txtM_nic.Text;
 
@@ -646,7 +646,7 @@ namespace GymMSystem.Interfaces
                 gm.MemberID = int.Parse(txtM3_memID.Text);
                 gm.name = txtM3_name.Text;
                 gm.nic = txtM3_nic.Text;
-                gm.phone = int.Parse(txtM3_phone.Text);
+                gm.phone = txtM3_phone.Text;
 
                 gm.fatLevel = double.Parse(txtM3_fatLevel.Text);
                 gm.addresss = txtmsearch_address.Text;
