@@ -20,6 +20,7 @@ namespace GymMSystem.Interfaces
             InitializeComponent();
 
             pictureBox_card_mem.Image = new Bitmap(pictureBox_card_mem.Width, pictureBox_card_mem.Height);
+
         }
 
         private void datagridm3refresh()
@@ -42,7 +43,19 @@ namespace GymMSystem.Interfaces
         private void Members_Load(object sender, EventArgs e)
         {
 
-          //  this.reportViewer1.RefreshReport();
+            //  this.reportViewer1.RefreshReport();
+            check_aerobic.Checked = false;
+            alreadyMember = false;
+            txtM_memID.Enabled = false;
+            lbl_nic.Visible = false;
+            lbl_name.Visible = false;
+            lbl_name.Refresh();
+            lbl_mid.Visible = false;
+            btn_tab1search.Visible = false;
+
+            lbl_mid.Refresh();
+            lbl_nic.Refresh();
+            btn_tab1search.Refresh();
         }
         private bool validateAddMember()
         {
@@ -1095,7 +1108,7 @@ namespace GymMSystem.Interfaces
                 g.DrawImage(pictureBox_card_mem.Image, 0, 0);
                 g.DrawImage(pictureBox_card_photo.Image, 20, 30, 160, 184);
                 g.DrawImage(pictureBox_barcode.Image, 250, 255, 276, 70);
-              //  g.DrawImage(pictureBox_logo.Image, 473, 104, 117, 104);
+               // g.DrawImage(pictureBox_logo.Image, 73, 74, 117, 104);
                 pictureBox_card_mem.Refresh();
             }
 
@@ -1187,6 +1200,80 @@ namespace GymMSystem.Interfaces
                pictureBox_card_mem.DrawToBitmap(bmp, new Rectangle(0, 0, wid, hei));
                 bmp.Save(dialg.FileName + ".png");
 
+            }
+        }
+        bool alreadyMember;
+        private void check_aerobic_CheckedChanged(object sender, EventArgs e)
+        {
+
+            //Already a member or not
+            if (check_aerobic.Checked)
+            {
+                alreadyMember = true;
+
+                lbl_mid.Visible = true;
+                lbl_nic.Visible = true;
+                lbl_name.Visible = true;
+                btn_tab1search.Visible = true;
+                txtM_memID.Enabled = true;
+
+               
+            }
+            else
+            {
+                alreadyMember = false;
+
+                lbl_nic.Visible = false;
+                lbl_mid.Visible = false;
+                btn_tab1search.Visible = false;
+                lbl_name.Visible = false;
+                txtM_memID.Enabled = false;
+
+               
+            }
+
+            lbl_name.Refresh();
+            lbl_nic.Refresh();
+            lbl_mid.Refresh();
+            btn_tab1search.Refresh();
+        }
+
+        private void btn_tab1search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int memberID;
+                string nic, name;
+
+                memberID = string.IsNullOrWhiteSpace(txtM_memID.Text) ? 0 : int.Parse(txtM_memID.Text);
+                nic = txtM_nic.Text;
+                name = txtM_name.Text;
+                Buisness_Logic.AreobicMemberRepository areo = new Buisness_Logic.AreobicMemberRepository();
+                Buisness_Logic.AreobicMember arm = new Buisness_Logic.AreobicMember();
+
+                if (areo.searchAerobicMemOnly(memberID, name, nic, arm))
+                {
+                    MessageBox.Show("The member is already registerd aerobic member.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // set values to gymMember class
+                    txtM_name.Text = arm.name;
+                    dateTimePickerMem.Value = DateTime.Parse(arm.dob);
+                    cmbM_gender.SelectedItem = arm.gender;
+                    txtM_phone.Text = arm.phone;
+                    txtM_address.Text = arm.addresss;
+                    txtM_nic.Text = arm.nic;
+                    
+
+                }
+                else
+                {
+                    MessageBox.Show("No record found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            catch (Exception sd)
+            {
+
+                throw;
             }
         }
     }

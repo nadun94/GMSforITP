@@ -28,11 +28,7 @@ namespace GymMSystem
         private void panel6_MouseClick(object sender, MouseEventArgs e)
         {
 
-            //window changing
-            Interfaces.OtherServices ot = new Interfaces.OtherServices();
-
-            this.Hide();
-            ot.Show();
+           
         }
 
         private void panel8_MouseClick(object sender, MouseEventArgs e)
@@ -44,9 +40,10 @@ namespace GymMSystem
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)
         {
-            Interfaces.Members mem = new Interfaces.Members();
+            Interfaces.subGUImembercs sub = new Interfaces.subGUImembercs();
             this.Hide();
-            mem.Show();
+            sub.Show();
+
         }
 
         private void panel7_MouseClick(object sender, MouseEventArgs e)

@@ -19,5 +19,7 @@ namespace GymMSystem.Buisness_Logic
         public string interval_days { get; set; }
         public string exName { get; set; }
 
+       public List <exercise> _exercise_w { get; set; }
+
     }
 }

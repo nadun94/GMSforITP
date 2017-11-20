@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GymMSystem.Buisness_Logic.AreobicMember">
+    <Position X="5" Y="7.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\AreobicMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.AreobicMemberRepository">
+    <Position X="17.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAACIAQQCAA=</HashCode>
+      <FileName>Buisness Logic\AreobicMemberRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.empAttendence">
+    <Position X="24.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAwQAAAAAAAiACEAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Buisness Logic\empAttendence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.empAttendence_repository">
+    <Position X="22.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAE=</HashCode>
+      <FileName>Buisness Logic\empAttendence_repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.employee">
+    <Position X="28" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAjAAAAgAAAIoAAAAAIEEAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.EmployeeRepository">
+    <Position X="23.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Buisness Logic\EmployeeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.EntityBase">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAEAAAAgAAAAAEAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.exercise">
+    <Position X="15" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\exercise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.fee">
+    <Position X="19.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgkAAgAggBIAEAQAAAAAACAAAAAAAAIAAEAQBEYAAAE=</HashCode>
+      <FileName>Buisness Logic\fee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.feeRepository">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQAAAAAAAAAAAAABAAAABAAAAAAAAAACAAA=</HashCode>
+      <FileName>Buisness Logic\feeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.finace_repository">
+    <Position X="24.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAQAACAA=</HashCode>
+      <FileName>Buisness Logic\finace_repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.Finance">
+    <Position X="14.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAIAAAAAAAAAAAQAgAAAAAAAAQAAAEA=</HashCode>
+      <FileName>Buisness Logic\Finance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.gymMember">
+    <Position X="8.25" Y="7.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAIABAAAQgAAAAAAAIAABAAAAgAAAAAACAAAE=</HashCode>
+      <FileName>Buisness Logic\gymMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.gymMemberRepository">
+    <Position X="17" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAIAAAAAAAAAIAACAAAAAAAAE=</HashCode>
+      <FileName>Buisness Logic\gymMemberRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.hourly_services">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\hourly_services.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.inventory">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAAIAAAAAAAAAAAAAAAAAAEAAAAAAABAAAIAAA=</HashCode>
+      <FileName>Buisness Logic\inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.inventoryRepository">
+    <Position X="10.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\inventoryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.member">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAIgAQBAAAEAAAgAAAAAAABAAA=</HashCode>
+      <FileName>Buisness Logic\member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.monthly_services">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAACAAAAEAAAAAAAAAAAAgAAARA=</HashCode>
+      <FileName>Buisness Logic\monthly_services.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.nonRepairable_Item">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\nonRepairable_Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.nonRepairableItem_repository">
+    <Position X="22" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAAAAAAAgBAAA=</HashCode>
+      <FileName>Buisness Logic\nonRepairableItem_repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.product">
+    <Position X="4.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAACJAAIAAAAAAAAAAAAAAAAAAEAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.productRepository">
+    <Position X="15.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAACAAAAAAAAAAEAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Buisness Logic\productRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.repair">
+    <Position X="17" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACIAAQAAAAAABAAAAAAQAAAAAAAhAQAAAEA=</HashCode>
+      <FileName>Buisness Logic\repair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.repairableItem_repository">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAAAAAgAA=</HashCode>
+      <FileName>Buisness Logic\repairableItem_repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.repairablerable_Items">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\repairablerable_Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.services" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buisness Logic\services.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.validation">
+    <Position X="28.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgEQAAAYAAAAAAEAAAAAAAAAAAAAAABAAAEAAAQkAg=</HashCode>
+      <FileName>Buisness Logic\validation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.workout">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgBAAAAAAAAgCACAAAAAAAAAABAAACAAAAAAAAAgA=</HashCode>
+      <FileName>Buisness Logic\workout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymMSystem.Buisness_Logic.workout_repository">
+    <Position X="19.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACAABAAAAAA=</HashCode>
+      <FileName>Buisness Logic\workout_repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

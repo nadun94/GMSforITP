@@ -144,6 +144,7 @@
     <Compile Include="Buisness Logic\repairableItem_repository.cs" />
     <Compile Include="Buisness Logic\repairablerable_Items.cs" />
     <Compile Include="Buisness Logic\services.cs" />
+    <Compile Include="Buisness Logic\service_repository.cs" />
     <Compile Include="Buisness Logic\validation.cs" />
     <Compile Include="Buisness Logic\workout.cs" />
     <Compile Include="Buisness Logic\workout_repository.cs" />
@@ -204,11 +205,17 @@
     <Compile Include="Interfaces\salesManagement.Designer.cs">
       <DependentUpon>salesManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Settings.cs">
+    <Compile Include="Interfaces\System Administration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <Compile Include="Interfaces\System Administration.Designer.cs">
+      <DependentUpon>System Administration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\subGUImembercs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\subGUImembercs.Designer.cs">
+      <DependentUpon>subGUImembercs.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\themCarrier.cs" />
     <Compile Include="Interfaces\workouts.cs">
@@ -246,8 +253,11 @@
     <EmbeddedResource Include="Interfaces\salesManagement.resx">
       <DependentUpon>salesManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\System Administration.resx">
+      <DependentUpon>System Administration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\subGUImembercs.resx">
+      <DependentUpon>subGUImembercs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\workouts.resx">
       <DependentUpon>workouts.cs</DependentUpon>
@@ -261,6 +271,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Buisness Logic\ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

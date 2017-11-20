@@ -22,27 +22,22 @@ namespace GymMSystem.Interfaces
 
         private void OtherServices_Load(object sender, EventArgs e)
         {
-            radio_hc.Checked = true;
+     
 
-            lbl_monthlyRate.Visible = false;
-            lbl_hr.Refresh();
-            metroLabel1.Visible = false;
-            txtOS1_EndingTime.Visible = false;
-            txtOS1_statingTime.Visible = false;
-            txt_cordinator.Visible = false;
-            cmbOS1_day.Visible = false;
-            metroLabel2.Visible = false;
-            metroLabel3.Visible = false;
-            metroLabel4.Visible = false;
+        
+            //check box
+           
 
-            metroLabel2.Refresh();
-            metroLabel3.Refresh();
-            metroLabel4.Refresh();
-            txt_cordinator.Refresh();
-            txtOS1_statingTime.Refresh();
-            txtOS1_EndingTime.Refresh();
-            cmbOS1_day.Refresh();
-            metroLabel1.Refresh();
+            lblHint1.Visible = false;
+            lblHint2.Visible = false;
+            lbl_hint_nic.Visible = false;
+            btnOS2_searchMember.Visible = false;
+        
+
+
+        lblHint1.Refresh();
+            lblHint2.Refresh();
+            btnOS2_searchMember.Refresh();
         }
 
         private void btnHome_otherServices_Click(object sender, EventArgs e)
@@ -54,165 +49,44 @@ namespace GymMSystem.Interfaces
 
         private void btnOS1_Save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                
-                if (radio_mc.Checked)
-                {
-                    Buisness_Logic.monthly_services ser = new Buisness_Logic.monthly_services();
-                    ser.cordinator = txt_cordinator.Text;
-                    ser.start_time = txtOS1_statingTime.Text;
-                    ser.end_time = txtOS1_EndingTime.Text;
-                    ser.day = cmbOS1_day.SelectedItem.ToString();
-                    ser.service_name = txtOS1_name.Text;
-                    ser.monthly_charge = double.Parse(txtOS1_Rate.Text);
-                    ser.service_type = "Monthly";
-
-
-                    if (ser.addMonthly_service(ser))
-                    {
-                        MessageBox.Show("Service added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                }
-
-                if (radio_hc.Checked)
-                {
-                    Buisness_Logic.hourly_services hser = new Buisness_Logic.hourly_services();
-
-                    hser.service_type = "Hourly";
-                    hser.service_name = txtOS1_name.Text;
-                    hser.hourly_rate = double.Parse(txtOS1_Rate.Text);
-
-
-                    if (hser.addHourly_service(hser))
-                    {
-                        MessageBox.Show("Service added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception fsf)
-            {
-
-                throw;
-            }
+            
         }
 
         private void radio_hc_CheckedChanged(object sender, EventArgs e)
         {
-            // radio button initialization
+            
 
-            if (radio_mc.Checked == true)
-            {
-                lbl_monthlyRate.Visible = true;
-                lbl_monthlyRate.Refresh();
-                lbl_hr.Visible = false;
-                lbl_hr.Refresh();
+            //// check button initialization
 
-            }
-            else if (radio_hc.Checked == true)
-            {
-                lbl_monthlyRate.Visible = false;
-                lbl_monthlyRate.Refresh();
-                lbl_hr.Visible = true;
-                lbl_hr.Refresh();
-            }
+            //if (checkOS2Mem.Checked == false)
+            //{
+            //    lblHint1.Visible = false;
+            //    lblHint2.Visible = false;
+            //    btnOS2_searchMember.Visible = false;
 
-            // check button initialization
+            //    lblHint1.Refresh();
+            //    lblHint2.Refresh();
+            //    btnOS2_searchMember.Refresh();
+            //}
+            //else if (checkOS2Mem.Checked == true)
+            //{
 
-            if (checkOS2Mem.Checked == false)
-            {
-                lblHint1.Visible = false;
-                lblHint2.Visible = false;
-                btnOS2_searchMember.Visible = false;
+            //    lblHint1.Visible = true;
+            //    lblHint2.Visible = true;
+            //    btnOS2_searchMember.Visible = true;
 
-                lblHint1.Refresh();
-                lblHint2.Refresh();
-                btnOS2_searchMember.Refresh();
-            }
-            else if (checkOS2Mem.Checked == true)
-            {
+            //    lblHint1.Refresh();
+            //    lblHint2.Refresh();
+            //    btnOS2_searchMember.Refresh();
 
-                lblHint1.Visible = true;
-                lblHint2.Visible = true;
-                btnOS2_searchMember.Visible = true;
-
-                lblHint1.Refresh();
-                lblHint2.Refresh();
-                btnOS2_searchMember.Refresh();
-
-            }
+            //}
 
         }
 
         private void radio_mc_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (radio_mc.Checked == true)
-            {
-                lbl_monthlyRate.Visible = true;
-                lbl_monthlyRate.Refresh();
-                lbl_hr.Visible = false;
-                lbl_hr.Refresh();
-
-                metroLabel1.Visible = true;
-                txtOS1_EndingTime.Visible = true;
-                txtOS1_statingTime.Visible = true;
-                txt_cordinator.Visible = true;
-                cmbOS1_day.Visible = true;
-                metroLabel2.Visible = true;
-                metroLabel3.Visible = true;
-                metroLabel4.Visible = true;
-
-                metroLabel2.Refresh();
-                metroLabel3.Refresh();
-                metroLabel4.Refresh();
-                txt_cordinator.Refresh();
-                txtOS1_statingTime.Refresh();
-                txtOS1_EndingTime.Refresh();
-                cmbOS1_day.Refresh();
-                metroLabel1.Refresh();
-
-
-            }
-            else if (radio_hc.Checked == true)
-            {
-                lbl_monthlyRate.Visible = false;
-                lbl_monthlyRate.Refresh();
-                lbl_hr.Visible = true;
-                lbl_hr.Refresh();
-
-                metroLabel1.Visible = false;
-                txtOS1_EndingTime.Visible = false;
-                txtOS1_statingTime.Visible = false;
-                txt_cordinator.Visible = false;
-                cmbOS1_day.Visible = false;
-                metroLabel2.Visible = false;
-                metroLabel3.Visible = false;
-                metroLabel4.Visible = false;
-
-                metroLabel2.Refresh();
-                metroLabel3.Refresh();
-                metroLabel4.Refresh();
-                txt_cordinator.Refresh();
-                txtOS1_statingTime.Refresh();
-                txtOS1_EndingTime.Refresh();
-                cmbOS1_day.Refresh();
-                metroLabel1.Refresh();
-
-
-
-
-
-            }
+            
         }
 
         //validtion for search aereobic member tab 1
@@ -330,15 +204,30 @@ namespace GymMSystem.Interfaces
         private void checkOS2Mem_CheckedChanged(object sender, EventArgs e)
         {
             //Already a member or not
+            if (checkOS2Mem.Checked)
+            {
+                alreadyMember = true;
 
-            alreadyMember = true;
+                lblHint1.Visible = true;
+                lblHint2.Visible = true;
+                lbl_hint_nic.Visible = true;
+                     
+                btnOS2_searchMember.Visible = true;
+            }
+            else
+            {
+                alreadyMember = false;
 
-            lblHint1.Visible = true;
-            lblHint2.Visible = true;
-            btnOS2_searchMember.Visible = true;
+                lblHint1.Visible = false;
+                lblHint2.Visible = false;
+                lbl_hint_nic.Visible = false;
+                btnOS2_searchMember.Visible = false;
+            }
+
 
             lblHint1.Refresh();
             lblHint2.Refresh();
+            lbl_hint_nic.Refresh();
             btnOS2_searchMember.Refresh();
 
 
@@ -372,6 +261,7 @@ namespace GymMSystem.Interfaces
             }
             else
             {
+                
                 this.errorProvider1.SetError(txtOS2_memName, (string)null);
                 name = true;
 
@@ -827,6 +717,11 @@ namespace GymMSystem.Interfaces
         }
 
         private void btnOS1_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOS1_clear_Click(object sender, EventArgs e)
         {
 
         }

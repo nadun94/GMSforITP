@@ -52,5 +52,42 @@ namespace GymMSystem.Buisness_Logic
             if (temp == true) return true;
             else return false;
         }
+
+        public bool updateMonthly_service(monthly_services ms)
+        {
+
+            bool temp = false;
+            try
+            {
+                DataLayer.dbConnect con = new DataLayer.dbConnect();
+                con.openConnection();
+
+                string q = "update tbl_services set service_type=@type,monthly_charge=@mrate,day=@day,start_time=@stime,end_time=@etime,cordinator=@cordi where service_name=@name";
+
+                SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+                cmd.Parameters.AddWithValue("@name", ms.service_name);
+                cmd.Parameters.AddWithValue("@type", ms.service_type);
+                cmd.Parameters.AddWithValue("@mrate", ms.monthly_charge);
+                cmd.Parameters.AddWithValue("@day", ms.day);
+                cmd.Parameters.AddWithValue("@stime", ms.start_time);
+                cmd.Parameters.AddWithValue("@etime", ms.end_time);
+                cmd.Parameters.AddWithValue("@cordi", ms.cordinator);
+
+                cmd.ExecuteNonQuery();
+
+                temp = true;
+                con.closeConnection();
+            }
+            catch (Exception fd)
+            {
+
+                throw;
+            }
+
+            if (temp == true) return true;
+            else return false;
+        }
+
     }
 }
