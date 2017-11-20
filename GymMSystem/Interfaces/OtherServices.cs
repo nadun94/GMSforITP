@@ -725,5 +725,115 @@ namespace GymMSystem.Interfaces
         {
 
         }
+
+        private void btnOS4Fe_cleari_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOS4_addPay_Click(object sender, EventArgs e)
+        {
+
+        }
+        private bool validateFeedatils()
+        {
+            Buisness_Logic.validation vf = new Buisness_Logic.validation();
+            if (string.IsNullOrWhiteSpace(txtMF_memID.Text) && string.IsNullOrWhiteSpace(txtmfNIC.Text) && (string.IsNullOrWhiteSpace(txtMFee_name.Text)))
+            {
+
+                MessageBox.Show("Enter Member ID or Name or NIC to find fee payment details.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else
+            {
+                if (!txtMF_memID.Text.All(char.IsDigit) && string.IsNullOrWhiteSpace(txtmfNIC.Text) && (string.IsNullOrWhiteSpace(txtMFee_name.Text)))
+                {
+                    MessageBox.Show("Member Id should include digits.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                //  else return true;
+                else if ((!txtMFee_name.Text.All(char.IsLetter)) && string.IsNullOrWhiteSpace(txtmfNIC.Text) && string.IsNullOrWhiteSpace(txtMF_memID.Text))
+                {
+                    MessageBox.Show("Enter name in correct format.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                else if ((!vf.IsNIC(txtmfNIC.Text)) && string.IsNullOrWhiteSpace(txtMF_memID.Text) && (string.IsNullOrWhiteSpace(txtMFee_name.Text)))
+                {
+                    MessageBox.Show("NIC  is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                // else return true;
+
+
+                else return true;
+
+
+            }
+        }
+        private void btnM3_check_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int memID = (string.IsNullOrEmpty(txtMF_memID.Text) ? 0 : int.Parse(txtMF_memID.Text));
+                string nic = txtmfNIC.Text.ToString();
+                 txtMFee_name.Text.ToString();
+
+                Buisness_Logic.feeRepository fr = new Buisness_Logic.feeRepository();
+
+                DataTable dt = fr.search_aerobic_fee(memID, nic);
+
+                if (dt.Rows.Count > 0)
+                {
+                    txtMF_memID.Text =dt.Rows[0]["memberID"].ToString();
+                    txtMFee_name.Text = dt.Rows[0]["name"].ToString();
+                    txtmfNIC.Text = dt.Rows[0]["nic"].ToString(); ;
+                    txtMF_lastValidDate.Text = dt.Rows[0]["valde_date"].ToString();
+                    txtlstPaidDate.Text = dt.Rows[0]["recentPayment_date"].ToString();
+                    txtLastpaidtime.Text = dt.Rows[0]["recentPayment_time"].ToString();
+                    txtMF_amount.Text = dt.Rows[0]["recentPayment"].ToString();
+                    txtfservice.Text = dt.Rows[0]["service"].ToString();
+                }
+
+            }
+            catch (Exception ff)
+            {
+
+                throw;
+            }
+        }
+        private void clearFee()
+        {
+            txtMFee_name.Text = "";
+            txtmfNIC.Text = "";
+            txtMF_amount.Text = "";
+            txtMF_lastValidDate.Text = "";
+            txtfservice.Text = "";
+            txtMF_memID.Text = "";
+            
+
+            txtlstPaidDate.Text = "";
+            txtLastpaidtime.Text = "";
+            txtMF_memID.Focus();
+
+
+        }
+        private void btnMFee_clear1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmfCalcPayment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception fsdf)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -759,5 +759,10 @@ namespace GymMSystem.Interfaces
         {
 
         }
+
+        private void btnPrAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

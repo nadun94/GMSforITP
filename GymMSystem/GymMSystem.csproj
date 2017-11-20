@@ -128,11 +128,13 @@
     <Compile Include="Buisness Logic\feeRepository.cs" />
     <Compile Include="Buisness Logic\finace_repository.cs" />
     <Compile Include="Buisness Logic\Finance.cs" />
+    <Compile Include="Buisness Logic\global.cs" />
     <Compile Include="Buisness Logic\gymMember.cs" />
     <Compile Include="Buisness Logic\gymMemberRepository.cs" />
     <Compile Include="Buisness Logic\hourly_services.cs" />
     <Compile Include="Buisness Logic\inventory.cs" />
     <Compile Include="Buisness Logic\inventoryRepository.cs" />
+    <Compile Include="Buisness Logic\login.cs" />
     <Compile Include="Buisness Logic\member.cs" />
     <Compile Include="Buisness Logic\monthly_services.cs" />
     <Compile Include="Buisness Logic\nonRepairableItem_repository.cs" />

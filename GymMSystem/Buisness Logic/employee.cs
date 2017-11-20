@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymMSystem.Buisness_Logic
 {
-    class employee
+   public class employee
     {
         public int empID { get; set; }
         public string  name { get; set; }

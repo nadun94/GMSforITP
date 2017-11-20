@@ -85,6 +85,7 @@
             this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
             this.tabemp_attendence = new MetroFramework.Controls.MetroTabPage();
+            this.btncalculate_Hours = new MetroFramework.Controls.MetroTile();
             this.btnGenEndTime = new MetroFramework.Controls.MetroTile();
             this.btngen_starttime = new MetroFramework.Controls.MetroTile();
             this.btnAtAdEndTime = new MetroFramework.Controls.MetroTile();
@@ -125,7 +126,6 @@
             this.openFileDialogEmp = new System.Windows.Forms.OpenFileDialog();
             this.btnHome_emp = new MetroFramework.Controls.MetroTile();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btncalculate_Hours = new MetroFramework.Controls.MetroTile();
             this.Emptab.SuspendLayout();
             this.tabAddEmp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picuturebox_emp1)).BeginInit();
@@ -1426,6 +1426,23 @@
             this.tabemp_attendence.VerticalScrollbarHighlightOnWheel = false;
             this.tabemp_attendence.VerticalScrollbarSize = 10;
             // 
+            // btncalculate_Hours
+            // 
+            this.btncalculate_Hours.ActiveControl = null;
+            this.btncalculate_Hours.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btncalculate_Hours.Location = new System.Drawing.Point(1015, 262);
+            this.btncalculate_Hours.Margin = new System.Windows.Forms.Padding(2);
+            this.btncalculate_Hours.Name = "btncalculate_Hours";
+            this.btncalculate_Hours.Size = new System.Drawing.Size(193, 45);
+            this.btncalculate_Hours.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btncalculate_Hours.TabIndex = 93;
+            this.btncalculate_Hours.Text = "Calculate hours";
+            this.btncalculate_Hours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btncalculate_Hours.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btncalculate_Hours.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btncalculate_Hours.UseSelectable = true;
+            this.btncalculate_Hours.Click += new System.EventHandler(this.btncalculate_Hours_Click);
+            // 
             // btnGenEndTime
             // 
             this.btnGenEndTime.ActiveControl = null;
@@ -1880,6 +1897,7 @@
             this.btnPrAdd.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnPrAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnPrAdd.UseSelectable = true;
+            this.btnPrAdd.Click += new System.EventHandler(this.btnPrAdd_Click);
             // 
             // btnPrClear
             // 
@@ -2362,23 +2380,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btncalculate_Hours
-            // 
-            this.btncalculate_Hours.ActiveControl = null;
-            this.btncalculate_Hours.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btncalculate_Hours.Location = new System.Drawing.Point(1015, 262);
-            this.btncalculate_Hours.Margin = new System.Windows.Forms.Padding(2);
-            this.btncalculate_Hours.Name = "btncalculate_Hours";
-            this.btncalculate_Hours.Size = new System.Drawing.Size(193, 45);
-            this.btncalculate_Hours.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btncalculate_Hours.TabIndex = 93;
-            this.btncalculate_Hours.Text = "Calculate hours";
-            this.btncalculate_Hours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btncalculate_Hours.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btncalculate_Hours.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btncalculate_Hours.UseSelectable = true;
-            this.btncalculate_Hours.Click += new System.EventHandler(this.btncalculate_Hours_Click);
             // 
             // Emplyee
             // 

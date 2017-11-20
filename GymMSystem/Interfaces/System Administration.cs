@@ -173,59 +173,171 @@ namespace GymMSystem.Interfaces
         {
 
         }
+        private bool validateUpdate_AddServices()
+        {
+            Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+            bool sname, cordinator, day, fee, stime, etime;
 
+
+
+            //Service name
+            if (!val1.IsWord(txtOS1_name.Text) && string.IsNullOrWhiteSpace(txtOS1_name.Text))
+            {
+
+                this.errorProvider1.SetError(txtOS1_name, "Service name is invalid.");
+                sname = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtOS1_name, (string)null);
+                sname = true;
+                
+            }
+
+            // rate 
+            if (!val1.isPrice(txtOS1_Rate.Text) && string.IsNullOrWhiteSpace(txtOS1_Rate.Text))
+            {
+
+                this.errorProvider1.SetError(txtOS1_Rate, "Service charge is invalid.");
+                fee = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtOS1_Rate, (string)null);
+                fee = true;
+
+            }
+
+            if (radio_mc.Checked == true)
+            {
+                //Cordinator name
+                if (!val1.IsName(txt_cordinator.Text) && string.IsNullOrWhiteSpace(txt_cordinator.Text))
+                {
+
+                    this.errorProvider1.SetError(txt_cordinator, "Cordinator name is invalid.");
+                    cordinator = false;
+
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txt_cordinator, (string)null);
+                    cordinator = true;
+
+                }
+
+
+                //Day
+                if (cmbOS1_day.SelectedIndex.Equals(-1))
+                {
+                    this.errorProvider1.SetError(cmbOS1_day, "Day is not selected.");
+                    day = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(cmbOS1_day, (string)null);
+                    day = true;
+                }
+
+
+
+                //start time
+                DateTime dt1;
+                if (DateTime.TryParse(txtOS1_statingTime.Text, out dt1) && dt1 > DateTime.Now && string.IsNullOrWhiteSpace(txtOS1_statingTime.Text))
+                {
+                    this.errorProvider1.SetError(txtOS1_statingTime, "Start time is invalid.");
+                    stime = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtOS1_statingTime, (string)null);
+                    stime = true;
+                }
+
+                //end time
+                DateTime dt2;
+                if (DateTime.TryParse(txtOS1_EndingTime.Text, out dt2) && dt2 > DateTime.Now && string.IsNullOrWhiteSpace(txtOS1_EndingTime.Text))
+                {
+                    this.errorProvider1.SetError(txtOS1_EndingTime, "End time is invalid.");
+                    etime = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtOS1_EndingTime, (string)null);
+                    etime = true;
+                }
+                if (cordinator == true && day == true && stime == true && etime == true ) return true;
+                else return false;
+
+            }
+
+            else
+            {
+                if (sname == true && fee == true) return true;
+                else return false;
+            }
+
+            
+            
+
+        }
         private void btnOS1_Save_Click(object sender, EventArgs e)
         {
-            try
+            if (validateUpdate_AddServices())
             {
-
-                if (radio_mc.Checked)
+                try
                 {
-                    Buisness_Logic.monthly_services ser = new Buisness_Logic.monthly_services();
-                    ser.cordinator = txt_cordinator.Text;
-                    ser.start_time = txtOS1_statingTime.Text;
-                    ser.end_time = txtOS1_EndingTime.Text;
-                    ser.day = cmbOS1_day.SelectedItem.ToString();
-                    ser.service_name = txtOS1_name.Text;
-                    ser.monthly_charge = double.Parse(txtOS1_Rate.Text);
-                    ser.service_type = "Monthly";
 
-
-                    if (ser.addMonthly_service(ser))
+                    if (radio_mc.Checked)
                     {
-                        MessageBox.Show("Service added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Buisness_Logic.monthly_services ser = new Buisness_Logic.monthly_services();
+                        ser.cordinator = txt_cordinator.Text;
+                        ser.start_time = txtOS1_statingTime.Text;
+                        ser.end_time = txtOS1_EndingTime.Text;
+                        ser.day = cmbOS1_day.SelectedItem.ToString();
+                        ser.service_name = txtOS1_name.Text;
+                        ser.monthly_charge = double.Parse(txtOS1_Rate.Text);
+                        ser.service_type = "Monthly";
+
+
+                        if (ser.addMonthly_service(ser))
+                        {
+                            MessageBox.Show("Service added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
 
+                    if (radio_hc.Checked)
+                    {
+                        Buisness_Logic.hourly_services hser = new Buisness_Logic.hourly_services();
+
+                        hser.service_type = "Hourly";
+                        hser.service_name = txtOS1_name.Text;
+                        hser.hourly_rate = double.Parse(txtOS1_Rate.Text);
+
+
+                        if (hser.addHourly_service(hser))
+                        {
+                            MessageBox.Show("Service added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-
-                if (radio_hc.Checked)
+                catch (Exception fsf)
                 {
-                    Buisness_Logic.hourly_services hser = new Buisness_Logic.hourly_services();
 
-                    hser.service_type = "Hourly";
-                    hser.service_name = txtOS1_name.Text;
-                    hser.hourly_rate = double.Parse(txtOS1_Rate.Text);
-
-
-                    if (hser.addHourly_service(hser))
-                    {
-                        MessageBox.Show("Service added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    throw;
                 }
             }
-            catch (Exception fsf)
-            {
-
-                throw;
-            }
+            
         }
 
         private void btnOS1_clear_Click(object sender, EventArgs e)
@@ -288,7 +400,8 @@ namespace GymMSystem.Interfaces
 
         private void btnOS1_update_Click(object sender, EventArgs e)
         {
-            try
+
+            if (validateUpdate_AddServices())
             {
                 try
                 {
@@ -340,12 +453,143 @@ namespace GymMSystem.Interfaces
 
                     throw;
                 }
-
             }
-            catch (Exception dsf)
+           
+               
+
+            
+            
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_usrAcnt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buisness_Logic.login lg = new Buisness_Logic.login();
+
+                lg.emp.empID = int.Parse(txtUSacnt_empid.Text);
+                lg.username = txtUSacnt_username.Text;
+                lg.pwd = txtUSacnt_pwd.Text;
+                if (check_admin.Checked)
+                {
+                    lg.user_type = true;
+                }
+                else
+                    lg.user_type = false;
+
+               if(lg.add_users())
+                {
+                    MessageBox.Show("User account created.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               else
+                    MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception gfd)
             {
 
                 throw;
+            }
+        }
+        private bool validate_search_employee()
+        {
+
+
+            Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+            bool name, nic, empid;
+
+            if (string.IsNullOrWhiteSpace(txtUSacnt_empid.Text) && string.IsNullOrWhiteSpace(txtUSacnt_nic.Text) )
+            {
+                MessageBox.Show("Please enter employee ID or NIC or name to search employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else
+            {
+
+                // Member ID
+                if (!txtUSacnt_empid.Text.All(char.IsDigit) && !string.IsNullOrWhiteSpace(txtUSacnt_empid.Text))
+                {
+                    this.errorProvider1.SetError(txtUSacnt_empid, "Employee ID is invalid.");
+                    empid = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtUSacnt_empid, (string)null);
+                    empid = true;
+                }
+
+              
+                //NIC
+                if (!val1.IsNIC(txtUSacnt_nic.Text) && !string.IsNullOrWhiteSpace(txtUSacnt_nic.Text))
+                {
+                    this.errorProvider1.SetError(txtUSacnt_nic, "NIC is invalid.");
+                    nic = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtUSacnt_nic, (string)null);
+                    nic = true;
+                }
+
+
+
+
+                //**** main returning part
+                if (empid == true  || nic == true) return true;
+                else return false;
+            }
+        }
+
+
+        private void btnserch_Click(object sender, EventArgs e)
+        {
+            if (validate_search_employee())
+            {
+                try
+                {
+                    Buisness_Logic.employee emp = new Buisness_Logic.employee();
+
+                    emp.empID = (string.IsNullOrEmpty(txtUSacnt_empid.Text) ? 0 : int.Parse(txtUSacnt_empid.Text));
+                    emp.nic = txtUSacnt_nic.Text;
+                    emp.name = txtusre_name.Text;
+
+
+                    Buisness_Logic.EmployeeRepository emprt = new Buisness_Logic.EmployeeRepository();
+
+
+                    if (emprt.searchEMP(emp))
+                    {
+
+                        txtUSacnt_empid.Text = emp.empID.ToString();
+
+                        txtUSacnt_username.Text = emp.name.Replace(" ", "_");
+
+                        txtUSacnt_nic.Text = emp.nic;
+
+                        txtusre_name.Text = emp.name;
+                       
+                   
+                        MessageBox.Show("Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception exy)
+                {
+                    MessageBox.Show(exy.Message, "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
             }
         }
     }

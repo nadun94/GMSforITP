@@ -22,9 +22,8 @@ namespace GymMSystem.Interfaces
             InitializeComponent();
         }
 
-        private void workouts_Load(object sender, EventArgs e)
+        private void database_refresh()
         {
-
             DataLayer.dbConnect con = new DataLayer.dbConnect();
             con.openConnection();
 
@@ -47,7 +46,15 @@ namespace GymMSystem.Interfaces
             }
 
 
+            // for dataGridView
+            dataGrid_exercise.DataSource = dtq;
+            this.dataGrid_exercise.Columns[1].Visible = false;
             con.closeConnection();
+        }
+        private void workouts_Load(object sender, EventArgs e)
+        {
+
+            database_refresh();
         }
 
         private void btnHome_workouts_Click(object sender, EventArgs e)
@@ -59,19 +66,93 @@ namespace GymMSystem.Interfaces
         }
         private bool validateExercise()
         {
-            bool x = (!string.IsNullOrWhiteSpace(txtEx1_name.Text) && !string.IsNullOrWhiteSpace(txtEx2_description.Text)
-                && txtEx1_name.Text.All(char.IsLetter));
 
-            if (x)
+            bool exname, type, des,eq,ad;
+            try
             {
-                return true;
+               
+                Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+                      //Name
+            if (!val1.IsName(txtEx1_name.Text) && string.IsNullOrWhiteSpace(txtEx1_name.Text))
+                {
+
+                    this.errorProvider1.SetError(txtEx1_name, "Exercise name is invalid.");
+                    exname = false;
+
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtEx1_name, (string)null);
+                    exname = true;
+
+                }
+            //description
+                if (!val1.IsWord(txtEx2_description.Text) && string.IsNullOrWhiteSpace(txtEx2_description.Text))
+                {
+
+                    this.errorProvider1.SetError(txtEx2_description, "Exercise description is invalid.");
+                    des = false;
+
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtEx2_description, (string)null);
+                    des = true;
+
+                }
+                //type
+                if (cmbWork_cato.SelectedIndex.Equals(-1))
+                {
+                    this.errorProvider1.SetError(cmbWork_cato, "Exercise category is not selected.");
+                    type = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(cmbWork_cato, (string)null);
+                    type = true;
+                }
+                //equipments
+               
+                if (!val1.IsWord(txtEx1_equi.Text) )
+                {
+
+                    this.errorProvider1.SetError(txtEx1_equi, "Equipment name is invalid.");
+                    eq = false;
+
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtEx1_equi, (string)null);
+                    eq = true;
+
+                }
+
+                //additional
+               
+                if (!val1.IsWord(txtEx1_Addionaequi.Text))
+                {
+
+                    this.errorProvider1.SetError(txtEx1_Addionaequi, "Additional equipment name is invalid.");
+                    ad = false;
+
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtEx1_Addionaequi, (string)null);
+                    ad = true;
+
+                }
+
+
             }
-            else
+            catch (Exception fd)
             {
-                MessageBox.Show("Input data are invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+
+                throw;
             }
 
+            if (type == true && exname == true && des == true ) return true;
+            else return false;
         }
 
         private void btnexercise_save_Click(object sender, EventArgs e)
@@ -84,8 +165,19 @@ namespace GymMSystem.Interfaces
 
                     exercise1.name = txtEx1_name.Text;
                     exercise1.description = txtEx2_description.Text;
-                    exercise1.addExercise();
-                    MessageBox.Show(("Sucess !"), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    exercise1.type = cmbWork_cato.SelectedItem.ToString();
+                    exercise1.equipment = txtEx1_equi.Text;
+                    exercise1.additional_equipment = txtEx1_Addionaequi.Text;
+                    if (exercise1.addExercise())
+                    {
+                        MessageBox.Show(("Sucessfully Added!"), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        database_refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show(("Failed."), "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                   
 
 
                 }
@@ -206,6 +298,31 @@ namespace GymMSystem.Interfaces
         private void btnworkout_update_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exersixeTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGrid_exercise_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGrid_exercise.Rows[e.RowIndex];
+                    txtEx1_name.Text = row.Cells[0].Value.ToString();
+                    txtEx2_description.Text = row.Cells[1].Value.ToString();
+                    cmbWork_cato.SelectedItem = row.Cells[2].Value.ToString();
+                    
+                }
+            }
+            catch (Exception ecell)
+            {
+
+                throw;
+            }
         }
     }
 }

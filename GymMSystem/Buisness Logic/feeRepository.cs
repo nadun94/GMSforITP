@@ -201,6 +201,35 @@ namespace GymMSystem.Buisness_Logic
                 throw;
             }
         }
+
+        public DataTable search_aerobic_fee(int memberID,string nic )
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataLayer.dbConnect con = new DataLayer.dbConnect();
+                con.openConnection();
+                string q = "select * from view_aerobic_mem_Fee where memberID=@mid or nic=@nic";
+                SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+                cmd.Parameters.AddWithValue("@mid", memberID);
+                cmd.Parameters.AddWithValue("@nic", nic);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+            }
+
+            catch (Exception ffg)
+            {
+
+                throw;
+            }
+
+            return dt;
+        }
+
+       // public fee calcFee_aerobic()
             
     }
 }

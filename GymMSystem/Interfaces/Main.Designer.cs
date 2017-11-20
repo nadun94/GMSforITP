@@ -37,6 +37,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pan_Execises = new System.Windows.Forms.Panel();
+            this.lblSuper = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // panel10
@@ -143,11 +144,22 @@
             this.pan_Execises.TabIndex = 8;
             this.pan_Execises.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pan_Execises_MouseClick);
             // 
+            // lblSuper
+            // 
+            this.lblSuper.AutoSize = true;
+            this.lblSuper.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSuper.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblSuper.Location = new System.Drawing.Point(821, 39);
+            this.lblSuper.Name = "lblSuper";
+            this.lblSuper.Size = new System.Drawing.Size(0, 0);
+            this.lblSuper.TabIndex = 12;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 474);
+            this.Controls.Add(this.lblSuper);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
@@ -163,6 +175,7 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,6 +189,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pan_Execises;
+        private MetroFramework.Controls.MetroLabel lblSuper;
     }
 }
 

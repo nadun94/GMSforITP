@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnHome_workouts = new MetroFramework.Controls.MetroTile();
             this.workoutTab = new MetroFramework.Controls.MetroTabControl();
             this.exersixeTab = new MetroFramework.Controls.MetroTabPage();
@@ -76,10 +80,20 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.cmbWork_cato = new MetroFramework.Controls.MetroComboBox();
+            this.dataGrid_exercise = new MetroFramework.Controls.MetroGrid();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.txtEx1_Addionaequi = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.txtEx1_equi = new MetroFramework.Controls.MetroTextBox();
             this.workoutTab.SuspendLayout();
             this.exersixeTab.SuspendLayout();
             this.tab_get_workouts.SuspendLayout();
             this.workoutassigntab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_exercise)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome_workouts
@@ -102,15 +116,15 @@
             // workoutTab
             // 
             this.workoutTab.Controls.Add(this.exersixeTab);
-            this.workoutTab.Controls.Add(this.tab_get_workouts);
             this.workoutTab.Controls.Add(this.workoutassigntab);
+            this.workoutTab.Controls.Add(this.tab_get_workouts);
             this.workoutTab.FontSize = MetroFramework.MetroTabControlSize.Tall;
             this.workoutTab.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.workoutTab.ItemSize = new System.Drawing.Size(200, 70);
             this.workoutTab.Location = new System.Drawing.Point(24, 114);
             this.workoutTab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.workoutTab.Name = "workoutTab";
-            this.workoutTab.SelectedIndex = 2;
+            this.workoutTab.SelectedIndex = 0;
             this.workoutTab.Size = new System.Drawing.Size(1572, 724);
             this.workoutTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.workoutTab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -121,11 +135,18 @@
             // 
             // exersixeTab
             // 
-            this.exersixeTab.Controls.Add(this.btnexercise_clear);
+            this.exersixeTab.Controls.Add(this.dataGrid_exercise);
+            this.exersixeTab.Controls.Add(this.cmbWork_cato);
+            this.exersixeTab.Controls.Add(this.metroLabel3);
             this.exersixeTab.Controls.Add(this.btnexercise_save);
+            this.exersixeTab.Controls.Add(this.btnexercise_clear);
             this.exersixeTab.Controls.Add(this.metroLabel1);
             this.exersixeTab.Controls.Add(this.txtEx2_description);
+            this.exersixeTab.Controls.Add(this.txtEx1_equi);
+            this.exersixeTab.Controls.Add(this.txtEx1_Addionaequi);
+            this.exersixeTab.Controls.Add(this.metroLabel20);
             this.exersixeTab.Controls.Add(this.txtEx1_name);
+            this.exersixeTab.Controls.Add(this.metroLabel19);
             this.exersixeTab.Controls.Add(this.metroLabel15);
             this.exersixeTab.HorizontalScrollbarBarColor = true;
             this.exersixeTab.HorizontalScrollbarHighlightOnWheel = false;
@@ -139,12 +160,13 @@
             this.exersixeTab.VerticalScrollbarBarColor = true;
             this.exersixeTab.VerticalScrollbarHighlightOnWheel = false;
             this.exersixeTab.VerticalScrollbarSize = 10;
+            this.exersixeTab.Click += new System.EventHandler(this.exersixeTab_Click);
             // 
             // btnexercise_clear
             // 
             this.btnexercise_clear.ActiveControl = null;
             this.btnexercise_clear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnexercise_clear.Location = new System.Drawing.Point(666, 239);
+            this.btnexercise_clear.Location = new System.Drawing.Point(1114, 144);
             this.btnexercise_clear.Name = "btnexercise_clear";
             this.btnexercise_clear.Size = new System.Drawing.Size(91, 40);
             this.btnexercise_clear.Style = MetroFramework.MetroColorStyle.Teal;
@@ -160,7 +182,7 @@
             // 
             this.btnexercise_save.ActiveControl = null;
             this.btnexercise_save.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnexercise_save.Location = new System.Drawing.Point(666, 152);
+            this.btnexercise_save.Location = new System.Drawing.Point(1114, 65);
             this.btnexercise_save.Name = "btnexercise_save";
             this.btnexercise_save.Size = new System.Drawing.Size(91, 40);
             this.btnexercise_save.Style = MetroFramework.MetroColorStyle.Teal;
@@ -178,7 +200,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(164, 239);
+            this.metroLabel1.Location = new System.Drawing.Point(55, 257);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(102, 25);
@@ -194,9 +216,9 @@
             // 
             // 
             this.txtEx2_description.CustomButton.Image = null;
-            this.txtEx2_description.CustomButton.Location = new System.Drawing.Point(176, 2);
+            this.txtEx2_description.CustomButton.Location = new System.Drawing.Point(306, 1);
             this.txtEx2_description.CustomButton.Name = "";
-            this.txtEx2_description.CustomButton.Size = new System.Drawing.Size(89, 89);
+            this.txtEx2_description.CustomButton.Size = new System.Drawing.Size(139, 139);
             this.txtEx2_description.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtEx2_description.CustomButton.TabIndex = 1;
             this.txtEx2_description.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -205,7 +227,7 @@
             this.txtEx2_description.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEx2_description.ForeColor = System.Drawing.Color.White;
             this.txtEx2_description.Lines = new string[0];
-            this.txtEx2_description.Location = new System.Drawing.Point(319, 205);
+            this.txtEx2_description.Location = new System.Drawing.Point(210, 223);
             this.txtEx2_description.Margin = new System.Windows.Forms.Padding(2);
             this.txtEx2_description.MaxLength = 32767;
             this.txtEx2_description.Multiline = true;
@@ -216,7 +238,7 @@
             this.txtEx2_description.SelectionLength = 0;
             this.txtEx2_description.SelectionStart = 0;
             this.txtEx2_description.ShortcutsEnabled = true;
-            this.txtEx2_description.Size = new System.Drawing.Size(268, 94);
+            this.txtEx2_description.Size = new System.Drawing.Size(446, 141);
             this.txtEx2_description.TabIndex = 53;
             this.txtEx2_description.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEx2_description.UseSelectable = true;
@@ -242,7 +264,7 @@
             this.txtEx1_name.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEx1_name.ForeColor = System.Drawing.Color.White;
             this.txtEx1_name.Lines = new string[0];
-            this.txtEx1_name.Location = new System.Drawing.Point(319, 140);
+            this.txtEx1_name.Location = new System.Drawing.Point(210, 65);
             this.txtEx1_name.Margin = new System.Windows.Forms.Padding(2);
             this.txtEx1_name.MaxLength = 32767;
             this.txtEx1_name.Name = "txtEx1_name";
@@ -265,7 +287,7 @@
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel15.Location = new System.Drawing.Point(164, 138);
+            this.metroLabel15.Location = new System.Drawing.Point(55, 63);
             this.metroLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(59, 25);
@@ -1174,6 +1196,194 @@
             this.metroLabel2.Text = "Exercise Name";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(564, 63);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(147, 25);
+            this.metroLabel3.TabIndex = 58;
+            this.metroLabel3.Text = "Exercise category";
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // cmbWork_cato
+            // 
+            this.cmbWork_cato.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbWork_cato.FormattingEnabled = true;
+            this.cmbWork_cato.ItemHeight = 23;
+            this.cmbWork_cato.Items.AddRange(new object[] {
+            "Endurance",
+            "Strength",
+            "Balance",
+            "Flexibility"});
+            this.cmbWork_cato.Location = new System.Drawing.Point(737, 63);
+            this.cmbWork_cato.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbWork_cato.Name = "cmbWork_cato";
+            this.cmbWork_cato.Size = new System.Drawing.Size(168, 29);
+            this.cmbWork_cato.Style = MetroFramework.MetroColorStyle.Teal;
+            this.cmbWork_cato.TabIndex = 97;
+            this.cmbWork_cato.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.cmbWork_cato.UseSelectable = true;
+            // 
+            // dataGrid_exercise
+            // 
+            this.dataGrid_exercise.AllowUserToAddRows = false;
+            this.dataGrid_exercise.AllowUserToDeleteRows = false;
+            this.dataGrid_exercise.AllowUserToResizeRows = false;
+            this.dataGrid_exercise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGrid_exercise.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGrid_exercise.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGrid_exercise.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_exercise.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrid_exercise.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_exercise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGrid_exercise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_exercise.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGrid_exercise.EnableHeadersVisualStyles = false;
+            this.dataGrid_exercise.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGrid_exercise.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGrid_exercise.Location = new System.Drawing.Point(111, 474);
+            this.dataGrid_exercise.Name = "dataGrid_exercise";
+            this.dataGrid_exercise.ReadOnly = true;
+            this.dataGrid_exercise.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_exercise.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGrid_exercise.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGrid_exercise.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGrid_exercise.Size = new System.Drawing.Size(959, 192);
+            this.dataGrid_exercise.Style = MetroFramework.MetroColorStyle.Lime;
+            this.dataGrid_exercise.TabIndex = 98;
+            this.dataGrid_exercise.UseStyleColors = true;
+            this.dataGrid_exercise.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_exercise_CellClick);
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel19.Location = new System.Drawing.Point(562, 144);
+            this.metroLabel19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(181, 25);
+            this.metroLabel19.TabIndex = 52;
+            this.metroLabel19.Text = "Additonal Equipment";
+            this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // txtEx1_Addionaequi
+            // 
+            this.txtEx1_Addionaequi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEx1_Addionaequi.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtEx1_Addionaequi.CustomButton.Image = null;
+            this.txtEx1_Addionaequi.CustomButton.Location = new System.Drawing.Point(206, 1);
+            this.txtEx1_Addionaequi.CustomButton.Name = "";
+            this.txtEx1_Addionaequi.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtEx1_Addionaequi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtEx1_Addionaequi.CustomButton.TabIndex = 1;
+            this.txtEx1_Addionaequi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtEx1_Addionaequi.CustomButton.UseSelectable = true;
+            this.txtEx1_Addionaequi.CustomButton.Visible = false;
+            this.txtEx1_Addionaequi.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtEx1_Addionaequi.ForeColor = System.Drawing.Color.White;
+            this.txtEx1_Addionaequi.Lines = new string[0];
+            this.txtEx1_Addionaequi.Location = new System.Drawing.Point(747, 146);
+            this.txtEx1_Addionaequi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEx1_Addionaequi.MaxLength = 32767;
+            this.txtEx1_Addionaequi.Name = "txtEx1_Addionaequi";
+            this.txtEx1_Addionaequi.PasswordChar = '\0';
+            this.txtEx1_Addionaequi.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEx1_Addionaequi.SelectedText = "";
+            this.txtEx1_Addionaequi.SelectionLength = 0;
+            this.txtEx1_Addionaequi.SelectionStart = 0;
+            this.txtEx1_Addionaequi.ShortcutsEnabled = true;
+            this.txtEx1_Addionaequi.Size = new System.Drawing.Size(228, 23);
+            this.txtEx1_Addionaequi.TabIndex = 54;
+            this.txtEx1_Addionaequi.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtEx1_Addionaequi.UseSelectable = true;
+            this.txtEx1_Addionaequi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtEx1_Addionaequi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel20.Location = new System.Drawing.Point(55, 144);
+            this.metroLabel20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(98, 25);
+            this.metroLabel20.TabIndex = 52;
+            this.metroLabel20.Text = "Equipment";
+            this.metroLabel20.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // txtEx1_equi
+            // 
+            this.txtEx1_equi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEx1_equi.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtEx1_equi.CustomButton.Image = null;
+            this.txtEx1_equi.CustomButton.Location = new System.Drawing.Point(246, 1);
+            this.txtEx1_equi.CustomButton.Name = "";
+            this.txtEx1_equi.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtEx1_equi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtEx1_equi.CustomButton.TabIndex = 1;
+            this.txtEx1_equi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtEx1_equi.CustomButton.UseSelectable = true;
+            this.txtEx1_equi.CustomButton.Visible = false;
+            this.txtEx1_equi.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtEx1_equi.ForeColor = System.Drawing.Color.White;
+            this.txtEx1_equi.Lines = new string[0];
+            this.txtEx1_equi.Location = new System.Drawing.Point(210, 146);
+            this.txtEx1_equi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEx1_equi.MaxLength = 32767;
+            this.txtEx1_equi.Name = "txtEx1_equi";
+            this.txtEx1_equi.PasswordChar = '\0';
+            this.txtEx1_equi.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEx1_equi.SelectedText = "";
+            this.txtEx1_equi.SelectionLength = 0;
+            this.txtEx1_equi.SelectionStart = 0;
+            this.txtEx1_equi.ShortcutsEnabled = true;
+            this.txtEx1_equi.Size = new System.Drawing.Size(268, 23);
+            this.txtEx1_equi.TabIndex = 54;
+            this.txtEx1_equi.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtEx1_equi.UseSelectable = true;
+            this.txtEx1_equi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtEx1_equi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // workouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1191,6 +1401,8 @@
             this.tab_get_workouts.PerformLayout();
             this.workoutassigntab.ResumeLayout(false);
             this.workoutassigntab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_exercise)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1245,5 +1457,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroComboBox cmbWork_cato;
+        private MetroFramework.Controls.MetroGrid dataGrid_exercise;
+        private MetroFramework.Controls.MetroTextBox txtEx1_equi;
+        private MetroFramework.Controls.MetroTextBox txtEx1_Addionaequi;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
     }
 }

@@ -39,10 +39,10 @@
             // btnLogClear
             // 
             this.btnLogClear.ActiveControl = null;
-            this.btnLogClear.Location = new System.Drawing.Point(264, 313);
+            this.btnLogClear.Location = new System.Drawing.Point(261, 346);
             this.btnLogClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogClear.Name = "btnLogClear";
-            this.btnLogClear.Size = new System.Drawing.Size(104, 39);
+            this.btnLogClear.Size = new System.Drawing.Size(97, 62);
             this.btnLogClear.Style = MetroFramework.MetroColorStyle.Red;
             this.btnLogClear.TabIndex = 10;
             this.btnLogClear.Text = "Clear";
@@ -50,14 +50,15 @@
             this.btnLogClear.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnLogClear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnLogClear.UseSelectable = true;
+            this.btnLogClear.Click += new System.EventHandler(this.btnLogClear_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.ActiveControl = null;
-            this.btnLogin.Location = new System.Drawing.Point(128, 313);
+            this.btnLogin.Location = new System.Drawing.Point(125, 346);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(104, 39);
+            this.btnLogin.Size = new System.Drawing.Size(97, 62);
             this.btnLogin.Style = MetroFramework.MetroColorStyle.Red;
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Sign In";
@@ -65,6 +66,7 @@
             this.btnLogin.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnLogin.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnLogin.UseSelectable = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // txtLogPwd
             // 
@@ -72,9 +74,9 @@
             // 
             // 
             this.txtLogPwd.CustomButton.Image = null;
-            this.txtLogPwd.CustomButton.Location = new System.Drawing.Point(126, 2);
+            this.txtLogPwd.CustomButton.Location = new System.Drawing.Point(134, 2);
             this.txtLogPwd.CustomButton.Name = "";
-            this.txtLogPwd.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtLogPwd.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtLogPwd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtLogPwd.CustomButton.TabIndex = 1;
             this.txtLogPwd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -93,8 +95,9 @@
             this.txtLogPwd.SelectionLength = 0;
             this.txtLogPwd.SelectionStart = 0;
             this.txtLogPwd.ShortcutsEnabled = true;
-            this.txtLogPwd.Size = new System.Drawing.Size(148, 24);
+            this.txtLogPwd.Size = new System.Drawing.Size(160, 28);
             this.txtLogPwd.TabIndex = 8;
+            this.txtLogPwd.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txtLogPwd.UseSelectable = true;
             this.txtLogPwd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLogPwd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -105,9 +108,9 @@
             // 
             // 
             this.txtLogUsename.CustomButton.Image = null;
-            this.txtLogUsename.CustomButton.Location = new System.Drawing.Point(126, 2);
+            this.txtLogUsename.CustomButton.Location = new System.Drawing.Point(134, 2);
             this.txtLogUsename.CustomButton.Name = "";
-            this.txtLogUsename.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtLogUsename.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtLogUsename.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtLogUsename.CustomButton.TabIndex = 1;
             this.txtLogUsename.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -116,18 +119,19 @@
             this.txtLogUsename.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtLogUsename.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtLogUsename.Lines = new string[0];
-            this.txtLogUsename.Location = new System.Drawing.Point(229, 178);
+            this.txtLogUsename.Location = new System.Drawing.Point(229, 154);
             this.txtLogUsename.Margin = new System.Windows.Forms.Padding(2);
             this.txtLogUsename.MaxLength = 32767;
             this.txtLogUsename.Name = "txtLogUsename";
-            this.txtLogUsename.PasswordChar = '.';
+            this.txtLogUsename.PasswordChar = '\0';
             this.txtLogUsename.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtLogUsename.SelectedText = "";
             this.txtLogUsename.SelectionLength = 0;
             this.txtLogUsename.SelectionStart = 0;
             this.txtLogUsename.ShortcutsEnabled = true;
-            this.txtLogUsename.Size = new System.Drawing.Size(148, 24);
+            this.txtLogUsename.Size = new System.Drawing.Size(160, 28);
             this.txtLogUsename.TabIndex = 7;
+            this.txtLogUsename.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txtLogUsename.UseSelectable = true;
             this.txtLogUsename.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLogUsename.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -137,26 +141,28 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(105, 229);
+            this.metroLabel2.Location = new System.Drawing.Point(85, 229);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(92, 25);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Password";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(105, 177);
+            this.metroLabel1.Location = new System.Drawing.Point(85, 153);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(97, 25);
             this.metroLabel1.TabIndex = 6;
             this.metroLabel1.Text = "Username";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Login
             // 
@@ -172,6 +178,7 @@
             this.Name = "Login";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Login";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,14 +16,21 @@ namespace GymMSystem
         public Main()
         {
             InitializeComponent();
+           // Buisness_Logic.login superLg = lg; 
         }
-
+        //public  Buisness_Logic.login superLOG { get; set; }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //lblSuper.Text = "Hi " + Buisness_Logic.global.sglobal.username;
+            
+            //if(Buisness_Logic.global.sglobal.user_type == false)
+            //{
+            //    panel8.Enabled = false;
 
+            //}
         }
+       
 
-        
 
         private void panel6_MouseClick(object sender, MouseEventArgs e)
         {

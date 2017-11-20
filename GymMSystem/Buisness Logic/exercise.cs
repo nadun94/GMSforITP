@@ -13,6 +13,9 @@ namespace GymMSystem.Buisness_Logic
     {
         public string name { get; set; }
         public string description { get; set; }
+        public string  type { get; set; }
+        public string equipment { get; set; }
+        public string additional_equipment { get; set; }
 
         public bool addExercise()
         {
@@ -20,10 +23,13 @@ namespace GymMSystem.Buisness_Logic
             {
                 DataLayer.dbConnect myDb = new DataLayer.dbConnect();
                 myDb.openConnection();
-                string qry = ("INSERT INTO tbl_exercise VALUES (@a,@b)");
+                string qry = ("INSERT INTO tbl_exercise VALUES (@a,@b,@type,@equi,@add)");
                 SqlCommand cmd = new SqlCommand(qry, myDb.getConnection());
                 cmd.Parameters.AddWithValue("@a", name);
                 cmd.Parameters.AddWithValue("@b", description);
+                cmd.Parameters.AddWithValue("@type", type);
+                cmd.Parameters.AddWithValue("@equi", equipment);
+                cmd.Parameters.AddWithValue("@add", additional_equipment);
                 cmd.ExecuteNonQuery();
                 myDb.closeConnection();
                 return true;
