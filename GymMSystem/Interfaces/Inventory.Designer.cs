@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnHome_inven = new MetroFramework.Controls.MetroTile();
             this.tab_inventory = new MetroFramework.Controls.MetroTabControl();
             this.GymEquip_Tab = new MetroFramework.Controls.MetroTabPage();
@@ -188,7 +188,7 @@
             this.tab_inventory.Location = new System.Drawing.Point(36, 97);
             this.tab_inventory.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.tab_inventory.Name = "tab_inventory";
-            this.tab_inventory.SelectedIndex = 4;
+            this.tab_inventory.SelectedIndex = 3;
             this.tab_inventory.Size = new System.Drawing.Size(1586, 722);
             this.tab_inventory.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tab_inventory.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -237,7 +237,7 @@
             this.radio_nonRep.AutoSize = true;
             this.radio_nonRep.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
             this.radio_nonRep.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.radio_nonRep.Location = new System.Drawing.Point(507, 101);
+            this.radio_nonRep.Location = new System.Drawing.Point(668, 101);
             this.radio_nonRep.Margin = new System.Windows.Forms.Padding(2);
             this.radio_nonRep.Name = "radio_nonRep";
             this.radio_nonRep.Size = new System.Drawing.Size(197, 25);
@@ -268,7 +268,7 @@
             // btnBrowse_i1
             // 
             this.btnBrowse_i1.ActiveControl = null;
-            this.btnBrowse_i1.Location = new System.Drawing.Point(839, 414);
+            this.btnBrowse_i1.Location = new System.Drawing.Point(1079, 401);
             this.btnBrowse_i1.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse_i1.Name = "btnBrowse_i1";
             this.btnBrowse_i1.Size = new System.Drawing.Size(118, 43);
@@ -284,7 +284,7 @@
             // pictureBox_i2
             // 
             this.pictureBox_i2.BackColor = System.Drawing.Color.White;
-            this.pictureBox_i2.Location = new System.Drawing.Point(817, 175);
+            this.pictureBox_i2.Location = new System.Drawing.Point(1057, 162);
             this.pictureBox_i2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_i2.Name = "pictureBox_i2";
             this.pictureBox_i2.Size = new System.Drawing.Size(161, 200);
@@ -294,7 +294,7 @@
             // btnclear_invt1
             // 
             this.btnclear_invt1.ActiveControl = null;
-            this.btnclear_invt1.Location = new System.Drawing.Point(1019, 309);
+            this.btnclear_invt1.Location = new System.Drawing.Point(1309, 305);
             this.btnclear_invt1.Margin = new System.Windows.Forms.Padding(2);
             this.btnclear_invt1.Name = "btnclear_invt1";
             this.btnclear_invt1.Size = new System.Drawing.Size(93, 43);
@@ -310,7 +310,7 @@
             // btnsave_Int1
             // 
             this.btnsave_Int1.ActiveControl = null;
-            this.btnsave_Int1.Location = new System.Drawing.Point(1019, 220);
+            this.btnsave_Int1.Location = new System.Drawing.Point(1309, 216);
             this.btnsave_Int1.Margin = new System.Windows.Forms.Padding(2);
             this.btnsave_Int1.Name = "btnsave_Int1";
             this.btnsave_Int1.Size = new System.Drawing.Size(93, 43);
@@ -395,7 +395,7 @@
             this.txtI1_imodel.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_imodel.ForeColor = System.Drawing.Color.White;
             this.txtI1_imodel.Lines = new string[0];
-            this.txtI1_imodel.Location = new System.Drawing.Point(619, 274);
+            this.txtI1_imodel.Location = new System.Drawing.Point(780, 274);
             this.txtI1_imodel.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_imodel.MaxLength = 32767;
             this.txtI1_imodel.Name = "txtI1_imodel";
@@ -418,7 +418,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(466, 274);
+            this.metroLabel4.Location = new System.Drawing.Point(627, 274);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(63, 25);
@@ -486,7 +486,7 @@
             this.lblQty.AutoSize = true;
             this.lblQty.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblQty.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblQty.Location = new System.Drawing.Point(466, 337);
+            this.lblQty.Location = new System.Drawing.Point(627, 337);
             this.lblQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(80, 25);
@@ -567,7 +567,7 @@
             this.txtInv_1qty.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtInv_1qty.ForeColor = System.Drawing.Color.White;
             this.txtInv_1qty.Lines = new string[0];
-            this.txtInv_1qty.Location = new System.Drawing.Point(619, 339);
+            this.txtInv_1qty.Location = new System.Drawing.Point(780, 339);
             this.txtInv_1qty.Margin = new System.Windows.Forms.Padding(2);
             this.txtInv_1qty.MaxLength = 32767;
             this.txtInv_1qty.Name = "txtInv_1qty";
@@ -604,7 +604,7 @@
             this.txtI1_icode.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_icode.ForeColor = System.Drawing.Color.White;
             this.txtI1_icode.Lines = new string[0];
-            this.txtI1_icode.Location = new System.Drawing.Point(619, 206);
+            this.txtI1_icode.Location = new System.Drawing.Point(780, 206);
             this.txtI1_icode.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_icode.MaxLength = 32767;
             this.txtI1_icode.Name = "txtI1_icode";
@@ -627,7 +627,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(466, 206);
+            this.metroLabel2.Location = new System.Drawing.Point(627, 206);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(121, 25);
@@ -728,7 +728,7 @@
             // btnwlidelete
             // 
             this.btnwlidelete.ActiveControl = null;
-            this.btnwlidelete.Location = new System.Drawing.Point(1068, 221);
+            this.btnwlidelete.Location = new System.Drawing.Point(1348, 234);
             this.btnwlidelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnwlidelete.Name = "btnwlidelete";
             this.btnwlidelete.Size = new System.Drawing.Size(93, 43);
@@ -745,7 +745,7 @@
             // btnwliUpdate
             // 
             this.btnwliUpdate.ActiveControl = null;
-            this.btnwliUpdate.Location = new System.Drawing.Point(1068, 141);
+            this.btnwliUpdate.Location = new System.Drawing.Point(1348, 154);
             this.btnwliUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnwliUpdate.Name = "btnwliUpdate";
             this.btnwliUpdate.Size = new System.Drawing.Size(93, 43);
@@ -762,7 +762,7 @@
             // btnWliBrowse
             // 
             this.btnWliBrowse.ActiveControl = null;
-            this.btnWliBrowse.Location = new System.Drawing.Point(888, 316);
+            this.btnWliBrowse.Location = new System.Drawing.Point(1042, 316);
             this.btnWliBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnWliBrowse.Name = "btnWliBrowse";
             this.btnWliBrowse.Size = new System.Drawing.Size(118, 43);
@@ -777,7 +777,7 @@
             // picboxWli
             // 
             this.picboxWli.BackColor = System.Drawing.Color.White;
-            this.picboxWli.Location = new System.Drawing.Point(866, 77);
+            this.picboxWli.Location = new System.Drawing.Point(1020, 77);
             this.picboxWli.Margin = new System.Windows.Forms.Padding(2);
             this.picboxWli.Name = "picboxWli";
             this.picboxWli.Size = new System.Drawing.Size(161, 200);
@@ -787,7 +787,7 @@
             // btnWlficlear
             // 
             this.btnWlficlear.ActiveControl = null;
-            this.btnWlficlear.Location = new System.Drawing.Point(1068, 305);
+            this.btnWlficlear.Location = new System.Drawing.Point(1348, 318);
             this.btnWlficlear.Margin = new System.Windows.Forms.Padding(2);
             this.btnWlficlear.Name = "btnWlficlear";
             this.btnWlficlear.Size = new System.Drawing.Size(93, 43);
@@ -802,7 +802,7 @@
             // btnWli_search
             // 
             this.btnWli_search.ActiveControl = null;
-            this.btnWli_search.Location = new System.Drawing.Point(1068, 64);
+            this.btnWli_search.Location = new System.Drawing.Point(1348, 77);
             this.btnWli_search.Margin = new System.Windows.Forms.Padding(2);
             this.btnWli_search.Name = "btnWli_search";
             this.btnWli_search.Size = new System.Drawing.Size(93, 43);
@@ -835,7 +835,7 @@
             this.txtwl_price.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_price.ForeColor = System.Drawing.Color.White;
             this.txtwl_price.Lines = new string[0];
-            this.txtwl_price.Location = new System.Drawing.Point(276, 174);
+            this.txtwl_price.Location = new System.Drawing.Point(300, 174);
             this.txtwl_price.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_price.MaxLength = 32767;
             this.txtwl_price.Name = "txtwl_price";
@@ -887,7 +887,7 @@
             this.txtwl_model.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_model.ForeColor = System.Drawing.Color.White;
             this.txtwl_model.Lines = new string[0];
-            this.txtwl_model.Location = new System.Drawing.Point(668, 176);
+            this.txtwl_model.Location = new System.Drawing.Point(751, 174);
             this.txtwl_model.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_model.MaxLength = 32767;
             this.txtwl_model.Name = "txtwl_model";
@@ -910,7 +910,7 @@
             this.metroLabel21.AutoSize = true;
             this.metroLabel21.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel21.Location = new System.Drawing.Point(515, 176);
+            this.metroLabel21.Location = new System.Drawing.Point(565, 176);
             this.metroLabel21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel21.Name = "metroLabel21";
             this.metroLabel21.Size = new System.Drawing.Size(63, 25);
@@ -939,7 +939,7 @@
             this.txtwl_make.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_make.ForeColor = System.Drawing.Color.White;
             this.txtwl_make.Lines = new string[0];
-            this.txtwl_make.Location = new System.Drawing.Point(276, 241);
+            this.txtwl_make.Location = new System.Drawing.Point(300, 241);
             this.txtwl_make.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_make.MaxLength = 32767;
             this.txtwl_make.Name = "txtwl_make";
@@ -978,7 +978,7 @@
             this.metroLabel29.AutoSize = true;
             this.metroLabel29.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel29.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel29.Location = new System.Drawing.Point(515, 305);
+            this.metroLabel29.Location = new System.Drawing.Point(565, 305);
             this.metroLabel29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel29.Name = "metroLabel29";
             this.metroLabel29.Size = new System.Drawing.Size(172, 25);
@@ -994,7 +994,7 @@
             this.metroLabel23.AutoSize = true;
             this.metroLabel23.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel23.Location = new System.Drawing.Point(515, 239);
+            this.metroLabel23.Location = new System.Drawing.Point(565, 239);
             this.metroLabel23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel23.Name = "metroLabel23";
             this.metroLabel23.Size = new System.Drawing.Size(80, 25);
@@ -1023,7 +1023,7 @@
             this.txtwl_weight.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_weight.ForeColor = System.Drawing.Color.White;
             this.txtwl_weight.Lines = new string[0];
-            this.txtwl_weight.Location = new System.Drawing.Point(276, 305);
+            this.txtwl_weight.Location = new System.Drawing.Point(300, 305);
             this.txtwl_weight.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_weight.MaxLength = 32767;
             this.txtwl_weight.Name = "txtwl_weight";
@@ -1059,7 +1059,7 @@
             this.txtwl_Newqty.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_Newqty.ForeColor = System.Drawing.Color.White;
             this.txtwl_Newqty.Lines = new string[0];
-            this.txtwl_Newqty.Location = new System.Drawing.Point(716, 305);
+            this.txtwl_Newqty.Location = new System.Drawing.Point(799, 303);
             this.txtwl_Newqty.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_Newqty.MaxLength = 32767;
             this.txtwl_Newqty.Name = "txtwl_Newqty";
@@ -1111,7 +1111,7 @@
             this.txtwl_qty.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_qty.ForeColor = System.Drawing.Color.White;
             this.txtwl_qty.Lines = new string[0];
-            this.txtwl_qty.Location = new System.Drawing.Point(668, 241);
+            this.txtwl_qty.Location = new System.Drawing.Point(751, 239);
             this.txtwl_qty.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_qty.MaxLength = 32767;
             this.txtwl_qty.Name = "txtwl_qty";
@@ -1147,7 +1147,7 @@
             this.txtwl_code.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_code.ForeColor = System.Drawing.Color.White;
             this.txtwl_code.Lines = new string[0];
-            this.txtwl_code.Location = new System.Drawing.Point(668, 108);
+            this.txtwl_code.Location = new System.Drawing.Point(751, 106);
             this.txtwl_code.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_code.MaxLength = 32767;
             this.txtwl_code.Name = "txtwl_code";
@@ -1170,7 +1170,7 @@
             this.metroLabel25.AutoSize = true;
             this.metroLabel25.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel25.Location = new System.Drawing.Point(515, 108);
+            this.metroLabel25.Location = new System.Drawing.Point(565, 108);
             this.metroLabel25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel25.Name = "metroLabel25";
             this.metroLabel25.Size = new System.Drawing.Size(121, 25);
@@ -1199,7 +1199,7 @@
             this.txtwl_name.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtwl_name.ForeColor = System.Drawing.Color.White;
             this.txtwl_name.Lines = new string[0];
-            this.txtwl_name.Location = new System.Drawing.Point(276, 108);
+            this.txtwl_name.Location = new System.Drawing.Point(300, 108);
             this.txtwl_name.Margin = new System.Windows.Forms.Padding(2);
             this.txtwl_name.MaxLength = 32767;
             this.txtwl_name.Name = "txtwl_name";
@@ -1283,7 +1283,7 @@
             // btnEqui_delete
             // 
             this.btnEqui_delete.ActiveControl = null;
-            this.btnEqui_delete.Location = new System.Drawing.Point(1023, 226);
+            this.btnEqui_delete.Location = new System.Drawing.Point(1097, 226);
             this.btnEqui_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btnEqui_delete.Name = "btnEqui_delete";
             this.btnEqui_delete.Size = new System.Drawing.Size(93, 43);
@@ -1300,7 +1300,7 @@
             // btnEqui_update
             // 
             this.btnEqui_update.ActiveControl = null;
-            this.btnEqui_update.Location = new System.Drawing.Point(1023, 146);
+            this.btnEqui_update.Location = new System.Drawing.Point(1097, 146);
             this.btnEqui_update.Margin = new System.Windows.Forms.Padding(2);
             this.btnEqui_update.Name = "btnEqui_update";
             this.btnEqui_update.Size = new System.Drawing.Size(93, 43);
@@ -1317,7 +1317,7 @@
             // btnEqui_browse
             // 
             this.btnEqui_browse.ActiveControl = null;
-            this.btnEqui_browse.Location = new System.Drawing.Point(843, 321);
+            this.btnEqui_browse.Location = new System.Drawing.Point(889, 324);
             this.btnEqui_browse.Margin = new System.Windows.Forms.Padding(2);
             this.btnEqui_browse.Name = "btnEqui_browse";
             this.btnEqui_browse.Size = new System.Drawing.Size(118, 43);
@@ -1332,7 +1332,7 @@
             // pictureBoxEqui
             // 
             this.pictureBoxEqui.BackColor = System.Drawing.Color.White;
-            this.pictureBoxEqui.Location = new System.Drawing.Point(821, 82);
+            this.pictureBoxEqui.Location = new System.Drawing.Point(867, 85);
             this.pictureBoxEqui.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxEqui.Name = "pictureBoxEqui";
             this.pictureBoxEqui.Size = new System.Drawing.Size(161, 200);
@@ -1342,7 +1342,7 @@
             // btnEqui_clear
             // 
             this.btnEqui_clear.ActiveControl = null;
-            this.btnEqui_clear.Location = new System.Drawing.Point(1023, 310);
+            this.btnEqui_clear.Location = new System.Drawing.Point(1097, 310);
             this.btnEqui_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btnEqui_clear.Name = "btnEqui_clear";
             this.btnEqui_clear.Size = new System.Drawing.Size(93, 43);
@@ -1357,7 +1357,7 @@
             // btnEqui_search
             // 
             this.btnEqui_search.ActiveControl = null;
-            this.btnEqui_search.Location = new System.Drawing.Point(1023, 69);
+            this.btnEqui_search.Location = new System.Drawing.Point(1097, 69);
             this.btnEqui_search.Margin = new System.Windows.Forms.Padding(2);
             this.btnEqui_search.Name = "btnEqui_search";
             this.btnEqui_search.Size = new System.Drawing.Size(93, 43);
@@ -1685,7 +1685,7 @@
             this.txti_repfdate.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txti_repfdate.ForeColor = System.Drawing.Color.White;
             this.txti_repfdate.Lines = new string[0];
-            this.txti_repfdate.Location = new System.Drawing.Point(708, 234);
+            this.txti_repfdate.Location = new System.Drawing.Point(851, 234);
             this.txti_repfdate.Margin = new System.Windows.Forms.Padding(2);
             this.txti_repfdate.MaxLength = 32767;
             this.txti_repfdate.Name = "txti_repfdate";
@@ -1712,7 +1712,7 @@
             "Started",
             "In progress",
             "Done"});
-            this.cmbRepairINV.Location = new System.Drawing.Point(228, 282);
+            this.cmbRepairINV.Location = new System.Drawing.Point(278, 280);
             this.cmbRepairINV.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepairINV.Name = "cmbRepairINV";
             this.cmbRepairINV.Size = new System.Drawing.Size(177, 29);
@@ -1725,7 +1725,7 @@
             // 
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile1.Location = new System.Drawing.Point(964, 329);
+            this.metroTile1.Location = new System.Drawing.Point(1278, 327);
             this.metroTile1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(101, 41);
@@ -1741,7 +1741,7 @@
             // 
             this.btnDelelte_i7.ActiveControl = null;
             this.btnDelelte_i7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelelte_i7.Location = new System.Drawing.Point(964, 256);
+            this.btnDelelte_i7.Location = new System.Drawing.Point(1278, 254);
             this.btnDelelte_i7.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelelte_i7.Name = "btnDelelte_i7";
             this.btnDelelte_i7.Size = new System.Drawing.Size(101, 41);
@@ -1757,7 +1757,7 @@
             // 
             this.btnupdate_i6.ActiveControl = null;
             this.btnupdate_i6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnupdate_i6.Location = new System.Drawing.Point(964, 189);
+            this.btnupdate_i6.Location = new System.Drawing.Point(1278, 187);
             this.btnupdate_i6.Margin = new System.Windows.Forms.Padding(2);
             this.btnupdate_i6.Name = "btnupdate_i6";
             this.btnupdate_i6.Size = new System.Drawing.Size(101, 45);
@@ -1774,7 +1774,7 @@
             // 
             this.btnsearch_i5.ActiveControl = null;
             this.btnsearch_i5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnsearch_i5.Location = new System.Drawing.Point(964, 114);
+            this.btnsearch_i5.Location = new System.Drawing.Point(1278, 112);
             this.btnsearch_i5.Margin = new System.Windows.Forms.Padding(2);
             this.btnsearch_i5.Name = "btnsearch_i5";
             this.btnsearch_i5.Size = new System.Drawing.Size(101, 41);
@@ -1806,7 +1806,7 @@
             this.txtI1_icod.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_icod.ForeColor = System.Drawing.Color.White;
             this.txtI1_icod.Lines = new string[0];
-            this.txtI1_icod.Location = new System.Drawing.Point(708, 130);
+            this.txtI1_icod.Location = new System.Drawing.Point(851, 130);
             this.txtI1_icod.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_icod.MaxLength = 32767;
             this.txtI1_icod.Name = "txtI1_icod";
@@ -1829,7 +1829,7 @@
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.Location = new System.Drawing.Point(530, 133);
+            this.metroLabel12.Location = new System.Drawing.Point(647, 128);
             this.metroLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(122, 25);
@@ -1858,7 +1858,7 @@
             this.txtI1_idescription.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_idescription.ForeColor = System.Drawing.Color.White;
             this.txtI1_idescription.Lines = new string[0];
-            this.txtI1_idescription.Location = new System.Drawing.Point(708, 282);
+            this.txtI1_idescription.Location = new System.Drawing.Point(851, 282);
             this.txtI1_idescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_idescription.MaxLength = 32767;
             this.txtI1_idescription.Name = "txtI1_idescription";
@@ -1894,7 +1894,7 @@
             this.txtI1_istart.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_istart.ForeColor = System.Drawing.Color.White;
             this.txtI1_istart.Lines = new string[0];
-            this.txtI1_istart.Location = new System.Drawing.Point(708, 180);
+            this.txtI1_istart.Location = new System.Drawing.Point(851, 180);
             this.txtI1_istart.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_istart.MaxLength = 32767;
             this.txtI1_istart.Name = "txtI1_istart";
@@ -1930,7 +1930,7 @@
             this.txtI1_icost.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_icost.ForeColor = System.Drawing.Color.White;
             this.txtI1_icost.Lines = new string[0];
-            this.txtI1_icost.Location = new System.Drawing.Point(228, 229);
+            this.txtI1_icost.Location = new System.Drawing.Point(278, 227);
             this.txtI1_icost.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_icost.MaxLength = 32767;
             this.txtI1_icost.Name = "txtI1_icost";
@@ -1953,7 +1953,7 @@
             this.metroLabel20.AutoSize = true;
             this.metroLabel20.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel20.Location = new System.Drawing.Point(530, 176);
+            this.metroLabel20.Location = new System.Drawing.Point(647, 178);
             this.metroLabel20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(88, 25);
@@ -1982,7 +1982,7 @@
             this.txtI1_irepair.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_irepair.ForeColor = System.Drawing.Color.White;
             this.txtI1_irepair.Lines = new string[0];
-            this.txtI1_irepair.Location = new System.Drawing.Point(228, 130);
+            this.txtI1_irepair.Location = new System.Drawing.Point(278, 128);
             this.txtI1_irepair.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_irepair.MaxLength = 32767;
             this.txtI1_irepair.Name = "txtI1_irepair";
@@ -2006,7 +2006,7 @@
             this.metroLabel17.AutoSize = true;
             this.metroLabel17.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel17.Location = new System.Drawing.Point(530, 275);
+            this.metroLabel17.Location = new System.Drawing.Point(647, 277);
             this.metroLabel17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel17.Name = "metroLabel17";
             this.metroLabel17.Size = new System.Drawing.Size(102, 25);
@@ -2022,7 +2022,7 @@
             this.metroLabel19.AutoSize = true;
             this.metroLabel19.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel19.Location = new System.Drawing.Point(530, 227);
+            this.metroLabel19.Location = new System.Drawing.Point(647, 229);
             this.metroLabel19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(117, 25);
@@ -2100,7 +2100,7 @@
             this.txtI1_imachine.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtI1_imachine.ForeColor = System.Drawing.Color.White;
             this.txtI1_imachine.Lines = new string[0];
-            this.txtI1_imachine.Location = new System.Drawing.Point(228, 180);
+            this.txtI1_imachine.Location = new System.Drawing.Point(278, 178);
             this.txtI1_imachine.Margin = new System.Windows.Forms.Padding(2);
             this.txtI1_imachine.MaxLength = 32767;
             this.txtI1_imachine.Name = "txtI1_imachine";
@@ -2560,19 +2560,19 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;

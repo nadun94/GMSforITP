@@ -194,5 +194,36 @@ namespace GymMSystem.Buisness_Logic
             if (tempdel == true) return true;
             else return false;
         }
+
+        public DataTable searchEMP_for_datagrid()
+        {
+            DataTable dtq = new DataTable();
+            try
+            {
+                DataLayer.dbConnect dbemp_seach = new DataLayer.dbConnect();
+                dbemp_seach.openConnection();
+               
+                string query1 = "SELECT * FROM tbl_employee ";
+
+                SqlCommand cmd1 = new SqlCommand(query1, dbemp_seach.getConnection());
+
+               
+
+
+               
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+
+                da1.Fill(dtq);
+
+               
+            }
+            catch (Exception ert)
+            {
+
+                throw;
+            }
+            return dtq;
+        }
+
     }
 }

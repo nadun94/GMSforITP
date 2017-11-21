@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Emptab = new MetroFramework.Controls.MetroTabControl();
             this.tabAddEmp = new MetroFramework.Controls.MetroTabPage();
             this.dateTimePickeremp = new MetroFramework.Controls.MetroDateTime();
@@ -126,6 +129,7 @@
             this.openFileDialogEmp = new System.Windows.Forms.OpenFileDialog();
             this.btnHome_emp = new MetroFramework.Controls.MetroTile();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridEmp = new MetroFramework.Controls.MetroGrid();
             this.Emptab.SuspendLayout();
             this.tabAddEmp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picuturebox_emp1)).BeginInit();
@@ -134,6 +138,7 @@
             this.tabemp_attendence.SuspendLayout();
             this.tabEMp_salary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmp)).BeginInit();
             this.SuspendLayout();
             // 
             // Emptab
@@ -148,7 +153,7 @@
             this.Emptab.Location = new System.Drawing.Point(35, 61);
             this.Emptab.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.Emptab.Name = "Emptab";
-            this.Emptab.SelectedIndex = 3;
+            this.Emptab.SelectedIndex = 1;
             this.Emptab.Size = new System.Drawing.Size(1586, 756);
             this.Emptab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Emptab.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -198,7 +203,7 @@
             // dateTimePickeremp
             // 
             this.dateTimePickeremp.Location = new System.Drawing.Point(173, 192);
-            this.dateTimePickeremp.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dateTimePickeremp.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateTimePickeremp.Name = "dateTimePickeremp";
             this.dateTimePickeremp.Size = new System.Drawing.Size(223, 29);
             this.dateTimePickeremp.TabIndex = 51;
@@ -717,6 +722,7 @@
             // 
             // employeeTab
             // 
+            this.employeeTab.Controls.Add(this.dataGridEmp);
             this.employeeTab.Controls.Add(this.btnEMP2_search);
             this.employeeTab.Controls.Add(this.btnEMP2_delete);
             this.employeeTab.Controls.Add(this.btnEMP2_update);
@@ -762,7 +768,7 @@
             // 
             this.btnEMP2_search.ActiveControl = null;
             this.btnEMP2_search.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_search.Location = new System.Drawing.Point(1228, 249);
+            this.btnEMP2_search.Location = new System.Drawing.Point(1228, 169);
             this.btnEMP2_search.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_search.Name = "btnEMP2_search";
             this.btnEMP2_search.Size = new System.Drawing.Size(105, 41);
@@ -779,7 +785,7 @@
             // 
             this.btnEMP2_delete.ActiveControl = null;
             this.btnEMP2_delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_delete.Location = new System.Drawing.Point(1228, 367);
+            this.btnEMP2_delete.Location = new System.Drawing.Point(1228, 287);
             this.btnEMP2_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_delete.Name = "btnEMP2_delete";
             this.btnEMP2_delete.Size = new System.Drawing.Size(105, 41);
@@ -796,7 +802,7 @@
             // 
             this.btnEMP2_update.ActiveControl = null;
             this.btnEMP2_update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_update.Location = new System.Drawing.Point(1228, 309);
+            this.btnEMP2_update.Location = new System.Drawing.Point(1228, 229);
             this.btnEMP2_update.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_update.Name = "btnEMP2_update";
             this.btnEMP2_update.Size = new System.Drawing.Size(105, 41);
@@ -1035,7 +1041,7 @@
             // 
             this.btnEMP2_clear.ActiveControl = null;
             this.btnEMP2_clear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEMP2_clear.Location = new System.Drawing.Point(1233, 435);
+            this.btnEMP2_clear.Location = new System.Drawing.Point(1233, 355);
             this.btnEMP2_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btnEMP2_clear.Name = "btnEMP2_clear";
             this.btnEMP2_clear.Size = new System.Drawing.Size(100, 41);
@@ -2381,6 +2387,56 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dataGridEmp
+            // 
+            this.dataGridEmp.AllowUserToAddRows = false;
+            this.dataGridEmp.AllowUserToDeleteRows = false;
+            this.dataGridEmp.AllowUserToResizeRows = false;
+            this.dataGridEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridEmp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridEmp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridEmp.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridEmp.EnableHeadersVisualStyles = false;
+            this.dataGridEmp.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridEmp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridEmp.Location = new System.Drawing.Point(48, 488);
+            this.dataGridEmp.Name = "dataGridEmp";
+            this.dataGridEmp.ReadOnly = true;
+            this.dataGridEmp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmp.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridEmp.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridEmp.Size = new System.Drawing.Size(1201, 187);
+            this.dataGridEmp.Style = MetroFramework.MetroColorStyle.Lime;
+            this.dataGridEmp.TabIndex = 111;
+            this.dataGridEmp.UseStyleColors = true;
+            // 
             // Emplyee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2403,6 +2459,7 @@
             this.tabEMp_salary.ResumeLayout(false);
             this.tabEMp_salary.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2506,5 +2563,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private MetroFramework.Controls.MetroTile btnGenEndTime;
         private MetroFramework.Controls.MetroTile btncalculate_Hours;
+        private MetroFramework.Controls.MetroGrid dataGridEmp;
     }
 }

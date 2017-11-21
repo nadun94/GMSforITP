@@ -22,7 +22,9 @@ namespace GymMSystem.Interfaces
 
         private void Emplyee_Load(object sender, EventArgs e)
         {
-
+            Buisness_Logic.EmployeeRepository er = new Buisness_Logic.EmployeeRepository();
+            dataGridEmp.DataSource = er.searchEMP_for_datagrid();
+            this.dataGridEmp.Columns[11].Visible = false;
         }
         private Buisness_Logic.empAttendence transport1 = null;
 
@@ -225,9 +227,16 @@ namespace GymMSystem.Interfaces
                     MessageBox.Show("Employee attendence record found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtStartTime.Text = ea1.startTime;
                     txtempAT_theday.Text = ea1.theDay;
-                    textAtEndTime.Text = ea1.endTime;
-                    textAtTotalHr.Text = ea1.hoursWorked.ToString();
-                    textAtExtraHr.Text = ea1.extraHours.ToString();
+                    if (string.IsNullOrWhiteSpace(ea1.endTime))
+                    {
+
+                    }else
+                    {
+                        textAtEndTime.Text = ea1.endTime;
+                        textAtTotalHr.Text = ea1.hoursWorked.ToString();
+                        textAtExtraHr.Text = ea1.extraHours.ToString();
+                    }
+                    
 
 
                 }

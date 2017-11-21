@@ -205,5 +205,41 @@ namespace GymMSystem.Buisness_Logic
             return dtq;
 
         }
+
+        public DataTable getExercises_from_workoutGrid(string wn)
+        {
+
+            DataTable dtq = new DataTable();
+            try
+            {
+                DataLayer.dbConnect workoutSearch = new DataLayer.dbConnect();
+                workoutSearch.openConnection();
+
+                string query1 = "SELECT * FROM tbl_workout_exercise where w_name=@wn ";
+
+                SqlCommand cmd1 = new SqlCommand(query1, workoutSearch.getConnection());
+
+                cmd1.Parameters.AddWithValue("@wn", wn);
+
+
+
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                //  workout wrk = new workout();
+                da1.Fill(dtq);
+
+
+                workoutSearch.closeConnection();
+
+
+            }
+            catch (Exception exp)
+            {
+
+                throw;
+            }
+
+            return dtq;
+
+        }
     }
 }

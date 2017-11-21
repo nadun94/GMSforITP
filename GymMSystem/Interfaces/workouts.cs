@@ -353,12 +353,119 @@ namespace GymMSystem.Interfaces
                     txtW2_bmi_to.Text = row.Cells[5].Value.ToString();
                     txtW4_fat_to.Text = row.Cells[6].Value.ToString();
 
-                   
+                    Buisness_Logic.workout_repository wr = new Buisness_Logic.workout_repository();
 
-                 
+                    dataGrid_ex_list.DataSource = wr.getExercises_from_workoutGrid(txtW3_Wname.Text);
+
+
+
                 }
+
+
             }
             catch (Exception ecell)
+            {
+
+                throw;
+            }
+        }
+
+        private void dataGrid_ex_list_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGrid_ex_list.Rows[e.RowIndex];
+                   
+                    comboW5_name.SelectedItem = row.Cells[1].Value.ToString();
+                    txtW5_sets.Text = row.Cells[2].Value.ToString();
+                  
+                }
+
+
+            }
+            catch (Exception ecell)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void btnGw_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buisness_Logic.gymMemberRepository gr = new Buisness_Logic.gymMemberRepository();
+             
+                int regNo = string.IsNullOrWhiteSpace(txtgetW_memID.Text) ? 0 : int.Parse(txtgetW_memID.Text);
+                string name = "";
+                string nic = txtgetW_nic.Text;
+                var gm= gr.search(regNo, name, nic);
+                txtgetW_memID.Text = gm.MemberID.ToString();
+                txtgetW_nic.Text = gm.nic;
+                txtgetW_weight.Text = gm.weight.ToString();
+                txtgetW_bmi.Text = gm.BMIratio.ToString();
+                txtgetW_fat.Text = gm.fatLevel.ToString();
+                txtgetW_height.Text = gm.height.ToString();
+                //txtgetW_shedule.Text = 
+
+            }
+            catch (Exception fd)
+            {
+
+                throw;
+            }
+        }
+
+        private void bnt_genwrfs_Click(object sender, EventArgs e)
+        {       
+            try
+            { DataTable dt = new DataTable();
+
+                double fat_to, fat_from, bmi_to, bmi_from;
+                string workout_name;
+                int match;
+                bool test = false;
+                double member_bmi, member_fat;
+                member_bmi = double.Parse(txtgetW_bmi.Text);
+                member_fat = double.Parse(txtgetW_fat.Text);
+               
+                Buisness_Logic.workout_repository wr = new Buisness_Logic.workout_repository();
+                dt = wr.searchWorkouts_for_grid();
+
+                if (dt.Rows.Count > 0)
+                {
+                    for(int i=0; i < dt.Rows.Count; i++)
+                    {
+                        bmi_from = (double)dt.Rows[i]["BMI_rate_from"];
+                        bmi_to = (double)dt.Rows[i]["BMI_rate_to"];
+                        fat_from = (double)dt.Rows[i]["fat_level_from"];
+                        fat_to = (double)dt.Rows[i]["fat_level_to"];
+                       
+                       
+
+                        if(member_bmi>= bmi_from && member_bmi<bmi_to && member_fat>=fat_from && member_fat< fat_to)
+                        {
+                            
+                            match = i;
+                            workout_name = dt.Rows[i]["w_name"].ToString();
+                            // txtgw_workoutName.Text = dt.Rows[match]["w_name"].ToString();
+                            MessageBox.Show("Workout generated.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtgw_workoutName.Text = workout_name;
+                            txtgetW_shedule.Text = dt.Rows[i]["interval_days"].ToString();
+                            test = true;
+                            break;
+                        }
+                        
+                    }
+                    if(test==false)
+                        MessageBox.Show("No workout match found.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            catch (Exception gf)
             {
 
                 throw;

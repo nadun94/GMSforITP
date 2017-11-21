@@ -22,7 +22,9 @@ namespace GymMSystem.Interfaces
 
         private void salesManagement_Load(object sender, EventArgs e)
         {
-
+            Buisness_Logic.productRepository prep = new Buisness_Logic.productRepository();
+            dataGridPriducts.DataSource = prep.searchProducts_for_dataGrid();
+            this.dataGridPriducts.Columns[7].Visible = false;
         }
 
         private void btnHome_SalesMgt_Click(object sender, EventArgs e)
@@ -463,6 +465,42 @@ namespace GymMSystem.Interfaces
                 MessageBox.Show("Record deletion failed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
+        }
+
+        private void btnPopulate_Click(object sender, EventArgs e)
+        {
+            Buisness_Logic.productRepository pr = new Buisness_Logic.productRepository();
+
+            var dt_pr = pr.searchProducts_for_dataGrid();
+
+            
+            //List<Image> productPhoto = new List<Image>();
+            for(int i =0;i<dt_pr.Rows.Count;i++)
+            {
+                try
+                {
+                    byte[] ph = (byte[])dt_pr.Rows[i]["photo"];
+                    MemoryStream ms = new MemoryStream(ph);
+                    ms.Position = 0;
+                    ms.Read(ph, 0, ph.Length);
+                    this.imageList1.Images.Add(Image.FromStream(ms));
+                }
+                catch
+                {
+                    Console.WriteLine("This is not an image file");
+                }
+            }
+            this.listView1.View = View.LargeIcon;
+            this.imageList1.ImageSize = new Size(100, 120);
+            this.listView1.LargeImageList = this.imageList1;
+           
+
+            for (int j = 0; j < this.imageList1.Images.Count; j++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = j;
+                this.listView1.Items.Add(item);
+            }
         }
     }
 }

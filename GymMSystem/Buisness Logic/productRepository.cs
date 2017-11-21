@@ -189,5 +189,33 @@ namespace GymMSystem.Buisness_Logic
 
                
         }
+        public DataTable searchProducts_for_dataGrid()
+        {
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+            DataTable dt = new DataTable();
+            try
+            {
+                string qr = "select * from tbl_product";
+
+                SqlCommand cmd = new SqlCommand(qr, con.getConnection());
+
+               
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+               
+
+                da.Fill(dt);
+
+              
+                
+            }
+            catch (Exception pt)
+            {
+
+                throw;
+            }
+            return dt;
+
+        }
     }
 }
