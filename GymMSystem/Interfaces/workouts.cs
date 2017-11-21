@@ -33,14 +33,14 @@ namespace GymMSystem.Interfaces
 
             DataTable dtq = new DataTable();
             SqlDataAdapter da1 = new SqlDataAdapter(cmd);
-            comboW1_name.Refresh();
+            comboW5_name.Refresh();
             da1.Fill(dtq);
 
             if (dtq.Rows.Count > 0)
             {
                 for (int i = 0; i < dtq.Rows.Count; i++)
                 {
-                    comboW1_name.Items.Add(dtq.Rows[i]["name"].ToString());
+                    comboW5_name.Items.Add(dtq.Rows[i]["name"].ToString());
 
                 }
             }
@@ -51,10 +51,17 @@ namespace GymMSystem.Interfaces
             this.dataGrid_exercise.Columns[1].Visible = false;
             con.closeConnection();
         }
+
+        private void workout_to_datagrid()
+        {
+            Buisness_Logic.workout_repository wr = new Buisness_Logic.workout_repository();
+            dataGrid_workout.DataSource = wr.searchWorkouts_for_grid();
+        }
         private void workouts_Load(object sender, EventArgs e)
         {
-
+            
             database_refresh();
+            workout_to_datagrid();
         }
 
         private void btnHome_workouts_Click(object sender, EventArgs e)
@@ -206,11 +213,16 @@ namespace GymMSystem.Interfaces
                 Buisness_Logic.workout wo = new Buisness_Logic.workout();
 
                 wo.workout_name = txtW3_Wname.Text;
-                wo.type = txtW6_type.Text;
-                wo.exName = comboW1_name.SelectedItem.ToString();
-                wo.BMI_rate = double.Parse(txtW2_bmi.Text);
-                wo.fat_level = double.Parse(txtW4_fat.Text);
-                wo.repeats = int.Parse(txtW5_sets.Text);
+                wo.type = cmb_w5_type.SelectedItem.ToString();
+               // from
+                wo.BMI_rate_from = double.Parse(txtW2_bmi_from.Text);
+                wo.fat_level_from = double.Parse(txtW4_fat_from.Text);
+
+                //to 
+                wo.BMI_rate_to = double.Parse(txtW2_bmi_to.Text);
+                wo.fat_level_to = double.Parse(txtW4_fat_to.Text);
+
+               
                 wo.interval_days = txtW3_schedule.Text;
 
 
@@ -241,13 +253,9 @@ namespace GymMSystem.Interfaces
 
         private void btnworkout_clear_Click(object sender, EventArgs e)
         {
-            comboW1_name.SelectedIndex = -1;
+            comboW5_name.SelectedIndex = -1;
             txtW3_Wname.Clear();
-            txtW6_type.Clear();
-            txtW2_bmi.Clear();
-            txtW4_fat.Clear();
-            txtW3_schedule.Clear();
-            txtW5_sets.Clear();
+            
         }
 
         private void btnworkout_search_Click(object sender, EventArgs e)
@@ -257,25 +265,15 @@ namespace GymMSystem.Interfaces
                 Buisness_Logic.workout wrk = new Buisness_Logic.workout();
 
                 wrk.workout_name = txtW3_Wname.Text;
-                //wo1.type = txtW6_type.Text;
-                //wo1.exName = comboW1_name.SelectedItem.ToString();
-                //wo1.BMI_rate = double.Parse(txtW2_bmi.Text);
-                //wo1.fat_level = double.Parse(txtW4_fat.Text);
-                //wo1.repeats = int.Parse(txtW5_sets.Text);
-                //wo1.interval_days = txtW3_schedule.Text;
+                wrk.exName = comboW5_name.SelectedItem.ToString();
+                wrk.repeats = int.Parse(txtW5_sets.Text);
 
                 Buisness_Logic.workout_repository wo1 = new Buisness_Logic.workout_repository();
 
 
 
-                if (wo1.searchWorkouts(wrk))
-                {
-
-                    txtW6_type.Text = wrk.type;
-                    txtW2_bmi.Text = wrk.BMI_rate.ToString();
-                    txtW4_fat.Text = wrk.fat_level.ToString();
-                    txtW5_sets.Text = wrk.repeats.ToString();
-                    txtW3_schedule.Text = wrk.interval_days.ToString();
+                if (wo1.addExercises_to_workout(wrk))
+                { 
 
                     MessageBox.Show("Succesfull.", "Data Insertion.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -315,7 +313,49 @@ namespace GymMSystem.Interfaces
                     txtEx1_name.Text = row.Cells[0].Value.ToString();
                     txtEx2_description.Text = row.Cells[1].Value.ToString();
                     cmbWork_cato.SelectedItem = row.Cells[2].Value.ToString();
-                    
+                    txtEx1_Addionaequi.Text = row.Cells[4].Value.ToString(); 
+
+                    txtEx1_equi.Text = row.Cells[3].Value.ToString();
+
+
+                }
+            }
+            catch (Exception ecell)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnworkout_clear_1_Click(object sender, EventArgs e)
+        {
+            txtW3_Wname.Clear();
+            cmb_w5_type.SelectedIndex = -1;
+            txtW2_bmi_from.Clear();
+            txtW4_fat_from.Clear();
+            txtW3_schedule.Clear();
+            txtW5_sets.Clear();
+        }
+
+        private void dataGrid_workout_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGrid_workout.Rows[e.RowIndex];
+                    txtW3_Wname.Text = row.Cells[0].Value.ToString();
+                    cmb_w5_type.SelectedItem = row.Cells[1].Value.ToString();
+                     txtW2_bmi_from.Text = row.Cells[2].Value.ToString();
+                    txtW3_schedule.Text = row.Cells[4].Value.ToString();
+
+                    txtW4_fat_from.Text = row.Cells[3].Value.ToString();
+                    txtW2_bmi_to.Text = row.Cells[5].Value.ToString();
+                    txtW4_fat_to.Text = row.Cells[6].Value.ToString();
+
+                   
+
+                 
                 }
             }
             catch (Exception ecell)

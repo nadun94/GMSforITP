@@ -201,7 +201,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(24, 88);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(1792, 756);
             this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Magenta;

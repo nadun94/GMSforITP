@@ -20,22 +20,27 @@ namespace GymMSystem.Buisness_Logic
 
                 con1.openConnection();
 
-                string q1 = "INSERT INTO tbl_workout (w_name,type, BMI_rate,fat_level,repeats,interval_days) values (@name,@type,@bmi,@fat,@rep,@interval)";
-
+                string q1 = "INSERT INTO tbl_workout  values (@name,@type,@bmi_f,@fat_f,@interval,@bmi_t,@fat_t)";
+                //(w_name,type, BMI_rate,fat_level,repeats,interval_days)
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
                 cmd1.Parameters.AddWithValue("@name", wo.workout_name);
                 cmd1.Parameters.AddWithValue("@type",wo.type);
-                cmd1.Parameters.AddWithValue("@bmi",wo.BMI_rate);
-                cmd1.Parameters.AddWithValue("@fat",wo.fat_level);
-                cmd1.Parameters.AddWithValue("@rep",wo.repeats);
+               //from
+                cmd1.Parameters.AddWithValue("@bmi_f",wo.BMI_rate_from);
+                cmd1.Parameters.AddWithValue("@fat_f",wo.fat_level_from);
+                //to
+                cmd1.Parameters.AddWithValue("@bmi_t", wo.BMI_rate_to);
+                cmd1.Parameters.AddWithValue("@fat_t", wo.fat_level_to);
+
+               
                 cmd1.Parameters.AddWithValue("@interval",wo.interval_days);
 
                 cmd1.ExecuteNonQuery();
 
 
                 temp = true;
-
+                
             }
             catch (Exception exr)
             {
@@ -46,6 +51,42 @@ namespace GymMSystem.Buisness_Logic
             if (temp == true) return true;
             else return false;
 
+        }
+
+
+        // add exercises to given workout
+
+            public bool addExercises_to_workout(Buisness_Logic.workout wo)
+        {
+            bool temp = false;
+            try
+            {
+                DataLayer.dbConnect con1 = new DataLayer.dbConnect();
+
+                con1.openConnection();
+
+                string q1 = "INSERT INTO tbl_workout_exercise values (@name,@ex_name,@rep)";
+
+                SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
+
+                cmd1.Parameters.AddWithValue("@name", wo.workout_name);
+                cmd1.Parameters.AddWithValue("@ex_name", wo.exName);
+                cmd1.Parameters.AddWithValue("@rep", wo.repeats);
+
+
+                cmd1.ExecuteNonQuery();
+
+
+                temp = true;
+            }
+            catch (Exception fs)
+            {
+
+                throw;
+            }
+
+            if (temp == true) return true;
+            else return false;
         }
 
 
@@ -65,8 +106,8 @@ namespace GymMSystem.Buisness_Logic
                 cmd = new SqlCommand(qry, mydb.getConnection());
 
                 cmd.Parameters.AddWithValue("@type",wo1.type);
-                cmd.Parameters.AddWithValue("@BMI",wo1.BMI_rate);
-                cmd.Parameters.AddWithValue("@fat",wo1.fat_level);
+                //cmd.Parameters.AddWithValue("@BMI",wo1.BMI_rate);
+                //cmd.Parameters.AddWithValue("@fat",wo1.fat_level);
                 cmd.Parameters.AddWithValue("@repeat",wo1.repeats);
                 cmd.Parameters.AddWithValue("@interval",wo1.interval_days);
 
@@ -108,8 +149,8 @@ namespace GymMSystem.Buisness_Logic
                     wrk.id = int.Parse(dtq.Rows[0]["w_id"].ToString());
                     wrk.workout_name = dtq.Rows[0]["w_name"].ToString();
                     wrk.type = dtq.Rows[0]["type"].ToString();
-                    wrk.BMI_rate = double.Parse(dtq.Rows[0]["BMI_rate"].ToString());
-                    wrk.fat_level = double.Parse(dtq.Rows[0]["fat_level"].ToString());
+                    //wrk.BMI_rate = double.Parse(dtq.Rows[0]["BMI_rate"].ToString());
+                    //wrk.fat_level = double.Parse(dtq.Rows[0]["fat_level"].ToString());
                     wrk.repeats = int.Parse(dtq.Rows[0]["repeats"].ToString());
                     wrk.interval_days = dtq.Rows[0]["interval_days"].ToString();
                     
@@ -129,6 +170,39 @@ namespace GymMSystem.Buisness_Logic
             if (temp == true) return true;
             else return false;
 
+
+        }
+        public DataTable searchWorkouts_for_grid()
+        {
+            
+            DataTable dtq = new DataTable();
+            try
+            {
+                DataLayer.dbConnect workoutSearch = new DataLayer.dbConnect();
+                workoutSearch.openConnection();
+
+                string query1 = "SELECT * FROM tbl_workout ";
+
+                SqlCommand cmd1 = new SqlCommand(query1, workoutSearch.getConnection());
+
+
+                
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                //  workout wrk = new workout();
+                da1.Fill(dtq);
+
+               
+                workoutSearch.closeConnection();
+
+
+            }
+            catch (Exception exp)
+            {
+
+                throw;
+            }
+
+            return dtq;
 
         }
     }
