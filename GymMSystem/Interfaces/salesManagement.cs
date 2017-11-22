@@ -581,5 +581,58 @@ namespace GymMSystem.Interfaces
         {
             
     }
+
+        private void dataGridPriducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridPriducts.Rows[e.RowIndex];
+                    txtp2name.Text = row.Cells[1].Value.ToString();
+                    txtp2_make.Text = row.Cells[2].Value.ToString();
+                    cmbp2ProdType.SelectedItem = row.Cells[3].Value.ToString();
+                    txtp2_availableqty.Text = row.Cells[4].Value.ToString();
+                    txtp2_bprice.Text= row.Cells[5].Value.ToString();
+                    txtp2_sellingprice.Text = row.Cells[6].Value.ToString();
+                    txtp2_prodID.Text = row.Cells[0].Value.ToString();
+
+
+
+
+
+                    byte[] picdg = (byte[])row.Cells[7].Value;
+                    picbox_editProd.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    MemoryStream msdg1 = new MemoryStream(picdg);
+                    msdg1.Position = 0;
+
+                    msdg1.Read(picdg, 0, picdg.Length);
+                    picbox_editProd.Image = Image.FromStream(msdg1);
+                    picbox_editProd.Refresh();
+
+                }
+            }
+            catch (Exception ecell)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnEditProd_clear_Click(object sender, EventArgs e)
+        {
+            txtp2_prodID.Text = "";
+            txtp2_sellingprice.Clear();
+            txtp2_make.Text = "";
+            txtp2_bprice.Text = "";
+            cmbp2ProdType.SelectedIndex = -1;
+            picbox_editProd.Image = null;
+
+
+            picbox_editProd.Refresh();
+            cmbp2ProdType.Refresh();
+
+        }
     }
 }

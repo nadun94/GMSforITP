@@ -831,5 +831,10 @@ namespace GymMSystem.Interfaces
                 throw;
             }
         }
+
+        private void txtEqui_code_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -828,5 +828,24 @@ namespace GymMSystem.Interfaces
                 throw;
             }
         }
+
+        private void btnEmp1_clear_Click(object sender, EventArgs e)
+        {
+            txtEmp1_name.Text = "";
+            txtEmp1_address.Text = "";
+            txtEmp1_jdate.Text = "";
+            txtEmp_nic.Text = "";
+            txtEmp1_phone.Text = "";
+            txtEmp1_email.Text = "";
+            txtEmp1_resume.Text = "";
+            picuturebox_emp1.Image = null;
+            picuturebox_emp1.Refresh();
+
+        }
+
+        private void txtEmp1_email_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

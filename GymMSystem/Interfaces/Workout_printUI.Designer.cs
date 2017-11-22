@@ -36,7 +36,7 @@
             this.crpt_workout.ActiveViewIndex = -1;
             this.crpt_workout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crpt_workout.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crpt_workout.Location = new System.Drawing.Point(23, 46);
+            this.crpt_workout.Location = new System.Drawing.Point(63, 46);
             this.crpt_workout.Name = "crpt_workout";
             this.crpt_workout.Size = new System.Drawing.Size(1090, 611);
             this.crpt_workout.TabIndex = 3;
