@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
     
 
 namespace GymMSystem.DataLayer
 {
     class dbConnect
     {
-        private static string conString;
+        //private static string conString;
         SqlConnection con;
-        private SqlCommand cmd; 
+        private SqlCommand cmd;
+        private static string conString;
 
-       public dbConnect()
+        public dbConnect()
         {
-            conString = @"Data Source=DESKTOP-HCHF8AM\NADUN;Initial Catalog=dbGym;Integrated Security=True";
+           // conString = @"Data Source=DESKTOP-HCHF8AM\NADUN;Initial Catalog=dbGym;Integrated Security=True";
+            conString = ConfigurationManager.ConnectionStrings["GymMSystem"].ConnectionString;
         }
 
         public void openConnection()

@@ -20,13 +20,18 @@ namespace GymMSystem.Interfaces
             InitializeComponent();
         }
 
+        // product list for add to cart
+        List<Buisness_Logic.product> prdList = new List<Buisness_Logic.product>();
+       
         private void salesManagement_Load(object sender, EventArgs e)
         {
             Buisness_Logic.productRepository prep = new Buisness_Logic.productRepository();
             dataGridPriducts.DataSource = prep.searchProducts_for_dataGrid();
             this.dataGridPriducts.Columns[7].Visible = false;
+            
         }
 
+       
         private void btnHome_SalesMgt_Click(object sender, EventArgs e)
         {
             Main smmain = new Main();
@@ -473,34 +478,108 @@ namespace GymMSystem.Interfaces
 
             var dt_pr = pr.searchProducts_for_dataGrid();
 
+
+            dataGridCART.DataSource = dt_pr;
+            this.dataGridCART.Columns[7].Visible = false;
+
+
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
-            //List<Image> productPhoto = new List<Image>();
-            for(int i =0;i<dt_pr.Rows.Count;i++)
+            
+        }
+
+        private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            
+        }
+
+        private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+        }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+        int count = 0;
+        string sub;
+        private void dataGridCART_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+            try
             {
-                try
+
+                if (e.RowIndex >= 0)
                 {
-                    byte[] ph = (byte[])dt_pr.Rows[i]["photo"];
-                    MemoryStream ms = new MemoryStream(ph);
-                    ms.Position = 0;
-                    ms.Read(ph, 0, ph.Length);
-                    this.imageList1.Images.Add(Image.FromStream(ms));
-                }
-                catch
-                {
-                    Console.WriteLine("This is not an image file");
+                    DataGridViewRow row = this.dataGridCART.Rows[e.RowIndex];
+
+            
+                    int pid = (int)row.Cells[0].Value;
+                    
+                    string make = row.Cells[2].Value.ToString();
+                   double price  =(double) row.Cells[6].Value;
+                    int qty = (int)row.Cells[4].Value;
+                    //sub = "p" + count.ToString();
+                   
+                    string name = row.Cells[1].Value.ToString();
+                    Buisness_Logic.product sub  = new Buisness_Logic.product();
+                    sub.productID = pid;
+                    sub.make = make;
+                    sub.selling_Price = price;
+                    sub.name = name;
+                    sub.qty = qty;
+
+                    prdList.Add(sub);
+
+
+                    count++;
+                    
                 }
             }
-            this.listView1.View = View.LargeIcon;
-            this.imageList1.ImageSize = new Size(100, 120);
-            this.listView1.LargeImageList = this.imageList1;
-           
-
-            for (int j = 0; j < this.imageList1.Images.Count; j++)
+            catch (Exception ecell)
             {
-                ListViewItem item = new ListViewItem();
-                item.ImageIndex = j;
-                this.listView1.Items.Add(item);
+
+                throw;
             }
         }
+        public void carList()
+        {
+            try
+            {
+                int x = prdList.Count;
+                for (int i = 1; i < x; i++)
+                {
+                   // DataGridViewRow row = (DataGridViewRow)dataGRid_sell.Rows[i].Clone();
+                    dataGRid_sell.Rows[i].Cells[0].Value = prdList[i].productID;
+                    dataGRid_sell.Rows[i].Cells[1].Value = prdList[i].name; 
+                    dataGRid_sell.Rows[i].Cells[2].Value = prdList[i].selling_Price;
+                    dataGRid_sell.Rows[i].Cells[3].Value = null;
+                    dataGRid_sell.Rows[i].Cells[4].Value = prdList[i].make;
+                    
+
+                    
+                }
+                dataGRid_sell.Refresh();
+            }
+            catch (Exception fs)
+            {
+
+                throw;
+            }
+        }
+
+        private void salesMgtsTab_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+    }
     }
 }

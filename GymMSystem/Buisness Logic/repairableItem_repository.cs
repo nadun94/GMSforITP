@@ -208,5 +208,37 @@ namespace GymMSystem.Buisness_Logic
             else return false;
 
         }
+        public DataTable searchEqui_Items()
+        {
+
+            // Buisness_Logic.product prd = new Buisness_Logic.product();
+
+            bool temp = false;
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+            DataTable dt = new DataTable();
+            try
+            {
+                string qr = "select * from view_repairItemsSet";
+
+                SqlCommand cmd = new SqlCommand(qr, con.getConnection());
+
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+
+                da.Fill(dt);
+
+            }
+            catch (Exception pt)
+            {
+
+                throw;
+            }
+
+            return dt;
+
+        }
     }
 }

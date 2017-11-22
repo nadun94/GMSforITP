@@ -38,6 +38,11 @@ namespace GymMSystem.Interfaces
                 lblQty.Refresh();
 
             }
+            Buisness_Logic.repairableItem_repository er = new Buisness_Logic.repairableItem_repository();
+            dataGridINV1.DataSource = er.searchEqui_Items();
+            this.dataGridINV1.Columns[5].Visible = false;
+
+
         }
 
         private void btnHome_inven_Click(object sender, EventArgs e)

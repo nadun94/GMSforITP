@@ -471,5 +471,28 @@ namespace GymMSystem.Interfaces
                 throw;
             }
         }
+
+        private void btnGw_save_Click(object sender, EventArgs e)
+        {
+            string wk =txtgw_workoutName.Text;
+            DataTable mem = new DataTable();
+            mem.Columns.Add("memID", typeof(int));
+            mem.Columns.Add("fat", typeof(double));
+            mem.Columns.Add("bmi", typeof(double));
+
+            double fat = double.Parse(txtgetW_fat.Text);
+            double bmi = double.Parse(txtgetW_bmi.Text);
+            int memid = int.Parse(txtgetW_memID.Text);
+
+            mem.Rows.Add(memid, fat, bmi);
+           
+
+            Buisness_Logic.workout_repository wr = new Buisness_Logic.workout_repository();
+            var dt_w = wr.searchWorkouts_for_report(wk);
+            var dt_e = wr.getExercises_from_workoutGrid( wk);
+
+            Workout_printUI fd = new Workout_printUI(dt_w,dt_e, mem);
+            fd.Show();
+        }
     }
 }

@@ -766,12 +766,67 @@ namespace GymMSystem.Interfaces
 
         private void btnPrSearch_Click(object sender, EventArgs e)
         {
+            int monthInDigit = DateTime.ParseExact(cmbFin1_month.SelectedItem.ToString(), "MMMM", CultureInfo.InvariantCulture).Month;
+            int year = int.Parse(metroTextBox1.Text);
+            int eid = int.Parse(textPrEid.Text);
+            Buisness_Logic.employee emp = new Buisness_Logic.employee();
+            Buisness_Logic.salary b = new Buisness_Logic.salary();
+            if (emp.calculate_salaryl(monthInDigit, year, eid, b))
+            {
+                MessageBox.Show("Successfull");
+                textPrTotHrWrk.Text = b.tot_hours.ToString();
+                textPrTotExHrWrk.Text = b.extr_hours.ToString();
 
+
+            }
+            else
+            {
+
+            }
         }
 
         private void btnPrAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridEmp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridEmp.Rows[e.RowIndex];
+                    txtEmp2_jDate.Text = row.Cells[10].Value.ToString();
+                    txtEmp2_name.Text = row.Cells[1].Value.ToString();
+                    txtEmp2_nic.Text = row.Cells[3].Value.ToString();
+                    txtEmp2_address.Text = row.Cells[4].Value.ToString();
+                    cmbEMP2_gender.SelectedItem = row.Cells[5].Value.ToString();
+                    txtEmp2_dob.Text = row.Cells[2].Value.ToString();
+                    txtEmp2_phone.Text = row.Cells[7].Value.ToString();
+                    txtEmp2_email.Text = row.Cells[6].Value.ToString();
+                    cmbEMP2_post.SelectedItem = row.Cells[8].Value.ToString();
+                    txtEmp2_profile.Text = row.Cells[9].Value.ToString();
+                    txtEmp2_empid.Text = row.Cells[0].Value.ToString();
+
+
+                    byte[] picdg = (byte[])row.Cells[11].Value;
+                    pictureBoxEmp2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    MemoryStream msdg1 = new MemoryStream(picdg);
+                    msdg1.Position = 0;
+
+                    msdg1.Read(picdg, 0, picdg.Length);
+                    pictureBoxEmp2.Image = Image.FromStream(msdg1);
+                    pictureBoxEmp2.Refresh();
+
+                }
+            }
+            catch (Exception ecell)
+            {
+
+                throw;
+            }
         }
     }
 }
