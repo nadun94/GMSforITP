@@ -16,8 +16,8 @@ namespace GymMSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
-            //Application.Run(new Interfaces.Login());
+           // Application.Run(new Main());
+            Application.Run(new Interfaces.Login());
         }
     }
 }

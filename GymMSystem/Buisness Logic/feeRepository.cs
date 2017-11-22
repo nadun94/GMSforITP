@@ -229,7 +229,37 @@ namespace GymMSystem.Buisness_Logic
             return dt;
         }
 
-       // public fee calcFee_aerobic()
-            
+        // public fee calcFee_aerobic()
+
+
+
+
+
+        public DataTable search_aerobic_fee_for_data_grid()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataLayer.dbConnect con = new DataLayer.dbConnect();
+                con.openConnection();
+                string q = "select * from view_aerobic_mem_Fee";
+                SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+            }
+
+            catch (Exception ffg)
+            {
+
+                throw;
+            }
+
+            return dt;
+        }
+
+        
     }
 }

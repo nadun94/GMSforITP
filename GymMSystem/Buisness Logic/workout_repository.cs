@@ -101,21 +101,27 @@ namespace GymMSystem.Buisness_Logic
                 mydb.openConnection();
 
                 SqlCommand cmd = null;
-                string qry = "UPDATE tbl_workout SET type=@type, BMI_rate=@BMI, fat_level=@fat, repeats=@repeat, interval_days=@interval WHERE w_name=@wname";
+                string qry = "UPDATE tbl_workout SET type=@type, BMI_rate_from=@BMIf, fat_level_from=@fatf,  interval_days=@interval,BMI_rate_to=@bmito,fat_level_to=@fatto WHERE w_name=@wname";
 
                 cmd = new SqlCommand(qry, mydb.getConnection());
 
                 cmd.Parameters.AddWithValue("@type",wo1.type);
-                //cmd.Parameters.AddWithValue("@BMI",wo1.BMI_rate);
-                //cmd.Parameters.AddWithValue("@fat",wo1.fat_level);
+                cmd.Parameters.AddWithValue("@BMIf", wo1.BMI_rate_from);
+                cmd.Parameters.AddWithValue("@fatf", wo1.fat_level_from);
                 cmd.Parameters.AddWithValue("@repeat",wo1.repeats);
                 cmd.Parameters.AddWithValue("@interval",wo1.interval_days);
+                cmd.Parameters.AddWithValue("@bmito", wo1.BMI_rate_to);
+                cmd.Parameters.AddWithValue("@fatto", wo1.fat_level_to);
+                cmd.Parameters.AddWithValue("@wname", wo1.workout_name);
 
                 cmd.ExecuteNonQuery();
 
+
+        
+
                 temp = true;
 
-                return temp;
+               
 
             }
             catch (Exception exr)
@@ -123,6 +129,9 @@ namespace GymMSystem.Buisness_Logic
                 
                 throw;
             }
+
+            if (temp == true) return true;
+            else return false;
         }
 
         public bool searchWorkouts(Buisness_Logic.workout wrk)
@@ -273,6 +282,48 @@ namespace GymMSystem.Buisness_Logic
 
             return dtq;
 
+        }
+
+        //update workout exercise list
+
+        public bool updateWorkouts_ex_list(Buisness_Logic.workout wo1)
+        {
+
+            bool temp = false;
+
+            try
+            {
+                DataLayer.dbConnect mydb = new DataLayer.dbConnect();
+                mydb.openConnection();
+
+                SqlCommand cmd = null;
+                string qry = "UPDATE tbl_workout_exercise SET repeats=@r where  ex_name=@ex and   w_name=@wname";
+
+                cmd = new SqlCommand(qry, mydb.getConnection());
+
+                cmd.Parameters.AddWithValue("@r", wo1.repeats);
+                cmd.Parameters.AddWithValue("@ex", wo1.exName);
+              
+                cmd.Parameters.AddWithValue("@wname", wo1.workout_name);
+
+                cmd.ExecuteNonQuery();
+
+
+
+
+                temp = true;
+
+
+
+            }
+            catch (Exception exr)
+            {
+
+                throw;
+            }
+
+            if (temp == true) return true;
+            else return false;
         }
 
     }

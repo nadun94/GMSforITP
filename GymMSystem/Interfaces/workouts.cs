@@ -203,6 +203,10 @@ namespace GymMSystem.Interfaces
         {
             txtEx1_name.Clear();
             txtEx2_description.Clear();
+            txtEx1_Addionaequi.Text = "";
+            txtEx1_equi.Text = "";
+            cmbWork_cato.SelectedIndex = -1;
+            cmbWork_cato.Refresh();
         }
 
         private void btnworkout_save_Click(object sender, EventArgs e)
@@ -255,7 +259,8 @@ namespace GymMSystem.Interfaces
         {
             comboW5_name.SelectedIndex = -1;
             txtW3_Wname.Clear();
-            
+            txtW5_sets.Clear();
+
         }
 
         private void btnworkout_search_Click(object sender, EventArgs e)
@@ -295,7 +300,33 @@ namespace GymMSystem.Interfaces
 
         private void btnworkout_update_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                Buisness_Logic.workout wk = new Buisness_Logic.workout();
+
+                wk.exName = comboW5_name.SelectedItem.ToString();
+                wk.workout_name = txtW3_Wname.Text;
+                wk.repeats = int.Parse(txtW5_sets.Text);
+
+                Buisness_Logic.workout_repository wr = new Buisness_Logic.workout_repository();
+
+                if (wr.updateWorkouts_ex_list(wk))
+                {
+                    MessageBox.Show("Workout list update successfull.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Workout list  update failed.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+            }
+            catch (Exception fs)
+            {
+
+                throw;
+            }
         }
 
         private void exersixeTab_Click(object sender, EventArgs e)
@@ -334,7 +365,10 @@ namespace GymMSystem.Interfaces
             txtW2_bmi_from.Clear();
             txtW4_fat_from.Clear();
             txtW3_schedule.Clear();
-            txtW5_sets.Clear();
+           
+            txtW4_fat_to.Text = "";
+            txtW2_bmi_to.Text = "";
+
         }
 
         private void dataGrid_workout_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -493,6 +527,55 @@ namespace GymMSystem.Interfaces
 
             Workout_printUI fd = new Workout_printUI(dt_w,dt_e, mem);
             fd.Show();
+        }
+
+        private void btnGw_clear_Click(object sender, EventArgs e)
+        {
+            txtgetW_memID.Text = "";
+            txtgetW_bmi.Text = "";
+            txtgetW_fat.Text = "";
+            txtgetW_height.Text = "";
+            txtgetW_nic.Text = "";
+            txtgetW_shedule.Text = "";
+            txtgw_workoutName.Text = "";
+            txtgetW_weight.Text = "";
+
+
+        }
+
+        private void btnworkout_update_w_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Buisness_Logic.workout wk = new Buisness_Logic.workout();
+
+                wk.BMI_rate_from = double.Parse(txtW2_bmi_from.Text);
+                wk.BMI_rate_to = double.Parse(txtW2_bmi_to.Text);
+                wk.fat_level_from = double.Parse(txtW4_fat_from.Text);
+                wk.fat_level_to = double.Parse(txtW4_fat_to.Text);
+                wk.interval_days = txtW3_schedule.Text;
+                wk.type = cmb_w5_type.SelectedItem.ToString();
+                wk.workout_name = txtW3_Wname.Text;
+
+                Buisness_Logic.workout_repository wr = new Buisness_Logic.workout_repository();
+
+                if (wr.updateWorkouts(wk))
+                {
+                    MessageBox.Show("Workout update successfull.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Workout update failed.", "Information.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+            }
+            catch (Exception fs)
+            {
+                
+                throw;
+            }
         }
     }
 }

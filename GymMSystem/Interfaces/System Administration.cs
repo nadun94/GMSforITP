@@ -592,5 +592,53 @@ namespace GymMSystem.Interfaces
                 }
             }
         }
+
+        private void fsdfdsfds_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buisness_Logic.service_repository ser = new Buisness_Logic.service_repository();
+                dataGrd_us.DataSource = ser.search_users();
+            }
+            catch (Exception sf)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void dataGrd_us_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGrd_us.Rows[e.RowIndex];
+                    txtUSacnt_pwd.Text = row.Cells[1].Value.ToString();
+                    txtUSacnt_empid.Text = row.Cells[2].Value.ToString();
+                    txtUSacnt_username.Text = row.Cells[0].Value.ToString();
+                    bool c = (bool)row.Cells[3].Value;
+                    if (c == true)
+                    {
+                        check_admin.Checked = true;
+
+
+                    }
+                    else
+                    {
+                        check_admin.Checked = false;
+                    }
+                    
+          
+                
+                }
+            }
+            catch (Exception ecell)
+            {
+
+                throw;
+            }
+        }
     }
 }

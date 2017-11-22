@@ -36,6 +36,32 @@ namespace GymMSystem.Buisness_Logic
             }
         }
 
-      
+
+        //user accounts
+        public DataTable search_users()
+        {
+            try
+            {
+                DataLayer.dbConnect con = new DataLayer.dbConnect();
+                con.openConnection();
+
+                string q = "select * from tbl_userLogin";
+
+                SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception fd)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

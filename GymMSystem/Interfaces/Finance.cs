@@ -39,6 +39,52 @@ namespace GymMSystem.Interfaces
 
             dataGridFin1.DataSource = dt;
         }
+        private void dataGrid_generation_sales()
+        {
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+
+            string q = "select * from sales_finance";
+            SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            datGridFin2.DataSource = dt;
+        }
+        private void dataGrid_generation_os()
+        {
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+
+            string q = "select * from sales_finance";
+            SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            datGridFin3.DataSource = dt;
+        }
+        private void dataGrid_generation_expense()
+        {
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+
+            string q = "select * from sales_finance";
+            SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            datagrid_expe.DataSource = dt;
+        }
+        
         private void Settings_Load(object sender, EventArgs e)
         {
 
@@ -52,11 +98,11 @@ namespace GymMSystem.Interfaces
             txtsalesyear.Text = year;
             cmbFin2_month.SelectedItem = month;
             txtos_year.Text = year;
-           
 
 
-
-
+            dataGrid_generation_sales();
+            dataGrid_generation_os();
+            dataGrid_generation_expense();
             //cmbFin1_month.Refresh();
         }
 
@@ -503,17 +549,106 @@ namespace GymMSystem.Interfaces
         {
 
         }
-
-        private void btnFin5_Add_Click(object sender, EventArgs e)
+        public bool validate_expenxe()
         {
+
+
+
+            bool exname, type,am;
             try
             {
 
+                Buisness_Logic.validation val1 = new Buisness_Logic.validation();
+                ////Year
+                //if (!val1.IsNumeric(txtfin_expen_Year.Text) && string.IsNullOrWhiteSpace(txtFin_fitYear.Text))
+                //{
+
+                //    this.errorProvider1.SetError(txtFin_fitYear, " Year is invalid.");
+                //    exname = false;
+
+                //}
+                //else
+                //{
+                //    this.errorProvider1.SetError(txtFin_fitYear, (string)null);
+                //    exname = true;
+
+                //}
+
+                //month
+                if (cmbFin5_expenseType.SelectedIndex.Equals(-1))
+                {
+                    this.errorProvider1.SetError(cmbFin1_month, "Expense type is not selected.");
+                    type = false;
+                }
+                else
+                {
+                    this.errorProvider1.SetError(cmbFin1_month, (string)null);
+                    type = true;
+                }
+
+                //amount
+                if (!val1.isPrice(txtFin5_amount.Text) && string.IsNullOrWhiteSpace(txtFin5_amount.Text))
+                {
+
+                    this.errorProvider1.SetError(txtFin5_amount, " Income is invalid.");
+                    am = false;
+
+                }
+                else
+                {
+                    this.errorProvider1.SetError(txtFin5_amount, (string)null);
+                    am = true;
+
+                }
+
+
             }
-            catch (Exception df)
+            catch (Exception fd)
             {
 
                 throw;
+            }
+
+            if (type == true ) return true;
+            else return false;
+
+
+
+        }
+        private void btnFin5_Add_Click(object sender, EventArgs e)
+        {
+            if (validate_expenxe())
+            {
+                try
+                {
+
+                    string date = dateTimePickerMem.Value.ToString();
+                    string name = cmbFin5_expenseType.SelectedItem.ToString();
+                    double amount = double.Parse(txtFin5_amount.Text);
+                 
+
+                    string q = "insert into tbl_expences (name,date,amount) values(@n,@d,@a)";
+
+                    DataLayer.dbConnect con = new DataLayer.dbConnect();
+                    con.openConnection();
+
+                    SqlCommand cmd = new SqlCommand(q, con.getConnection());
+
+                    cmd.Parameters.AddWithValue("@d", date);
+                    cmd.Parameters.AddWithValue("@a", amount);
+                    cmd.Parameters.AddWithValue("@n", name);
+                   
+
+                    cmd.ExecuteNonQuery();
+
+
+                    MessageBox.Show("Succesfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception fdf)
+                {
+
+                    throw;
+                }
             }
         }
 
@@ -587,6 +722,11 @@ namespace GymMSystem.Interfaces
                     throw;
                 }
             }
+        }
+
+        private void tabFinOtherserve_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

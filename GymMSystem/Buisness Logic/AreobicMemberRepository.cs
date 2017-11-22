@@ -420,5 +420,36 @@ namespace GymMSystem.Buisness_Logic
         }
 
 
+        public DataTable searchAerobicMemOnly_for_datagrid()
+        {
+            DataLayer.dbConnect con = new DataLayer.dbConnect();
+            con.openConnection();
+          
+            DataTable dt1 = new DataTable();
+
+            try
+            {
+                string q1 = "select * from veiw_areobicMember";
+
+                SqlCommand cmd1 = new SqlCommand(q1, con.getConnection());
+
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                
+                da1.Fill(dt1);
+
+                
+                
+
+            }
+            catch (Exception df)
+            {
+
+                throw;
+            }
+
+            return dt1;
+        }
+
+
     }
 }

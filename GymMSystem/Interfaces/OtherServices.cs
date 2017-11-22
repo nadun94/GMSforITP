@@ -22,11 +22,14 @@ namespace GymMSystem.Interfaces
 
         private void OtherServices_Load(object sender, EventArgs e)
         {
-     
+            Buisness_Logic.AreobicMemberRepository ar = new Buisness_Logic.AreobicMemberRepository();
 
-        
+
+            dataGrid_osMember.DataSource = ar.searchAerobicMemOnly_for_datagrid();
+
+
             //check box
-           
+
 
             lblHint1.Visible = false;
             lblHint2.Visible = false;
@@ -825,15 +828,35 @@ namespace GymMSystem.Interfaces
 
         private void btnmfCalcPayment_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrWhiteSpace(txtMF_memID.Text) || string.IsNullOrWhiteSpace(txtmfNIC.Text))
             {
-
+                MessageBox.Show("Please search payment details of a member first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception fsdf)
+            else
             {
+                Buisness_Logic.fee fee2 = new Buisness_Logic.fee();
 
-                throw;
+                fee2.service = txtfservice.Text;
+                fee2.lastVPaymentDate = txtMF_lastValidDate.Text;
+                fee2.memberID = int.Parse(txtMF_memID.Text);
+             
+                Buisness_Logic.feeRepository fr = new Buisness_Logic.feeRepository();
+               // fr.paymentCalculation(fee2, transporter);
+
+
+                txtMFnewpayemnt.Text = fee2.newAmount.ToString();
+                txtPaymentValidfor.Text = fee2.PaymentvalidDate;
             }
+            
+            
+        }
+
+        private void fsdfsdf_Click(object sender, EventArgs e)
+        {
+            Buisness_Logic.feeRepository fr = new Buisness_Logic.feeRepository();
+
+            var i = fr.search_aerobic_fee_for_data_grid();
+
         }
     }
 }
